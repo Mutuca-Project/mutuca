@@ -7,6 +7,10 @@ import scrapy
 
 
 class MutucaItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    # TODO implementar o download do arquivo
+    # files_urls = scrapy.Field()
+    # files = scrapy.Field()
+    url = scrapy.Field()
+    publication_date = scrapy.Field()
+    description = scrapy.Field()
+    file_id = scrapy.Field()
