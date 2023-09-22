@@ -1,5 +1,6 @@
 import scrapy
 from mutuca.items import MutucaItem
+from datetime import datetime
 
 
 class CotaParlamentarCaruaruSpider(scrapy.Spider):
@@ -12,9 +13,8 @@ class CotaParlamentarCaruaruSpider(scrapy.Spider):
     }
 
     def start_requests(self):
-        # definir a data com o módulo date para a data do momento da raspagem
         start_date = "01/01/2000"
-        end_date = "18/09/2023"
+        end_date = datetime.now().strftime("%d/%m/%Y")
         row_count = "-1"
         url = f"https://transparenciape.com.br/CamaraCaruaru/cotaAtividadeParlamentarClass.php?dataInicial={start_date}&dataFinal={end_date}&rowCount={row_count}"
 
