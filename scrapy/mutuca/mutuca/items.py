@@ -8,8 +8,8 @@ import scrapy
 
 class MutucaItem(scrapy.Item):
     # TODO implementar o download do arquivo
-    # files_urls = scrapy.Field()
-    # files = scrapy.Field()
+    file_urls = scrapy.Field()
+    files = scrapy.Field()
     url = scrapy.Field()
     publication_date = scrapy.Field()
     description = scrapy.Field()
