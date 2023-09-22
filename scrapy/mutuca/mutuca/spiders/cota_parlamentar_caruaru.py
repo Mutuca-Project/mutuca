@@ -27,6 +27,8 @@ class CotaParlamentarCaruaruSpider(scrapy.Spider):
         for row in rows:
             url = url_base + row["arquivo"]
             mutuca_item = MutucaItem()
+
+            mutuca_item["file_urls"] = [url]
             mutuca_item["url"] = url
             mutuca_item["publication_date"] = row["data_publicacao"]
             mutuca_item["description"] = row["descricao"]
