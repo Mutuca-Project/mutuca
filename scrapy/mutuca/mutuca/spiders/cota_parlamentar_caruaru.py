@@ -1,8 +1,15 @@
 import scrapy
+from mutuca.items import MutucaItem
 
 
 class CotaParlamentarCaruaruSpider(scrapy.Spider):
     name = "cota_parlamentar"
+
+    custom_settings = {
+        "FEEDS": {
+            "datatest.json": {"format": "json", "ovewrite": True}
+        }
+    }
 
     def start_requests(self):
         # definir a data com o módulo date para a data do momento da raspagem
@@ -19,10 +26,10 @@ class CotaParlamentarCaruaruSpider(scrapy.Spider):
 
         for row in rows:
             url = url_base + row["arquivo"]
+            mutuca_item = MutucaItem()
+            mutuca_item["url"] = url
+            mutuca_item["publication_date"] = row["data_publicacao"]
+            mutuca_item["description"] = row["descricao"]
+            mutuca_item["file_id"] = row["arquivo"]
 
-            yield {
-                "url": url,
-                "publication_date": row["data_publicacao"],
-                "description": row["descricao"],
-                "file_id": row["arquivo"],
-            }
+            yield mutuca_item
