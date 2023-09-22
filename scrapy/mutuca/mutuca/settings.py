@@ -68,10 +68,11 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    "mutuca.pipelines.MutucaPipeline": 300,
-# }
-
+ITEM_PIPELINES = {
+    "scrapy.pipelines.files.FilesPipeline": 1
+    # "mutuca.pipelines.MutucaPipeline": 300,
+}
+FILES_STORE = "downloaded_files_test"
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 # AUTOTHROTTLE_ENABLED = True
