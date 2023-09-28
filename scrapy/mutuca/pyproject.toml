@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "mutuca"
+version = "0.1.0"
+description = "Mutuca é uma ferramenta de extração de dados públicos do município de Caruaru-PE"
+authors = ["Tiago Henrique <tiagohs.dev@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scrapy = "^2.11.0"
+pdfplumber = "^0.10.2"
+
+[tool.poetry.group.dev.dependencies]
+
+
+[tool.poetry.group.docs.dependencies]
+jupyter = "^1.0.0"
+jupyter-server-terminals = "^0.4.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
