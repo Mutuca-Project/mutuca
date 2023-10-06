@@ -6,11 +6,11 @@
 import scrapy
 
 
-class MutucaItem(scrapy.Item):
-    # TODO implementar o download do arquivo
+class ParliamentaryAllowanceItem(scrapy.Item):
     file_urls = scrapy.Field()
     files = scrapy.Field()
     url = scrapy.Field()
     publication_date = scrapy.Field()
     description = scrapy.Field()
+    category = scrapy.Field()
     file_id = scrapy.Field()
