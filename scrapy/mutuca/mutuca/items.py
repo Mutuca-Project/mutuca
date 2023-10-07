@@ -12,5 +12,4 @@ class ParliamentaryAllowanceItem(scrapy.Item):
     url = scrapy.Field()
     publication_date = scrapy.Field()
     description = scrapy.Field()
-    category = scrapy.Field()
     file_id = scrapy.Field()
