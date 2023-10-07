@@ -69,10 +69,12 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    "scrapy.pipelines.files.FilesPipeline": 1
-    # "mutuca.pipelines.MutucaPipeline": 300,
+    "mutuca.pipelines.ParliamentaryAllowancePipeline": 1,
 }
-FILES_STORE = "downloaded_files_test"
+FILES_STORE = "documentos_subsidio_alimentacao_combustivel"
+
+# FEEDS = {"parliamentary_allowance_metadata.json": {"format": "json", "overwrite": False}}
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 # AUTOTHROTTLE_ENABLED = True
