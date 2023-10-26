@@ -6,6 +6,7 @@
 
 # useful for handling different item types with a single interface
 
+import os
 from pathlib import PurePosixPath
 from urllib.parse import urlparse
 
@@ -15,4 +16,4 @@ from scrapy.pipelines.files import FilesPipeline
 
 class ParliamentaryAllowancePipeline(FilesPipeline):
     def file_path(self, request, response=None, info=None, *, item=None):
-        return "pdf/" + PurePosixPath(urlparse(request.url).path).name
+        return "pdf" + PurePosixPath(urlparse(request.url).path).name

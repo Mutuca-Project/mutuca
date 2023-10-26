@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import os
 
 BOT_NAME = "mutuca"
 
@@ -71,6 +72,7 @@ DOWNLOADER_MIDDLEWARES = {
 ITEM_PIPELINES = {
     "mutuca.pipelines.ParliamentaryAllowancePipeline": 1,
 }
+
 FILES_STORE = "documentos_subsidio_alimentacao_combustivel"
 
 # FEEDS = {"parliamentary_allowance_metadata.json": {"format": "json", "overwrite": False}}
