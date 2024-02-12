@@ -86,7 +86,7 @@ class GoogleDriveLoadPDF(FilesPipeline):
 
     def __get_google_credentials(self):
         credentials = service_account.Credentials.from_service_account_file(
-            "credentials.json",
+            os.environ.get("GOOGLE_CREDENTIALS_PATH"),
             scopes=[
                 "https://www.googleapis.com/auth/drive.file",
             ],
