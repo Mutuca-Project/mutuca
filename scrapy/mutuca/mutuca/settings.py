@@ -70,7 +70,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    "mutuca.pipelines.ParliamentaryAllowancePipeline": 1,
+    "mutuca.pipelines.GoogleDriveLoadPDF": 1,
+    # "mutuca.pipelines.ParliamentaryAllowancePipeline": 1,
 }
 
 FILES_STORE = "documentos_subsidio_alimentacao_combustivel"
