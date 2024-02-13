@@ -71,12 +71,11 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     "mutuca.pipelines.GoogleDriveLoadPDF": 1,
-    # "mutuca.pipelines.ParliamentaryAllowancePipeline": 1,
 }
 
-FILES_STORE = "documentos_subsidio_alimentacao_combustivel"
+# FILES_STORE = ""
 
-# FEEDS = {"parliamentary_allowance_metadata.json": {"format": "json", "overwrite": False}}
+FEEDS = {"parliamentary_allowance_metadata.csv": {"format": "csv", "overwrite": False}}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
