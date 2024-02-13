@@ -69,7 +69,7 @@ class GoogleDriveLoadPDF(FilesPipeline):
 
             file_metadata = {
                 "name": file_name,
-                "parents": [os.environ.get("GOOGLE_DRIVE_DIR_TESTE")],
+                "parents": [os.environ.get("GOOGLE_DRIVE_DIR")],
                 "mimeType": "application/pdf",
             }
 
