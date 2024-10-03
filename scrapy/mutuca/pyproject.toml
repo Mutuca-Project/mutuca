@@ -5,8 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "black>=24.8.0",
+    "flake8>=7.1.1",
+    "google-api-python-client>=2.147.0",
+    "google-auth>=2.35.0",
+    "google-auth-httplib2>=0.2.0",
+    "google-auth-oauthlib>=1.2.1",
+    "isort>=5.13.2",
     "pdfplumber>=0.11.4",
     "pip>=24.2",
+    "python-dotenv>=1.0.1",
     "requests>=2.32.3",
     "scrapy>=2.11.2",
 ]
