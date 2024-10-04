@@ -22,4 +22,5 @@ dev-dependencies = [
     "pdfplumber>=0.11.4",
     "pip>=24.2",
     "python-dotenv>=1.0.1",
+    "ipdb>=0.13.13",
 ]
