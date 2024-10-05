@@ -1,4 +1,5 @@
 import re
+from logging import info
 
 from scrapy import Request, Spider
 
@@ -7,15 +8,32 @@ from mutuca.items.public_works_cityhall_items import CityHallPublicWorksItem
 
 class PublicWorksCityHallSpyder(Spider):
     name = "public_works_cityhall"
-    start_urls = ["https://caruaru.pe.gov.br/portal-da-transparencia/obras-publicas/"]
+    start_urls = ["https://caruaru.pe.gov.br/portal-da-transparencia/"]
 
     def parse(self, response, **kargs):
-        public_works_urls = response.xpath(
+        public_works_url = response.xpath(
+            '//div[@class="component_pt-cardItemBig contrast title-acesso-a-informacao"]/a[contains(@href, "obras-publicas")]/@href'
+        ).get()
+
+        yield Request(public_works_url, callback=self.parse_public_works_cards)
+
+    def parse_public_works_cards(self, response, **kargs):
+
+        public_works_cards = response.xpath(
             '//section[@class="groupBox contrast"]/a[contains(@class, "box status")]/@href'
         ).getall()
 
-        for public_work_url in public_works_urls:
+        for public_work_url in public_works_cards:
             yield Request(public_work_url, callback=self.parse_public_work_data)
+
+        pagination = response.xpath(
+            '//div[@class="component-pagination"]/a[@class="next page-numbers"]/@href'
+        ).get()
+
+        if pagination:
+            yield Request(pagination, callback=self.parse_public_works_cards)
+        else:
+            info("Não ha mais páginas para raspar.")
 
     def parse_public_work_data(self, response):
         nested_keys = response.xpath(
@@ -76,7 +94,9 @@ class PublicWorksCityHallSpyder(Spider):
         item["total_paid_amount"] = (
             formatted_values[16].strip() if len(formatted_values) > 16 else None
         )
-        item["status"] = formatted_values[17].strip() if len(formatted_values) > 17 else None
+        item["status"] = (
+            formatted_values[17].strip() if len(formatted_values) > 17 else None
+        )
         item["project_stage"] = (
             formatted_values[18].strip() if len(formatted_values) > 18 else None
         )
