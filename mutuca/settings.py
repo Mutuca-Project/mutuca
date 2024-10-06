@@ -6,8 +6,6 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-import os
-
 BOT_NAME = "mutuca"
 
 SPIDER_MODULES = ["mutuca.spiders"]
@@ -69,13 +67,13 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-    "mutuca.pipelines.GoogleDriveLoadPDF": 1,
-}
+# ITEM_PIPELINES = {
+#     "mutuca.pipelines.GoogleDriveLoadPDF": 1,
+# }
 
 # FILES_STORE = ""
 
-FEEDS = {"parliamentary_allowance_metadata.csv": {"format": "csv", "overwrite": False}}
+# FEEDS = {"parliamentary_allowance_metadata.csv": {"format": "csv", "overwrite": False}}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
