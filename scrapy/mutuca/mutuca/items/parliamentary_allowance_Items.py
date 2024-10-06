@@ -5,7 +5,6 @@
 
 import scrapy
 
-
 class ParliamentaryAllowanceItem(scrapy.Item):
     file_urls = scrapy.Field()
     files = scrapy.Field()
