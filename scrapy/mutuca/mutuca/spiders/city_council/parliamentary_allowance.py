@@ -3,26 +3,21 @@ from datetime import datetime
 import scrapy
 
 from mutuca.items.parliamentary_allowance_Items import ParliamentaryAllowanceItem
-from mutuca.pipelines.pipeline_builder import PipelineBuilder
 
 
 class ParliamentaryAllowanceSpider(scrapy.Spider):
     name = "parliamentary_allowance"
-
-    @classmethod
-    def from_crawler(cls, crawler, *args, **kwargs):
-        spider = super(ParliamentaryAllowanceSpider, cls).from_crawler(
-            crawler, *args, **kwargs
-        )
-
-        # Obtém a configuração de pipeline através do builder
-        builder = PipelineBuilder()
-        pipelines = builder.get_pipelines(spider.name)
-
-        # Aplica as configurações especificas de pipelines
-        crawler.settings.set("ITEM_PIPELINES", pipelines)
-
-        return spider
+    custom_settings = {
+        "ITEM_PIPELINES": {
+            "mutuca.pipelines.parliamentary_allowance_pipelines.GoogleDriveLoadPDF": 1
+        },
+        "FEEDS": {
+            "parliamentary_allowance_metadata.csv": {
+                "format": "csv",
+                "overwrite": False,
+            }
+        },
+    }
 
     def start_requests(self):
         start_date = "01/01/2000"
