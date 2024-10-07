@@ -1,0 +1,15 @@
+site_name: Mutuca 
+repo_url: https://github.com/dvths/mutuca
+repo_name: mutuca
+edit_uri: tree/main/docs
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/mutuca-white.png
+  favicon: assets/mutuca-white.png
+markdown_extensions: 
+ - attr_list 
+extra_css:
+  - assets/stylesheets/extra.css
+
+
