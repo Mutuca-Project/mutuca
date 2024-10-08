@@ -13,6 +13,7 @@ dependencies = [
     "scrapy>=2.11.2",
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.5.39",
+    "mkdocs-jupyter>=0.25.0",
 ]
 
 [tool.uv]

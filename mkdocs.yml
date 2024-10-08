@@ -3,13 +3,26 @@ repo_url: https://github.com/dvths/mutuca
 repo_name: mutuca
 edit_uri: tree/main/docs
 theme:
+  palette:
+    scheme: slate
+    primary: "slate"
+  features:
+    - header.autohide
   name: material
   language: pt-BR
-  logo: assets/mutuca-white.png
-  favicon: assets/mutuca-white.png
+  logo: assets/mutuca-darktheme.png
+  favicon: assets/mutuca-darktheme.png
 markdown_extensions: 
  - attr_list 
 extra_css:
   - assets/stylesheets/extra.css
+plugins: 
+  - mkdocs-jupyter
+
+nav:
+  - Home: index.md
+  - Câmara Municipal:
+    - câmara_municipal/analise_do_portal_para_raspagem_de_dados_cota_parlamentar.ipynb
+    - câmara_municipal/analise_dos_documentos_para_extracao_dos_dados.ipynb
 
 
