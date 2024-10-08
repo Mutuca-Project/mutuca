@@ -1,4 +1,4 @@
-![logo](assets/mutuca.png){width=200 .center}
+![logo](assets/mutuca-darktheme.png){width=200 .center}
 
 # Welcome to MkDocs
 
