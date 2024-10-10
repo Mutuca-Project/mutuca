@@ -13,7 +13,10 @@ theme:
   language: pt-BR
   logo: assets/mutuca-darktheme.png
   favicon: assets/mutuca-darktheme.png
-markdown_extensions: 
+markdown_extensions:  
+ - pymdownx.highlight:
+    anchor_linenums: true
+ - pymdownx.superfences
  - attr_list 
 extra_css:
   - assets/stylesheets/extra.css
