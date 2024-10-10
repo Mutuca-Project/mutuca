@@ -5,7 +5,8 @@ edit_uri: tree/main/docs
 theme:
   palette:
     scheme: slate
-    primary: "slate"
+    primary: teal 
+    accent: cyan
   features:
     - header.autohide
   name: material
