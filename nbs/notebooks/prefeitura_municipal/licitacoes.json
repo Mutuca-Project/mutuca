@@ -120,21 +120,6 @@
         "comissao": "UC-O"
     },
     {
-        "numero": "090019/2024",
-        "processo": "0024/2024",
-        "dataDeRealizacao": "10/09/2024",
-        "dataDePublicacao": "27/08/2024",
-        "modalidade": "Concorrência",
-        "orgao": "Secretaria de Urbanismo e Obras",
-        "fase": "Aberta",
-        "tipoObjeto": "Obras e serviços de engenharia",
-        "objeto": "Pavimentação em paralelepípedos, drenagem e sinalização de diversas vias no Bairro Deputado José Antônio Liberato, Caruaru/PE.",
-        "valorEstimado": "R$ 4.474.712,13",
-        "valorContratado": "",
-        "vencedor": null,
-        "comissao": "CPL Obras"
-    },
-    {
         "numero": "090029/2024",
         "processo": "0060/2024",
         "dataDeRealizacao": "06/06/2024",
@@ -190,6 +175,21 @@
         "tipoObjeto": "Obras e serviços de engenharia",
         "objeto": "Execução da reforma e requalificação da edificaçaõ para instalação de velório público, localizado no Povoado de Itaúna, município de Caruaru-PE.",
         "valorEstimado": "R$ 161.973,18",
+        "valorContratado": "",
+        "vencedor": null,
+        "comissao": "UC-O"
+    },
+    {
+        "numero": "090019/2024",
+        "processo": "0024/2024",
+        "dataDeRealizacao": "10/09/2024",
+        "dataDePublicacao": "27/08/2024",
+        "modalidade": "Concorrência",
+        "orgao": "Secretaria de Urbanismo e Obras",
+        "fase": "Homologada",
+        "tipoObjeto": "Obras e serviços de engenharia",
+        "objeto": "Pavimentação em paralelepípedos, drenagem e sinalização de diversas vias no Bairro Deputado José Antônio Liberato, Caruaru/PE.",
+        "valorEstimado": "R$ 4.474.712,13",
         "valorContratado": "",
         "vencedor": null,
         "comissao": "UC-O"

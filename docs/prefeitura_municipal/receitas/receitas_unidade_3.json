@@ -1,0 +1,141 @@
+{
+    "informacao": "Receita",
+    "ultimaAtualizacao": "13/10/2024",
+    "totalRegistros": 2,
+    "registros": [
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 137,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 3,
+                    "denominacao": "Consórcio dos Municípios Pernambucanos - COMUPE"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "173000000000",
+                        "denominacao": "Transferências dos Municípios e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "173900000000",
+                        "denominacao": "Outras Transferências dos Municípios"
+                    },
+                    "alinea": {
+                        "codigo": "173950000000",
+                        "denominacao": "Transferências de Municípios a Consórcios Públicos"
+                    },
+                    "subalinea": {
+                        "codigo": "173950000000",
+                        "denominacao": "Transferências de Municípios a Consórcios Públicos"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "173950010000",
+                        "denominacao": "Transferências de Municípios a Consórcios Públicos - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "173950010200",
+                        "denominacao": "Transferências a Consórcio Público - Delegação"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "173950010200",
+                        "denominacao": "Transferências a Consórcio Público - Delegação"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 300,
+                        "denominacao": "MSC - 1.880.0000 Recursos Próprios dos Consórcios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 20000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 136,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 3,
+                    "denominacao": "Consórcio dos Municípios Pernambucanos - COMUPE"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "173000000000",
+                        "denominacao": "Transferências dos Municípios e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "173900000000",
+                        "denominacao": "Outras Transferências dos Municípios"
+                    },
+                    "alinea": {
+                        "codigo": "173950000000",
+                        "denominacao": "Transferências de Municípios a Consórcios Públicos"
+                    },
+                    "subalinea": {
+                        "codigo": "173950000000",
+                        "denominacao": "Transferências de Municípios a Consórcios Públicos"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "173950010000",
+                        "denominacao": "Transferências de Municípios a Consórcios Públicos - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "173950010100",
+                        "denominacao": "Transferência a Consório Público - Rateio"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "173950010100",
+                        "denominacao": "Transferência a Consório Público - Rateio"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 300,
+                        "denominacao": "MSC - 1.880.0000 Recursos Próprios dos Consórcios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 180000.0
+                    }
+                ]
+            }
+        }
+    ]
+}
