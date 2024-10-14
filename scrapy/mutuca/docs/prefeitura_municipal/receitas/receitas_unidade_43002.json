@@ -1,0 +1,119 @@
+{
+    "informacao": "Receita",
+    "ultimaAtualizacao": "13/10/2024",
+    "totalRegistros": 1,
+    "registros": [
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 1,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43002,
+                    "denominacao": "Câmara Municipal de Vereadores de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010600",
+                        "denominacao": "Remuneração de Depósitos Bancários - Poder Legislativo"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010600",
+                        "denominacao": "Remuneração de Depósitos Bancários - Poder Legislativo"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 150,
+                        "denominacao": "MSC - 1.501.0000 Fundo Especial (RP)",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 30000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 32225.5
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25636.29
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25532.41
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25352.93
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 23423.36
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 22287.99
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25861.86
+                    },
+                    {
+                        "dataMovimento": "2024-08-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 24203.71
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 23310.17
+                    }
+                ]
+            }
+        }
+    ]
+}

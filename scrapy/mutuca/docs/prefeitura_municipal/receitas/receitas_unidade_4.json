@@ -1,0 +1,74 @@
+{
+    "informacao": "Receita",
+    "ultimaAtualizacao": "13/10/2024",
+    "totalRegistros": 1,
+    "registros": [
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 138,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 4,
+                    "denominacao": "CONIAPE - Consórcio Público Intermunicipal do Agreste Pernambucano e Fronteiras"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "173000000000",
+                        "denominacao": "Transferências dos Municípios e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "173900000000",
+                        "denominacao": "Outras Transferências dos Municípios"
+                    },
+                    "alinea": {
+                        "codigo": "173950000000",
+                        "denominacao": "Transferências de Municípios a Consórcios Públicos"
+                    },
+                    "subalinea": {
+                        "codigo": "173950000000",
+                        "denominacao": "Transferências de Municípios a Consórcios Públicos"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "173950010000",
+                        "denominacao": "Transferências de Municípios a Consórcios Públicos - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "173950010100",
+                        "denominacao": "Transferência a Consório Público - Rateio"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "173950010100",
+                        "denominacao": "Transferência a Consório Público - Rateio"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 300,
+                        "denominacao": "MSC - 1.880.0000 Recursos Próprios dos Consórcios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 360000.0
+                    }
+                ]
+            }
+        }
+    ]
+}

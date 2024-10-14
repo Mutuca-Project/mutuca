@@ -1,0 +1,3085 @@
+{
+    "informacao": "Receita",
+    "ultimaAtualizacao": "13/10/2024",
+    "totalRegistros": 34,
+    "registros": [
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 260,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "191000000000",
+                        "denominacao": "Multas Administrativas, Contratuais e Judiciais"
+                    },
+                    "rubrica": {
+                        "codigo": "191100000000",
+                        "denominacao": "Multas Administrativas, Contratuais e Judiciais"
+                    },
+                    "alinea": {
+                        "codigo": "191108000000",
+                        "denominacao": "Multas Decorrentes de Sentenças Judiciais"
+                    },
+                    "subalinea": {
+                        "codigo": "191108000000",
+                        "denominacao": "Multas Decorrentes de Sentenças Judiciais"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "191108010000",
+                        "denominacao": "Multas Decorrentes de Sentenças Judiciais"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "191108010000",
+                        "denominacao": "Multas Decorrentes de Sentenças Judiciais"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "191108010000",
+                        "denominacao": "Multas Decorrentes de Sentenças Judiciais"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-04-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 24953.19
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 269,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "200000000000",
+                        "denominacao": "Receitas de Capital"
+                    },
+                    "origem": {
+                        "codigo": "240000000000",
+                        "denominacao": "Transferências de Capital"
+                    },
+                    "especie": {
+                        "codigo": "242000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "242900000000",
+                        "denominacao": "Outras Transferências de Recursos dos Estados"
+                    },
+                    "alinea": {
+                        "codigo": "242999000000",
+                        "denominacao": "Outras Transferências de Recursos dos Estados"
+                    },
+                    "subalinea": {
+                        "codigo": "242999000000",
+                        "denominacao": "Outras Transferências de Recursos dos Estados"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "242999010000",
+                        "denominacao": "Outras Transferências de Recursos dos Estados - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "242999010300",
+                        "denominacao": "Outras Transf do Estado - FEAS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "242999010300",
+                        "denominacao": "Outras Transf do Estado - FEAS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 50000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 274,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172900000000",
+                        "denominacao": "Outras Transferências dos Estados e Distrito Federal"
+                    },
+                    "alinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subalinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172951010000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172951010500",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - PAEFI/CREAS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172951010500",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - PAEFI/CREAS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 18000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 270,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172900000000",
+                        "denominacao": "Outras Transferências dos Estados e Distrito Federal"
+                    },
+                    "alinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subalinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172951010000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172951010100",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - PAIF/CRAS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172951010100",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - PAIF/CRAS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 30000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 90000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 90000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 30000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 30000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 271,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172900000000",
+                        "denominacao": "Outras Transferências dos Estados e Distrito Federal"
+                    },
+                    "alinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subalinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172951010000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172951010200",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - Benefício Eventual "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172951010200",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - Benefício Eventual "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 36000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 36000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 268,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172900000000",
+                        "denominacao": "Outras Transferências dos Estados e Distrito Federal"
+                    },
+                    "alinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subalinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172951010000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172951010600",
+                        "denominacao": "Cofinanciamento Centro POP - Custeio"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172951010600",
+                        "denominacao": "Cofinanciamento Centro POP - Custeio"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 60000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 183,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010200",
+                        "denominacao": "Bloco de Proteção Social Especial de Média e Alta Complexidade"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010201",
+                        "denominacao": "Componente - Piso Fixo de Média Complexidade - PAEFI"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 250000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 26693.03
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16480.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16480.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16480.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16480.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16480.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16480.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16480.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 184,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010200",
+                        "denominacao": "Bloco de Proteção Social Especial de Média e Alta Complexidade"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010202",
+                        "denominacao": "Componente - Piso Fixo de Média Complexidade - MSE"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 100000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8552.14
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5280.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5280.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5280.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5280.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5280.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5280.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5280.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 185,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010200",
+                        "denominacao": "Bloco de Proteção Social Especial de Média e Alta Complexidade"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010203",
+                        "denominacao": "Componente - Piso Fixo de Média Complexidade - Abordagem Social"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 110000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 19436.67
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12000.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12000.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 281,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172900000000",
+                        "denominacao": "Outras Transferências dos Estados e Distrito Federal"
+                    },
+                    "alinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subalinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172951010000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172951010700",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo -  Abordagem Social"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172951010700",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo -  Abordagem Social"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-08-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 21000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 186,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010200",
+                        "denominacao": "Bloco de Proteção Social Especial de Média e Alta Complexidade"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010205",
+                        "denominacao": "Componente - Piso Fixo de Média Complexidade - Centro POP RUA"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 200000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16845.11
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10400.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10400.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10400.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10400.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10400.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10400.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10400.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 272,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172900000000",
+                        "denominacao": "Outras Transferências dos Estados e Distrito Federal"
+                    },
+                    "alinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subalinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172951010000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172951010300",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - Acolhimento Institucional "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172951010300",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - Acolhimento Institucional "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 135000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 45000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 90000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 45000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 45000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 45000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 273,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172900000000",
+                        "denominacao": "Outras Transferências dos Estados e Distrito Federal"
+                    },
+                    "alinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subalinea": {
+                        "codigo": "172951000000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172951010000",
+                        "denominacao": "Transferências de Estados destinadas à Assistência Social - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172951010400",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - Medida Sócio Educativa em Meio Aberto "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172951010400",
+                        "denominacao": "Cofinanciamento do Fundo a Fundo - Medida Sócio Educativa em Meio Aberto "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 42000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14000.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 179,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010400",
+                        "denominacao": "Remuneração de Depósitos Bancários - Assistência Social"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010401",
+                        "denominacao": "Rec Rem Depós Banc Rec Vinc - Fundo Nacional de Assistência Social (FNAS) "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 100000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8784.03
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5463.16
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5245.18
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4803.74
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5097.82
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3595.25
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3579.4
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3146.14
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2620.34
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 180,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010500",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010503",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados - FMAS "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 150000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2410.71
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2391.22
+                    },
+                    {
+                        "dataMovimento": "2024-02-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 24.55
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3290.36
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4609.6
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4460.04
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5601.07
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6633.14
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6034.4
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7358.21
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 181,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010100",
+                        "denominacao": "Programas "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010101",
+                        "denominacao": "Programa Primeira Infancia no SUAS "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 500000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25022.73
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 22753.36
+                    },
+                    {
+                        "dataMovimento": "2024-05-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 22777.36
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25663.64
+                    },
+                    {
+                        "dataMovimento": "2024-09-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 28390.91
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 182,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010100",
+                        "denominacao": "Programas "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010103",
+                        "denominacao": "BPC na Escola - Questionário a ser aplicado - BL"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 10000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 193,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171700000000",
+                        "denominacao": "Transferências de Convênios da União e de Suas Entidades"
+                    },
+                    "alinea": {
+                        "codigo": "171752000000",
+                        "denominacao": "Transferências de Convênios da União Destinadas a Programas de Assistência Social"
+                    },
+                    "subalinea": {
+                        "codigo": "171752000000",
+                        "denominacao": "Transferências de Convênios da União Destinadas a Programas de Assistência Social"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171752010000",
+                        "denominacao": "Transf. de Conv. da União Dest. a Programas de Assistência Social - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171752010000",
+                        "denominacao": "Transf. de Conv. da União Dest. a Programas de Assistência Social - Principal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171752010000",
+                        "denominacao": "Transf. de Conv. da União Dest. a Programas de Assistência Social - Principal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 700000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 194,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172400000000",
+                        "denominacao": "Transferências de Convênios dos Estados e DF e de Suas Entidades"
+                    },
+                    "alinea": {
+                        "codigo": "172499000000",
+                        "denominacao": "Outras Transferências de Convênios dos Estados e DF e de Suas Entidades"
+                    },
+                    "subalinea": {
+                        "codigo": "172499000000",
+                        "denominacao": "Outras Transferências de Convênios dos Estados e DF e de Suas Entidades"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172499010000",
+                        "denominacao": "Outras Transferências de Convênio dos Estados - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172499010100",
+                        "denominacao": "Outras Transferencias de Convênios dos Estados - Assistência Social "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172499010100",
+                        "denominacao": "Outras Transferencias de Convênios dos Estados - Assistência Social "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 116,
+                        "denominacao": "MSC - 1.665.0000 Transferência de Convênio Vinculados à Assistência Social  ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 1215000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 195,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "192000000000",
+                        "denominacao": "Indenizações, Restituições e Ressarcimentos"
+                    },
+                    "rubrica": {
+                        "codigo": "192200000000",
+                        "denominacao": "Restituições"
+                    },
+                    "alinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subalinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "192299010000",
+                        "denominacao": "Outras Restituições - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "192299010300",
+                        "denominacao": "Outras Restituições (FMAS)"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "192299010300",
+                        "denominacao": "Outras Restituições (FMAS)"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 366000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 9047.14
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1126.55
+                    },
+                    {
+                        "dataMovimento": "2024-04-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 37.75
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Apropriação de retenção/consignação",
+                        "valorMovimento": 260.64
+                    },
+                    {
+                        "dataMovimento": "2024-09-25",
+                        "tipoMovimento": "Apropriação de retenção/consignação",
+                        "valorMovimento": 315.9
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 196,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172900000000",
+                        "denominacao": "Outras Transferências dos Estados e Distrito Federal"
+                    },
+                    "alinea": {
+                        "codigo": "172999000000",
+                        "denominacao": "Outras Transferências dos Estados e DF"
+                    },
+                    "subalinea": {
+                        "codigo": "172999000000",
+                        "denominacao": "Outras Transferências dos Estados e DF"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172999010000",
+                        "denominacao": "Outras Transf dos Estados e DF - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172999010200",
+                        "denominacao": "Outras Transf dos Estados - FMDS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172999010200",
+                        "denominacao": "Outras Transf dos Estados - FMDS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 1350000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 197,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010500",
+                        "denominacao": "Bloco da Gestão do Programa Bolsa Família e do Cadastro Único"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010502",
+                        "denominacao": "IGD Programa Auxílio Brasil - IGD - PAB"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 2000000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 187,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010200",
+                        "denominacao": "Bloco de Proteção Social Especial de Média e Alta Complexidade"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010207",
+                        "denominacao": "Componente - Piso de Transição de Média Complexidade"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 350000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 54698.29
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33770.16
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33770.16
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33770.16
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33770.16
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33770.16
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33770.16
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33770.16
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 188,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010200",
+                        "denominacao": "Bloco de Proteção Social Especial de Média e Alta Complexidade"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010208",
+                        "denominacao": "Componente - Piso de Alta Complexidade I - Criança/Adolescente"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 200000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 32394.45
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 189,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010200",
+                        "denominacao": "Bloco de Proteção Social Especial de Média e Alta Complexidade"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010209",
+                        "denominacao": "Componente - Piso de Alta Complexidade II - POP de rua - Serv. Acolh Adultos e Famílias"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 100000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8422.56
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5200.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5200.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5200.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5200.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5200.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5200.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5200.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 190,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010300",
+                        "denominacao": "Bloco de Proteção Social Básica"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010301",
+                        "denominacao": "Componente - Serviço de Convivência e Fortalecimento de Vínculos - SCFV"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 500000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 63880.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 63880.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 63880.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 63880.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 63880.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 63880.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 63880.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 191,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010300",
+                        "denominacao": "Bloco de Proteção Social Básica"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010302",
+                        "denominacao": "Componente - Piso Básico Fixo"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 700000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 96000.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 96000.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 96000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 96000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 96000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 96000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 96000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 192,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650019900",
+                        "denominacao": "Outras Transferências do FNAS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650019901",
+                        "denominacao": "Outras Transferências do FNAS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 1570000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 198,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171900000000",
+                        "denominacao": "Outras Transferências de Recursos da União"
+                    },
+                    "alinea": {
+                        "codigo": "171999000000",
+                        "denominacao": "Outras Transferências de Recursos da União e de suas Entidades"
+                    },
+                    "subalinea": {
+                        "codigo": "171999000000",
+                        "denominacao": "Outras Transferências de Recursos da União e de suas Entidades"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171999010000",
+                        "denominacao": "Outras Transferências de Recursos da União e suas Entidades"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171999010400",
+                        "denominacao": "Outras Transferências de Recursos da União - Emendas Parlamentares Individuais - FMAS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171999010400",
+                        "denominacao": "Outras Transferências de Recursos da União - Emendas Parlamentares Individuais - FMAS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 140,
+                        "denominacao": "MSC - 1.700.3110 - Emendas Parlamentares Individuais - União",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 500000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 221,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010400",
+                        "denominacao": "Remuneração de Depósitos Bancários - Assistência Social"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010403",
+                        "denominacao": "Rec Rem Depós Banc Rec Vinc - Estado - FEAS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 128,
+                        "denominacao": "MSC - 1.661.0000 Transferências dos Fundos Estaduais de Assistência Social",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1219.49
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 505.4
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 64.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 262.68
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 154.92
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1184.44
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 835.76
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1556.52
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1197.9
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 978.12
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 231,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "200000000000",
+                        "denominacao": "Receitas de Capital"
+                    },
+                    "origem": {
+                        "codigo": "240000000000",
+                        "denominacao": "Transferências de Capital"
+                    },
+                    "especie": {
+                        "codigo": "241000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "241900000000",
+                        "denominacao": "Outras Transferências de Recursos da União e de suas Entidades"
+                    },
+                    "alinea": {
+                        "codigo": "241999000000",
+                        "denominacao": "Outras Transferências De Recursos da União e de suas Entidades"
+                    },
+                    "subalinea": {
+                        "codigo": "241999000000",
+                        "denominacao": "Outras Transferências De Recursos da União e de suas Entidades"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "241999010000",
+                        "denominacao": "Outras Transf Rec União e de suas Entidades"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "241999010300",
+                        "denominacao": "Outras Transf de Rec da União ao FMAS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "241999010300",
+                        "denominacao": "Outras Transf de Rec da União ao FMAS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 116,
+                        "denominacao": "MSC - 1.665.0000 Transferência de Convênio Vinculados à Assistência Social  ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5800.8
+                    },
+                    {
+                        "dataMovimento": "2024-02-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5800.8
+                    },
+                    {
+                        "dataMovimento": "2024-04-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5800.8
+                    },
+                    {
+                        "dataMovimento": "2024-04-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5800.8
+                    },
+                    {
+                        "dataMovimento": "2024-07-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 9369.75
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 222,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010400",
+                        "denominacao": "Remuneração de Depósitos Bancários - Assistência Social"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010404",
+                        "denominacao": "Rec Rem Depós Banc Rec Vinc - Emendas Parlamentares - FMAS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 140,
+                        "denominacao": "MSC - 1.700.3110 - Emendas Parlamentares Individuais - União",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 334.79
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 224.23
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Estorno de arrecadação de receita",
+                        "valorMovimento": 64.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 232.4
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 247.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 231.96
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 221.07
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 254.75
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 169.07
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 159.63
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 242,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010500",
+                        "denominacao": "Bloco da Gestão do Programa Bolsa Família e do Cadastro Único"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010501",
+                        "denominacao": "Índice de Gestão Descentralizada - IGDBF"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-02-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 235916.27
+                    },
+                    {
+                        "dataMovimento": "2024-03-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 150501.79
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 157049.62
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 158325.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 158263.06
+                    },
+                    {
+                        "dataMovimento": "2024-06-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 157033.42
+                    },
+                    {
+                        "dataMovimento": "2024-07-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 155931.03
+                    },
+                    {
+                        "dataMovimento": "2024-08-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 158605.9
+                    },
+                    {
+                        "dataMovimento": "2024-09-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 249575.96
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 241,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43010,
+                    "denominacao": "Fundo Municipal de Assistência Social de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171600000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS "
+                    },
+                    "alinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subalinea": {
+                        "codigo": "171650000000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171650010000",
+                        "denominacao": "Transferências de Recursos do Fundo Nacional de Assistência Social – FNAS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171650010100",
+                        "denominacao": "Programas "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171650010102",
+                        "denominacao": "Programa Primeira Infancia no SUAS - Calamidades "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 125,
+                        "denominacao": "MSC - 1.660.0000 Recursos Transferidos pelo FNAS ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 15417.27
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 24901.09
+                    }
+                ]
+            }
+        }
+    ]
+}

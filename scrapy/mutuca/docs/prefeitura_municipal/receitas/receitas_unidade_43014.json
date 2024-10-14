@@ -1,0 +1,248 @@
+{
+    "informacao": "Receita",
+    "ultimaAtualizacao": "13/10/2024",
+    "totalRegistros": 3,
+    "registros": [
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 275,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43014,
+                    "denominacao": "Fundo Municipal dos Direitos da Pessoa Idosa de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "192000000000",
+                        "denominacao": "Indenizações, Restituições e Ressarcimentos"
+                    },
+                    "rubrica": {
+                        "codigo": "192200000000",
+                        "denominacao": "Restituições"
+                    },
+                    "alinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subalinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "192299010000",
+                        "denominacao": "Outras Restituições - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "192299011100",
+                        "denominacao": "Outras Restituições (FMDPI)"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "192299011100",
+                        "denominacao": "Outras Restituições (FMDPI)"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 183500.37
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 278,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43014,
+                    "denominacao": "Fundo Municipal dos Direitos da Pessoa Idosa de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "175000000000",
+                        "denominacao": "Transferências de Outras Instituições Públicas"
+                    },
+                    "rubrica": {
+                        "codigo": "175900000000",
+                        "denominacao": "Demais Transferências de Outras Instituições Públicas"
+                    },
+                    "alinea": {
+                        "codigo": "175999000000",
+                        "denominacao": "Demais Transferências de Outras Instituições Públicas"
+                    },
+                    "subalinea": {
+                        "codigo": "175999000000",
+                        "denominacao": "Demais Transferências de Outras Instituições Públicas"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "175999010000",
+                        "denominacao": "Demais Transferências de Instituições Públicas - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "175999010000",
+                        "denominacao": "Demais Transferências de Instituições Públicas - Principal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "175999010000",
+                        "denominacao": "Demais Transferências de Instituições Públicas - Principal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-07-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 200121.89
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 230,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43014,
+                    "denominacao": "Fundo Municipal dos Direitos da Pessoa Idosa de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010500",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010510",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados - FMDPI"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3154.22
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2612.02
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2705.23
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2872.39
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3502.26
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3646.89
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4381.43
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5354.26
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5165.31
+                    }
+                ]
+            }
+        }
+    ]
+}
