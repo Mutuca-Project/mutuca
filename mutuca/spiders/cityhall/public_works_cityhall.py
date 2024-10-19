@@ -60,56 +60,56 @@ class PublicWorksCityHallSpyder(Spider):
 
         item = CityHallPublicWorksItem()
 
-        item["modality_bidding_number"] = (
+        item["numero_licitacao_modalidade"] = (
             formatted_values[0].strip() if len(formatted_values) > 0 else None
         )
-        item["project_description"] = (
+        item["descricao_projeto"] = (
             formatted_values[1].strip() if len(formatted_values) > 1 else None
         )
 
-        item["agreement"] = {
+        item["convenio"] = {
             nested_keys[0].strip(): formatted_values[2].strip(),
             nested_keys[1].strip(): formatted_values[3].strip(),
         }
-        item["contracted"] = {
+        item["contratado"] = {
             nested_keys[2].strip(): formatted_values[4].strip(),
             nested_keys[3].strip(): formatted_values[5].strip(),
         }
-        item["contract"] = {
+        item["contrato"] = {
             nested_keys[4].strip(): formatted_values[6].strip(),
             nested_keys[5].strip(): formatted_values[7].strip(),
             nested_keys[6].strip(): formatted_values[8].strip(),
             nested_keys[7].strip(): formatted_values[9].strip(),
             nested_keys[8].strip(): formatted_values[10].strip(),
         }
-        item["amendment"] = {
+        item["aditivo"] = {
             nested_keys[9].strip(): formatted_values[11].strip(),
             nested_keys[10].strip(): formatted_values[12].strip(),
         }
-        item["expenses"] = {
+        item["despesas"] = {
             nested_keys[11].strip(): formatted_values[13].strip(),
             nested_keys[12].strip(): formatted_values[14].strip(),
             nested_keys[13].strip(): formatted_values[15].strip(),
         }
-        item["total_paid_amount"] = (
+        item["valor_total_pago"] = (
             formatted_values[16].strip() if len(formatted_values) > 16 else None
         )
         item["status"] = (
             formatted_values[17].strip() if len(formatted_values) > 17 else None
         )
-        item["project_stage"] = (
+        item["fase_projeto"] = (
             formatted_values[18].strip() if len(formatted_values) > 18 else None
         )
-        item["completion_percentage"] = (
+        item["percentual_conclusao"] = (
             formatted_values[19].strip() if len(formatted_values) > 19 else None
         )
 
-        item["all_documents"] = (
+        item["todos_documentos"] = (
             dict(zip(documents_title, documents_urls))
             if documents_title and documents_urls
             else None
         )
 
-        item["geo_coordinates"] = coordinate_source
+        item["coordenadas_geograficas"] = coordinate_source
 
         yield item
