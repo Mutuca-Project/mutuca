@@ -9,7 +9,7 @@ class ParliamentaryAllowanceSpider(scrapy.Spider):
     name = "parliamentary_allowance"
     custom_settings = {
         "ITEM_PIPELINES": {
-            "mutuca.pipelines.parliamentary_allowance_pipelines.GoogleDriveLoadPDF": 1
+            "mutuca.pipelines.oci_storage_pipeline.OCIUploadPDFPipeline": 1
         },
         "FEEDS": {
             "parliamentary_allowance_metadata.csv": {
