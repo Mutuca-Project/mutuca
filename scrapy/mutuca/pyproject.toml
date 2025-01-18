@@ -14,13 +14,14 @@ dependencies = [
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.5.39",
     "mkdocs-jupyter>=0.25.0",
+    "oci>=2.142.0",
+    "python-dotenv>=1.0.1",
 ]
 
 [tool.uv]
 dev-dependencies = [
     "jupyterlab>=4.2.5",
     "black>=24.8.0",
-    "flake8>=7.1.1",
     "isort>=5.13.2",
     "pdfplumber>=0.11.4",
     "pip>=24.2",
