@@ -55,7 +55,7 @@ SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
 SCRAPEOPS_NUM_RESULTS = 10
 
 DOWNLOADER_MIDDLEWARES = {
-    "mutuca.middlewares.FakeUserAgentsMiddleware": 400,
+    # "mutuca.middlewares.FakeUserAgentsMiddleware": 400,
     # "mutuca.middlewares.MutucaDownloaderMiddleware": 543,
 }
 
