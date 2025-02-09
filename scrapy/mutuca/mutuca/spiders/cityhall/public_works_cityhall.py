@@ -9,6 +9,11 @@ from mutuca.items.public_works_cityhall_items import CityHallPublicWorksItem
 class PublicWorksCityHallSpyder(Spider):
     name = "public_works_cityhall"
     start_urls = ["https://caruaru.pe.gov.br/portal-da-transparencia/"]
+    custom_settings = {
+        "ITEM_PIPELINES": {
+            "mutuca.pipelines.oci_storage_json_pipeline.OCIUploadJSONPipeline": 1
+        },
+    }
 
     def parse(self, response, **kargs):
         public_works_url = response.xpath(
