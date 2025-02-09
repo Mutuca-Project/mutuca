@@ -9,13 +9,7 @@ class ParliamentaryAllowanceSpider(scrapy.Spider):
     name = "parliamentary_allowance"
     custom_settings = {
         "ITEM_PIPELINES": {
-            "mutuca.pipelines.oci_storage_pipeline.OCIUploadPDFPipeline": 1
-        },
-        "FEEDS": {
-            "parliamentary_allowance_metadata.csv": {
-                "format": "csv",
-                "overwrite": False,
-            }
+            "mutuca.pipelines.oci_storage_pdf_pipeline.OCIUploadPDFPipeline": 1
         },
     }
 
