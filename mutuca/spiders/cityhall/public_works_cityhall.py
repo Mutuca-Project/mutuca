@@ -1,12 +1,55 @@
 import re
-from logging import info
 
 from scrapy import Request, Spider
 
 from mutuca.items.public_works_cityhall_items import CityHallPublicWorksItem
+from mutuca.utils.logger import Logger
 
 
 class PublicWorksCityHallSpyder(Spider):
+    """
+    Spider responsável por coletar dados sobre obras públicas disponibilizadas
+    no Portal da Transparência da Prefeitura de Caruaru (PE).
+
+    Esta spider percorre a listagem de obras públicas e extrai informações detalhadas
+    de cada projeto, incluindo dados contratuais, status de execução, despesas,
+    documentos relacionados e coordenadas geográficas.
+
+    Dados extraídos:
+        - Número e modalidade da licitação
+        - Descrição do projeto
+        - Informações sobre convênio e contratado
+        - Detalhes do contrato e aditivos
+        - Despesas e valores pagos
+        - Status da obra, fase do projeto e percentual de conclusão
+        - Lista de documentos anexos (título + URL)
+        - Coordenadas geográficas (iframe do mapa)
+
+    Os dados são organizados no item CityHallPublicWorksItem e enviados para
+    o pipeline de upload em JSON no armazenamento OCI (Oracle Cloud Infrastructure).
+
+    A spider também trata a paginação automaticamente até o fim da listagem de obras.
+
+    Atributos:
+        name (str): Nome da spider.
+        start_urls (list): Lista com a URL inicial do Portal da Transparência.
+        custom_settings (dict): Configuração do pipeline utilizado.
+
+    Métodos:
+        parse(response):
+            Localiza e segue o link para a seção de obras públicas.
+
+        parse_public_works_cards(response):
+            Coleta os links de todas as obras públicas exibidas na página e
+            agenda requisições para suas respectivas páginas de detalhes.
+            Também lida com a paginação da listagem.
+
+        parse_public_work_data(response):
+            Extrai e estrutura os dados de uma obra pública individual.
+
+    """
+
+    logger = Logger(__name__)
     name = "public_works_cityhall"
     start_urls = ["https://caruaru.pe.gov.br/portal-da-transparencia/"]
     custom_settings = {
@@ -28,6 +71,7 @@ class PublicWorksCityHallSpyder(Spider):
             '//section[@class="groupBox contrast"]/a[contains(@class, "box status")]/@href'
         ).getall()
 
+        self.logger.info("Iniciando a coleta dos dados...")
         for public_work_url in public_works_cards:
             yield Request(public_work_url, callback=self.parse_public_work_data)
 
@@ -38,7 +82,7 @@ class PublicWorksCityHallSpyder(Spider):
         if pagination:
             yield Request(pagination, callback=self.parse_public_works_cards)
         else:
-            info("Não ha mais páginas para raspar.")
+            self.logger.info("Não ha mais dados para coletar. Finalizado!")
 
     def parse_public_work_data(self, response):
         nested_keys = response.xpath(
