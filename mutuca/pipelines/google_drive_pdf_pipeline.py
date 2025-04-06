@@ -20,6 +20,7 @@ load_dotenv()
 
 class GoogleDriveLoadPDF(FilesPipeline):
     """
+    [DESCONTINUADO]
     Pipeline para download dos arquivos PDF referentes à Conta de Alimentação
     e combustível da Câmara de Vereadores de Caruaru utilizando asURLs
     fornecidas em itens do Scrapy e carregá-los diretamente para o Google Drive.

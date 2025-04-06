@@ -63,13 +63,16 @@ reutilização do conteúdo:
 
 Se você é:
 
-- **Usuário final / cidadão:** Comece por [Visão Geral](#visão-geral) e
-  [Modelos de Dados](#modelos-de-dados).
-- **Desenvolvedor:** Acesse [Execução Local](#execução-local),
-  [Pipelines de Coleta](#pipelines-de-coleta) e [Contribuições](#contribuições).
-- **Analista de dados / jornalista:** Foque em [Modelos de Dados](#modelos-de-dados) e
-  [Arquitetura de Dados](#arquitetura-de-dados).
-- **Gestor público / pesquisador:** Consulte a seção [Referências Legais](#referências-legais) e os
+- **Usuário final / cidadão, comece por**:
+  [Introdução ao projeto Mutuca](overview/introducao_projeto.md#introducao-ao-projeto-mutuca),
+  [Modelos de Dados](modelos/datamodel.md#modelo-de-dados) e
+  [Tutoriais](tutoriais/index.md#itrodução-aos-tutoriais).
+- **Desenvolvedor, acesse:** [Desenvolvimento Local](desenvolvimento/index.md),
+  [Pipelines de Coleta](pipelines/index.md), [Boas Práticas](boas_praticas/index.md) e
+  [Contribuições](contribuicoes/guia.md).
+- **Analista de dados / jornalista, foque em:** [Modelos de Dados](modelos/datamodel.md) e
+  [Arquitetura de Dados](arquitetura/visao_arquitetural.md).
+- **Gestor público / pesquisador consulte a seção:** [Referências Legais](referencias/leis.md) e os
   resultados disponibilizados.
 
 ### 🔍 Navegação e pesquisa

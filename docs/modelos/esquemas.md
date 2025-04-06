@@ -1,3 +1,0 @@
-# Esquemas e Relacionamentos
-
-TODO

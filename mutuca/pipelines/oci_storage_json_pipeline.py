@@ -4,6 +4,7 @@ from io import BytesIO
 
 import oci
 from dotenv import load_dotenv
+from oci.object_storage import ObjectStorageClient
 
 load_dotenv()
 
@@ -31,7 +32,7 @@ class OCIUploadJSONPipeline:
         self.subfolder_path = "cityhall/public_works"
         self.items = []  # Lista para armazenar os itens coletados
 
-    def process_item(self, item, spider):
+    def process_item(self, item, spider) -> dict:
         """
         Processa cada item coletado pelo spider, adicionando-o à lista interna de itens.
 
@@ -72,7 +73,7 @@ class OCIUploadJSONPipeline:
         except oci.exceptions.ServiceError as error:
             print(f"Erro ao enviar o arquivo {file_name} para o OCI Bucket: {error}")
 
-    def __initialize_oci_client(self):
+    def __initialize_oci_client(self) -> ObjectStorageClient:
         """
         Inicializa o cliente OCI usando as variáveis de ambiente para autenticação.
 

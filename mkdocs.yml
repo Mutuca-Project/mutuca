@@ -21,25 +21,30 @@ markdown_extensions:
 extra_css:
   - assets/stylesheets/extra.css
 plugins:
+  - search
   - mkdocs-jupyter
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["pipelines", "spiders", "mkddlewares", "utils"]
 nav:
   - Home: index.md
   - Visão Geral:
-      - Introdução ao Projeto: overview/introducao.md
-      - Objetivos do Projeto: overview/objetivos.md
+      - Introdução ao Projeto: overview/introducao_projeto.md
   - Arquitetura de Dados:
       - Visão Arquitetural: arquitetura/visao_arquitetural.md
       - Tecnologias Utilizadas: arquitetura/tecnologias.md
       - Fluxo de Dados: arquitetura/fluxo_dados.md
   - Pipeline de Dados:
+      - Introdução as Pipelines de dados: pipelines/index.md
       - Fontes e Estratégias: pipelines/fontes.md
       - Esquemas e Relacionamentos: pipelines/relacionamentos.md
   - Modelos de Dados:
-      - Dicionários de Dados: momelos/dicionarios.md
-      - Esquemas e Relacionamentos: modelos/esquemas.md
-  - Execução Local:
-      - Instalação e Setup: execucao_local/setup.md
-      - Variáveis de Ambiente: execucao_local/variaveis.md
+      - Dicionários de Dados: modelos/dicionarios.md
+      - Modelo de Dados: modelos/datamodel.md
+  - Desenvolvimento Local:
+      - Instalação e Setup: desenvolvimento/setup.md
+      - Variáveis de Ambiente: desenvolvimento/variaveis.md
   - Orquestração:
       - Agendamento de Tarefas: orquestracao/agendamentos.md
       - Ferramentas: orquestracao/ferramentas.md
@@ -53,9 +58,13 @@ nav:
       - LAI e LCP 131/2009: referencias/leis.md
   - Documentação da API:
       - Visão Geral: api/index.md
-      - Modulo Principal: api/mutuca.md
+      - Pipelines:
+          - OCIStorageJSONPipeline: api/pipelines_doc/oci_storage_json_pipeline.md
+          - OCIStoragePDFPipeline: api/pipelines_doc/oci_storage_pdf_pipeline.md
   - FAQ: faq.md
   - Tutoriais:
-      - prefeitura_municipal/contratos_licitacoes.ipynb
-      - prefeitura_municipal/obras_publicas.ipynb
-      - prefeitura_municipal/receitas.ipynb
+      - Introdução aos tutoriais: tutoriais/index.md
+      - Webscraping Prefeitura de Caruaru:
+          - tutoriais/prefeitura_municipal/contratos_licitacoes.ipynb
+          - tutoriais/prefeitura_municipal/obras_publicas.ipynb
+          - tutoriais/prefeitura_municipal/receitas.ipynb
