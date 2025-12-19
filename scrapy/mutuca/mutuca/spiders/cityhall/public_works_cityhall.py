@@ -1,12 +1,14 @@
+import logging
 import re
+from datetime import datetime
 
 from scrapy import Request, Spider
 
 from mutuca.items.public_works_cityhall_items import CityHallPublicWorksItem
-from mutuca.utils.logger import Logger
+from mutuca.utils.constants import PUBLIC_WORK_DEFAULT_SELECTORS
 
 
-class PublicWorksCityHallSpyder(Spider):
+class PublicWorksCityHallSpider(Spider):
     """
     Spider responsável por coletar dados sobre obras públicas disponibilizadas
     no Portal da Transparência da Prefeitura de Caruaru (PE).
@@ -49,116 +51,79 @@ class PublicWorksCityHallSpyder(Spider):
 
     """
 
-    logger = Logger(__name__)
+    # logger = Logger(__name__)
+
     name = "public_works_cityhall"
-    start_urls = ["https://caruaru.pe.gov.br/portal-da-transparencia/"]
+    start_urls = ["https://caruaru.pe.gov.br/portal-da-transparencia/obras-publicas/"]
+
     custom_settings = {
-        "ITEM_PIPELINES": {
-            "mutuca.pipelines.oci_storage_json_pipeline.OCIUploadJSONPipeline": 1
-        },
+        "FEEDS": {"public_works_test.json": {"format": "json"}},
     }
 
+    def _clean_xpath_results(self, values):
+        cleaned_values = []
+        for item in values:
+            # Remove tags <div> e </div>
+            text = re.sub(r"<div[^>]*>", "", item)
+            text = re.sub(r"</div>", "", text)
+            # Remove quebras de linha e espaços extras
+            text = text.replace("\n", "").strip()
+            # Remove múltiplos espaços internos
+            text = re.sub(r"\s+", " ", text)
+            # Adiciona apenas se não for vazio
+            if text:
+                cleaned_values.append(text)
+
+        return cleaned_values
+
+    def _concat_keys_and_values(self, keys, values):
+        return dict(zip(keys, values))
+
     def parse(self, response, **kargs):
-        public_works_url = response.xpath(
-            '//div[@class="component_pt-cardItemBig contrast title-acesso-a-informacao"]/a[contains(@href, "obras-publicas")]/@href'
-        ).get()
-
-        yield Request(public_works_url, callback=self.parse_public_works_cards)
-
-    def parse_public_works_cards(self, response, **kargs):
-
-        public_works_cards = response.xpath(
+        public_works_urls = response.xpath(
             '//section[@class="groupBox contrast"]/a[contains(@class, "box status")]/@href'
         ).getall()
 
-        self.logger.info("Iniciando a coleta dos dados...")
-        for public_work_url in public_works_cards:
+        for public_work_url in public_works_urls:
             yield Request(public_work_url, callback=self.parse_public_work_data)
 
-        pagination = response.xpath(
+        next_page = response.xpath(
             '//div[@class="component-pagination"]/a[@class="next page-numbers"]/@href'
         ).get()
 
-        if pagination:
-            yield Request(pagination, callback=self.parse_public_works_cards)
+        if next_page:
+            yield Request(next_page, callback=self.parse)
         else:
             self.logger.info("Não ha mais dados para coletar. Finalizado!")
 
     def parse_public_work_data(self, response):
-        nested_keys = response.xpath(
-            '//div[@class="row-cards"]/div[@class="row-card"]/div[@class="card-title"]/text()'
-        ).getall()
 
-        retrive_values = response.xpath(
-            '//section[@class="description-obra"]/div[@class="row-details"]//div[@class="card-info"]/text()[normalize-space()]'
-        ).getall()
+        item_data = {}
 
-        documents_title = response.xpath(
-            '//div[@class="card-info card-info--docs"]/div[@class="attachment"]//p[@class="cardTitle"]/text()'
-        ).getall()
+        for section_name, xpaths in PUBLIC_WORK_DEFAULT_SELECTORS.items():
+            # 1 Extrai a categoria e o valor
+            categories = [
+                category.strip()
+                for category in response.xpath(xpaths["categories"]).getall()
+            ]
+            raw_values = response.xpath(xpaths["values"]).getall()
 
-        documents_urls = response.xpath(
-            '//div[@class="card-info card-info--docs"]/div[@class="attachment"]//div[@class="button"]/a/@href'
-        ).getall()
+            # 2 Limpa os valores obtidos
+            clean_values = self._clean_xpath_results(raw_values)
 
-        coordinate_source = response.xpath(
-            '//section[@class="map-obra"]//iframe/@src'
-        ).getall()
+            # 3 Concatena em um dicionário
+            item_data[section_name] = self._concat_keys_and_values(
+                categories, clean_values
+            )
 
-        formatted_values = [re.sub(r"\s+", " ", value) for value in retrive_values]
+        # 4 Adiciona work_location separadamente (não segue o padrão categorias/valores)
+        item_data["work_location"] = response.xpath(
+            '//section[@class="map-obra"]/iframe/@src'
+        ).get()
+        item_data["source_url"] = response.url
+        item_data["extraction_date"] = datetime.now()
 
-        item = CityHallPublicWorksItem()
-
-        item["numero_licitacao_modalidade"] = (
-            formatted_values[0].strip() if len(formatted_values) > 0 else None
-        )
-        item["descricao_projeto"] = (
-            formatted_values[1].strip() if len(formatted_values) > 1 else None
-        )
-
-        item["convenio"] = {
-            nested_keys[0].strip(): formatted_values[2].strip(),
-            nested_keys[1].strip(): formatted_values[3].strip(),
-        }
-        item["contratado"] = {
-            nested_keys[2].strip(): formatted_values[4].strip(),
-            nested_keys[3].strip(): formatted_values[5].strip(),
-        }
-        item["contrato"] = {
-            nested_keys[4].strip(): formatted_values[6].strip(),
-            nested_keys[5].strip(): formatted_values[7].strip(),
-            nested_keys[6].strip(): formatted_values[8].strip(),
-            nested_keys[7].strip(): formatted_values[9].strip(),
-            nested_keys[8].strip(): formatted_values[10].strip(),
-        }
-        item["aditivo"] = {
-            nested_keys[9].strip(): formatted_values[11].strip(),
-            nested_keys[10].strip(): formatted_values[12].strip(),
-        }
-        item["despesas"] = {
-            nested_keys[11].strip(): formatted_values[13].strip(),
-            nested_keys[12].strip(): formatted_values[14].strip(),
-            nested_keys[13].strip(): formatted_values[15].strip(),
-        }
-        item["valor_total_pago"] = (
-            formatted_values[16].strip() if len(formatted_values) > 16 else None
-        )
-        item["status"] = (
-            formatted_values[17].strip() if len(formatted_values) > 17 else None
-        )
-        item["fase_projeto"] = (
-            formatted_values[18].strip() if len(formatted_values) > 18 else None
-        )
-        item["percentual_conclusao"] = (
-            formatted_values[19].strip() if len(formatted_values) > 19 else None
-        )
-
-        item["todos_documentos"] = (
-            dict(zip(documents_title, documents_urls))
-            if documents_title and documents_urls
-            else None
-        )
-
-        item["coordenadas_geograficas"] = coordinate_source
+        # 5 Cria e retorna o Item
+        item = CityHallPublicWorksItem(**item_data)
 
         yield item
