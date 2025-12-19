@@ -10,4 +10,5 @@ class CityHallPublicWorksItem(scrapy.Item):
     cumulative_amount_paid = scrapy.Field()
     all_documents = scrapy.Field()
     work_location = scrapy.Field()
-
+    source_url = scrapy.Field()
+    extraction_date = scrapy.Field()
