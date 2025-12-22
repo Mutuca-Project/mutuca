@@ -224,7 +224,6 @@ class PublicWorksDataCollector:
             dict: Dados extraídos, limpos e com metados de qualidade
         """
 
-        # Simulação da extração XPath (em ambiente real uar response.xpath())
         raw_values = self._execut_xpath_extraction(response, xpath)
         cleaned_values = self.cleaner.clean_html_text(raw_values)
 
@@ -404,35 +403,65 @@ class PublicWorksDataCollector:
             "score": round(cleaning_efficiency, 2),
         }
 
-    def _simulate_xpath_extration(self, response, xpath: str) -> List[str]:
+    def _execut_xpath_extraction(self, response: Response, xpath: str) -> List[str]:
         """
-        Simula extração XPath para demonstração (em ambinete real usar response.xpath()).
+        Executa extração Xpath.
+
+        Extração e tratamento de erros.
 
         Args:
-            response (MockResponse): Objeto Response 'mocado'
-            xpath (str): Mock da expressão xpath
+            response: scrapy.http.Response
+            xpath: Expressão Xpath
 
         Returns:
-            Lista simulada de valores extraídos
+            list: Valores extraídos (strings)
         """
 
-        # Simulação para fins de demonstração
-        simulated_data = {
-            "categories": ["Categoria 1", "Categoria 2", "<div>Categoria 3</div>"],
-            "values": [
-                "Valor A",
-                "R$ 10.000,00",
-                "<span>Dados importantes</span>",
-                "\n  Valor final  \n",
-            ],
-        }
+        try:
+            results = response.xpath(xpath).getall()
+            return [str(r) for r in results] if results else []
+        except Exception as e:
+            logger.error(
+                f"Erro na extração Xpath", extra={"xpath": xpath, "error": str(e)}
+            )
+            return []
 
-        if "card-title" in xpath:
-            return simulated_data["categories"]
-        elif "card-info" in xpath:
-            return simulated_data["values"]
-        else:
-            return ["Dados simulados", "<p>HTML content</p>", "Informação adicional"]
+    def to_scrapy_item(self, extracted_data: Dict[str, Any], item_class) -> Any:
+        """
+        Comverte dados extraídos para Scrapy Item.
+
+        Mapeia a estrutura de dados inter para os campos do Scrapy definido pelo usuário
+
+        Args:
+            extracted_data (dict): Dados estruturados extraídos
+            item_class: Classe do Scrapy Item
+
+        Return:
+            Istancia de item_classe: Item populado
+        """
+        item = item_class
+
+        item["source_url"] = extracted_data.get("url")
+        item["extraction_date"] = extracted_data.get("extraction_timestamp")
+
+        # Extrair dados de cada seção
+        sections = extracted_data.get("sections", {})
+
+        # Mapeamento flexível: tenta mapear cada seção para campo do item
+        for section_name, section_data in sections.items():
+            if section_data.get("extraction_method") == "failed":
+                continue
+
+            # Para todos os dados pareados, extrai o structured_data
+            if "structured_data" in section_data:
+                item[section_name] = section_data["structured_data"]
+            # Para dados simples, extrai os values
+            elif "values" in section_data:
+                item[section_name] = section_data["values"]
+
+        item["extraction_summary"] = extracted_data.get("extraction_summary")
+
+        return item
 
     def export_to_json(
         self, data: Dict[str, Any], filename: Optional[str] = None
