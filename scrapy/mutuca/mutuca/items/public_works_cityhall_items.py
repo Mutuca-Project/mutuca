@@ -12,3 +12,4 @@ class CityHallPublicWorksItem(scrapy.Item):
     work_location = scrapy.Field()
     source_url = scrapy.Field()
     extraction_date = scrapy.Field()
+    extraction_summary = scrapy.Field()
