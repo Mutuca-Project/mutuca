@@ -51,13 +51,7 @@ class PublicWorksDataCollector:
         """
         self.selectors = selectors
         self.cleaner = XPathCleaner()
-        self.extraction_stats = {
-            "total_sections": 0,
-            "successful_sections": 0,
-            "errors": [],
-        }
 
-    # TODO adicionar o tipo Response do scrapy
     def parse_public_work_data(self, response: Response, item_class) -> Any:
         """
         Callback principal para processar os dados de obras Públicas.
@@ -98,6 +92,7 @@ class PublicWorksDataCollector:
 
         # Processar cada seção definida nos seletores
         for section_name, selectors_config in self.selectors.items():
+            self.extraction_stats["total_sections"] += 1
             try:
                 section_data = self._extract_section_data(
                     response, section_name, selectors_config
@@ -130,13 +125,13 @@ class PublicWorksDataCollector:
                 )
 
         # Adicionar o resumo da extração
-        extracted_data["extracion_summary"] = self._generate_extraction_summary()
+        extracted_data["extraction_summary"] = self._generate_extraction_summary()
 
         logger.info(
             "Extração concluída com sucesso",
             extra={
-                "success_rate": extracted_data["extracion_summary"]["success_rate"],
-                "quality": extracted_data["extracion_summary"]["extraction_quality"],
+                "success_rate": extracted_data["extraction_summary"]["success_rate"],
+                "quality": extracted_data["extraction_summary"]["extraction_quality"],
             },
         )
 
@@ -224,7 +219,7 @@ class PublicWorksDataCollector:
             dict: Dados extraídos, limpos e com metados de qualidade
         """
 
-        raw_values = self._execut_xpath_extraction(response, xpath)
+        raw_values = self._execute_xpath_extraction(response, xpath)
         cleaned_values = self.cleaner.clean_html_text(raw_values)
 
         return {
@@ -263,14 +258,12 @@ class PublicWorksDataCollector:
         """
 
         # Simulação da extração de categorias
-        raw_categories = self.self._execut_xpath_extraction(
-            response, config["categories"]
-        )
+        raw_categories = self._execute_xpath_extraction(response, config["categories"])
         cleaned_categories = self.cleaner.clean_html_text(raw_categories)
 
         # Extrair valores
-        raw_values = self._execut_xpath_extraction(response, config["values"])
-        cleaned_values = self._simulate_xpath_extration(raw_values, config["values"])
+        raw_values = self._execute_xpath_extraction(response, config["values"])
+        cleaned_values = self.cleaner.clean_html_text(raw_values)
 
         # Cria o mapeamento estruturado
         structured_data = self._create_structured_mapping(
@@ -403,7 +396,7 @@ class PublicWorksDataCollector:
             "score": round(cleaning_efficiency, 2),
         }
 
-    def _execut_xpath_extraction(self, response: Response, xpath: str) -> List[str]:
+    def _execute_xpath_extraction(self, response: Response, xpath: str) -> List[str]:
         """
         Executa extração Xpath.
 
@@ -439,7 +432,7 @@ class PublicWorksDataCollector:
         Return:
             Istancia de item_classe: Item populado
         """
-        item = item_class
+        item = item_class()
 
         item["source_url"] = extracted_data.get("url")
         item["extraction_date"] = extracted_data.get("extraction_timestamp")
@@ -462,26 +455,3 @@ class PublicWorksDataCollector:
         item["extraction_summary"] = extracted_data.get("extraction_summary")
 
         return item
-
-    def export_to_json(
-        self, data: Dict[str, Any], filename: Optional[str] = None
-    ) -> str:
-        """
-        Exporta os dados extraídos para arquivo JSON
-
-        Args:
-            data (dict): Dados para exportar
-            filename (str): Nome do arquivo (opcional, será gerado automaticamente se não for fornecido)
-
-        Returns:
-            Caminho do arquivo criado
-        """
-        if not filename:
-            url_safe = re.sub(r"[^\w\-_.]", "_", data.get("url", "unknown"))[:30]
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"public_work_data_{url_safe}_{timestamp}.json"
-
-        with open(filename, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-
-        return filename
