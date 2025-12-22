@@ -42,7 +42,14 @@ class PublicWorksCityHallSpider(Spider):
     start_urls = ["https://caruaru.pe.gov.br/portal-da-transparencia/obras-publicas/"]
 
     custom_settings = {
-        "FEEDS": {"public_works_test.json": {"format": "json"}},
+        "FEEDS": {
+            "public_works_test.json": {
+                "format": "json",
+                "encoding": "utf-8",
+                "indent": 2,
+                "overwrite": True,
+            }
+        },
         "CONCURRENT_REQUESTS": 8,  # Controle de concorrência
         "DOWNLOAD_DELAY": 0.5,  # Delay entre requisições (boa prática)
     }
