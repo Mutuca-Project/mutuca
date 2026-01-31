@@ -75,25 +75,6 @@ class PublicWorksCityHallSpider(Spider):
             },
         )
 
-    # def _clean_xpath_results(self, values):
-    #     cleaned_values = []
-    #     for item in values:
-    #         # Remove tags <div> e </div>
-    #         text = re.sub(r"<div[^>]*>", "", item)
-    #         text = re.sub(r"</div>", "", text)
-    #         # Remove quebras de linha e espaços extras
-    #         text = text.replace("\n", "").strip()
-    #         # Remove múltiplos espaços internos
-    #         text = re.sub(r"\s+", " ", text)
-    #         # Adiciona apenas se não for vazio
-    #         if text:
-    #             cleaned_values.append(text)
-
-    #     return cleaned_values
-
-    # def _concat_keys_and_values(self, keys, values):
-    #     return dict(zip(keys, values))
-
     def parse(self, response, **kwargs):
         """
         Callback inicial: localiza e segue link para obras públicas.
