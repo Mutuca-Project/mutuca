@@ -180,35 +180,3 @@ class PublicWorksCityHallSpider(Spider):
             f"Spider encerrada: {reason}",
             extra={"spider_name": self.name, "reason": reason},
         )
-
-    # def parse_public_work_data(self, response):
-
-    #     item_data = {}
-
-    #     for section_name, xpaths in PUBLIC_WORK_DEFAULT_SELECTORS.items():
-    #         # 1 Extrai a categoria e o valor
-    #         categories = [
-    #             category.strip()
-    #             for category in response.xpath(xpaths["categories"]).getall()
-    #         ]
-    #         raw_values = response.xpath(xpaths["values"]).getall()
-
-    #         # 2 Limpa os valores obtidos
-    #         clean_values = self._clean_xpath_results(raw_values)
-
-    #         # 3 Concatena em um dicionário
-    #         item_data[section_name] = self._concat_keys_and_values(
-    #             categories, clean_values
-    #         )
-
-    #     # 4 Adiciona work_location separadamente (não segue o padrão categorias/valores)
-    #     item_data["work_location"] = response.xpath(
-    #         '//section[@class="map-obra"]/iframe/@src'
-    #     ).get()
-    #     item_data["source_url"] = response.url
-    #     item_data["extraction_date"] = datetime.now()
-
-    #     # 5 Cria e retorna o Item
-    #     item = CityHallPublicWorksItem(**item_data)
-
-    #     yield item
