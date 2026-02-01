@@ -1,0 +1,412 @@
+{
+    "informacao": "Receita",
+    "ultimaAtualizacao": "13/10/2024",
+    "totalRegistros": 5,
+    "registros": [
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 243,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43019,
+                    "denominacao": "Autarquia de Urbanização e Meio Ambiente de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010500",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010509",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados - URB"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 107.14
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 62.81
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 51.05
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16.47
+                    },
+                    {
+                        "dataMovimento": "2024-06-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 42.97
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 49.23
+                    },
+                    {
+                        "dataMovimento": "2024-08-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 41.46
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 41.48
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 246,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43019,
+                    "denominacao": "Autarquia de Urbanização e Meio Ambiente de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "192000000000",
+                        "denominacao": "Indenizações, Restituições e Ressarcimentos"
+                    },
+                    "rubrica": {
+                        "codigo": "192200000000",
+                        "denominacao": "Restituições"
+                    },
+                    "alinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subalinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "192299010000",
+                        "denominacao": "Outras Restituições - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "192299011000",
+                        "denominacao": "Outras Restituições (URB) "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "192299011000",
+                        "denominacao": "Outras Restituições (URB) "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 373.33
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 133.33
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 66.67
+                    },
+                    {
+                        "dataMovimento": "2024-06-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 66.67
+                    },
+                    {
+                        "dataMovimento": "2024-08-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 333.33
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 204,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43019,
+                    "denominacao": "Autarquia de Urbanização e Meio Ambiente de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "110000000000",
+                        "denominacao": "Impostos, Taxas e Contribuições de Melhoria"
+                    },
+                    "especie": {
+                        "codigo": "112000000000",
+                        "denominacao": "Taxas"
+                    },
+                    "rubrica": {
+                        "codigo": "112100000000",
+                        "denominacao": "Taxas pelo Exercício do Poder de Polícia"
+                    },
+                    "alinea": {
+                        "codigo": "112101000000",
+                        "denominacao": "Taxas de Inspeção, Controle e Fiscalização"
+                    },
+                    "subalinea": {
+                        "codigo": "112101000000",
+                        "denominacao": "Taxas de Inspeção, Controle e Fiscalização"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "112101010000",
+                        "denominacao": "Taxa de Inspeção, Controle e Fiscalização - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "112101010100",
+                        "denominacao": "Taxa de Serviços Administrativos"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "112101010100",
+                        "denominacao": "Taxa de Serviços Administrativos"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 20000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 205,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43019,
+                    "denominacao": "Autarquia de Urbanização e Meio Ambiente de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "192000000000",
+                        "denominacao": "Indenizações, Restituições e Ressarcimentos"
+                    },
+                    "rubrica": {
+                        "codigo": "192200000000",
+                        "denominacao": "Restituições"
+                    },
+                    "alinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subalinea": {
+                        "codigo": null,
+                        "denominacao": null
+                    },
+                    "subdetalhamento1": {
+                        "codigo": null,
+                        "denominacao": null
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "192299110800",
+                        "denominacao": "OUTRAS RESTITUIÇÕES - URB"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "192299110800",
+                        "denominacao": "OUTRAS RESTITUIÇÕES - URB"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 20000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 250,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43019,
+                    "denominacao": "Autarquia de Urbanização e Meio Ambiente de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101019900",
+                        "denominacao": "Remuneração de Depósitos Bancários - Outros"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101019903",
+                        "denominacao": "Rem. Rem. Dep. Rec. Vinculados -  URB"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 117,
+                        "denominacao": "MSC - 1.700.0000 Recursos de Convênios do Governo Federal ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1329.49
+                    },
+                    {
+                        "dataMovimento": "2024-06-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1064.79
+                    },
+                    {
+                        "dataMovimento": "2024-08-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 358.17
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 358.21
+                    }
+                ]
+            }
+        }
+    ]
+}

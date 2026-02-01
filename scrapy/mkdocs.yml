@@ -1,0 +1,70 @@
+site_name: Mutuca
+repo_url: https://github.com/dvths/mutuca
+repo_name: mutuca
+edit_uri: tree/main/docs
+theme:
+  palette:
+    scheme: slate
+    primary: teal
+    accent: cyan
+  features:
+    - header.autohide
+  name: material
+  language: pt-BR
+  logo: assets/mutuca-darktheme.png
+  favicon: assets/mutuca-darktheme.png
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - attr_list
+extra_css:
+  - assets/stylesheets/extra.css
+plugins:
+  - search
+  - mkdocs-jupyter
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["pipelines", "spiders", "mkddlewares", "utils"]
+nav:
+  - Home: index.md
+  - Visão Geral:
+      - Introdução ao Projeto: overview/introducao_projeto.md
+  - Arquitetura de Dados:
+      - Visão Arquitetural: arquitetura/visao_arquitetural.md
+      - Tecnologias Utilizadas: arquitetura/tecnologias.md
+      - Fluxo de Dados: arquitetura/fluxo_dados.md
+  - Pipeline de Dados:
+      - Introdução as Pipelines de dados: pipelines/index.md
+      - Fontes e Estratégias: pipelines/fontes.md
+      - Esquemas e Relacionamentos: pipelines/relacionamentos.md
+  - Modelos de Dados:
+      - Dicionários de Dados: modelos/dicionarios.md
+      - Modelo de Dados: modelos/datamodel.md
+  - Desenvolvimento Local:
+      - Instalação e Setup: desenvolvimento/setup.md
+      - Variáveis de Ambiente: desenvolvimento/variaveis.md
+  - Orquestração:
+      - Agendamento de Tarefas: orquestracao/agendamentos.md
+      - Ferramentas: orquestracao/ferramentas.md
+  - Boas Práticas:
+      - Estilo de código: boas_praticas/codigo.md
+      - Logs e versionamento: boas_praticas/logs_versionamento.md
+  - Contribuições:
+      - Como Contribuir: contribuicoes/guia.md
+      - Fluxo de PRs: contribuicoes/pull_requests.md
+  - Referências Legais:
+      - LAI e LCP 131/2009: referencias/leis.md
+  - Documentação da API:
+      - Visão Geral: api/index.md
+      - Pipelines:
+          - OCIStorageJSONPipeline: api/pipelines_doc/oci_storage_json_pipeline.md
+          - OCIStoragePDFPipeline: api/pipelines_doc/oci_storage_pdf_pipeline.md
+  - FAQ: faq.md
+  - Tutoriais:
+      - Introdução aos tutoriais: tutoriais/index.md
+      - Webscraping Prefeitura de Caruaru:
+          - tutoriais/prefeitura_municipal/contratos_licitacoes.ipynb
+          - tutoriais/prefeitura_municipal/obras_publicas.ipynb
+          - tutoriais/prefeitura_municipal/receitas.ipynb

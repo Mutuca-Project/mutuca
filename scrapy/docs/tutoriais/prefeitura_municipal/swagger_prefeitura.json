@@ -1,0 +1,211 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Documentação para acesso aos dados do sistema de licitação da prefeitura de Caruaru",
+        "title": "Licitações Caruaru - REST API"
+    },
+    "host": "licitacoes.caruaru.pe.gov.br:8082",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "licitacao-resource",
+            "description": "Licitacao Resource"
+        }
+    ],
+    "paths": {
+        "/licitacao/exportar/{formato}": {
+            "get": {
+                "tags": [
+                    "licitacao-resource"
+                ],
+                "summary": "Exporta os dados presentes no sistema, de acordo com os filtros definidos",
+                "operationId": "exportarUsingGET",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "parameters": [
+                    {
+                        "name": "comissao",
+                        "in": "query",
+                        "description": "Parâmetro de filtragem, comissão responsável por conduzir o processo de licitação",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "covid19",
+                        "in": "query",
+                        "description": "Parâmetro de filtragem, se a licitação ocorreu em decorrência do covid-19",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "faseDaLicitacao",
+                        "in": "query",
+                        "description": "Parâmetro de filtragem, situação em que se encontra o processo licitatório",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "formato",
+                        "in": "path",
+                        "description": "Formato do arquivo de exportação, aceitando atualmente: CSV, JSON, XML, PDF",
+                        "required": true,
+                        "type": "string",
+                        "x-example": "JSON"
+                    },
+                    {
+                        "name": "modalidade",
+                        "in": "query",
+                        "description": "Parâmetro de filtragem, tipo da modalidade em que se enquadra a licitação",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "numeroDaLicitacao",
+                        "in": "query",
+                        "description": "Parâmetro de filtragem, número da licitação",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "numeroProcesso",
+                        "in": "query",
+                        "description": "Parâmetro de filtragem, número do processo da licitação",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "objetoDaLicitacao",
+                        "in": "query",
+                        "description": "Parâmetro de filtragem, descrição do objeto ou serviço prestado",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "orgao",
+                        "in": "query",
+                        "description": "Parâmetro de filtragem, órgão para o qual está sendo realizada a licitação",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Página que se deseja recuperar",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "x-example": 1
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Número de registros por página",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "x-example": 10
+                    },
+                    {
+                        "name": "tipoDeObjetoDaLicitacao",
+                        "in": "query",
+                        "description": "Parâmetro de filtragem, caracterização do tipo de objeto/serviço da licitação",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna um arquivo do tipo especificado, contendo as licitações solicitadas",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/LicitacaoExportData"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Caso algum dos parametros obrigatórios não seja especificado, ou caso algum dos demais seja informado de forma incorreta"
+                    },
+                    "500": {
+                        "description": "Caso ocorra algum erro interno no serviço"
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "LicitacaoExportData": {
+            "type": "object",
+            "properties": {
+                "comissao": {
+                    "type": "string",
+                    "example": "CLP Saúde",
+                    "description": "comissao"
+                },
+                "dataDePublicacao": {
+                    "type": "string",
+                    "example": "11/12/2013",
+                    "description": "data_de_publicacao"
+                },
+                "dataDeRealizacao": {
+                    "type": "string",
+                    "example": "12/12/2012",
+                    "description": "data_de_realizacao"
+                },
+                "fase": {
+                    "type": "string",
+                    "example": "Homologada",
+                    "description": "fase"
+                },
+                "modalidade": {
+                    "type": "string",
+                    "example": "Pregão presencial",
+                    "description": "modalidade"
+                },
+                "numero": {
+                    "type": "string",
+                    "example": "1234/4321",
+                    "description": "numero"
+                },
+                "objeto": {
+                    "type": "string",
+                    "example": "Descrição de aquisição de bem e/ou serviço",
+                    "description": "objeto"
+                },
+                "orgao": {
+                    "type": "string",
+                    "example": "Secretaria da fazenda",
+                    "description": "orgao"
+                },
+                "processo": {
+                    "type": "string",
+                    "example": "4321/1234",
+                    "description": "processo"
+                },
+                "tipoObjeto": {
+                    "type": "string",
+                    "example": "Compras e serviços",
+                    "description": "tipo_de_objeto"
+                },
+                "valorContratado": {
+                    "type": "string",
+                    "example": "12.960,00",
+                    "description": "valor_contratado"
+                },
+                "valorEstimado": {
+                    "type": "string",
+                    "example": "12.960,00",
+                    "description": "valor_estimado"
+                },
+                "vencedor": {
+                    "type": "string",
+                    "example": "99.999.999/9999-99, Vendas e serviços LTDA",
+                    "description": "vencedor"
+                }
+            },
+            "title": "LicitacaoExportData"
+        }
+    }
+}

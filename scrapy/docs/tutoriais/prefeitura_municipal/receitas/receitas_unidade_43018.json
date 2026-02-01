@@ -1,0 +1,2357 @@
+{
+    "informacao": "Receita",
+    "ultimaAtualizacao": "13/10/2024",
+    "totalRegistros": 5,
+    "registros": [
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 203,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43018,
+                    "denominacao": "Central de Abastecimento de Caruaru - CEACA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "192000000000",
+                        "denominacao": "Indenizações, Restituições e Ressarcimentos"
+                    },
+                    "rubrica": {
+                        "codigo": "192200000000",
+                        "denominacao": "Restituições"
+                    },
+                    "alinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subalinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "192299010000",
+                        "denominacao": "Outras Restituições - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "192299010900",
+                        "denominacao": "Outras Restituições (CEACA) "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "192299010900",
+                        "denominacao": "Outras Restituições (CEACA) "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 100000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 47.07
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 199,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43018,
+                    "denominacao": "Central de Abastecimento de Caruaru - CEACA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "110000000000",
+                        "denominacao": "Impostos, Taxas e Contribuições de Melhoria"
+                    },
+                    "especie": {
+                        "codigo": "112000000000",
+                        "denominacao": "Taxas"
+                    },
+                    "rubrica": {
+                        "codigo": "112100000000",
+                        "denominacao": "Taxas pelo Exercício do Poder de Polícia"
+                    },
+                    "alinea": {
+                        "codigo": "112101000000",
+                        "denominacao": "Taxas de Inspeção, Controle e Fiscalização"
+                    },
+                    "subalinea": {
+                        "codigo": "112101000000",
+                        "denominacao": "Taxas de Inspeção, Controle e Fiscalização"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "112101010000",
+                        "denominacao": "Taxa de Inspeção, Controle e Fiscalização - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "112101010900",
+                        "denominacao": "Taxa de Utilização de Área de Domínio Público"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "112101010900",
+                        "denominacao": "Taxa de Utilização de Área de Domínio Público"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 447000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 200,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43018,
+                    "denominacao": "Central de Abastecimento de Caruaru - CEACA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "131000000000",
+                        "denominacao": "Exploração do Patrimônio Imobiliário do Estado"
+                    },
+                    "rubrica": {
+                        "codigo": "131100000000",
+                        "denominacao": "Exploração do Patrimônio Imobiliário do Estado"
+                    },
+                    "alinea": {
+                        "codigo": "131101000000",
+                        "denominacao": "Aluguéis, Arrendamentos, Foros, Laudêmios, Tarifas de Ocupação"
+                    },
+                    "subalinea": {
+                        "codigo": "131101100000",
+                        "denominacao": "Aluguéis e Arrendamentos"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "131101110000",
+                        "denominacao": "Aluguéis e Arrendamentos - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "131101110000",
+                        "denominacao": "Aluguéis e Arrendamentos - Principal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "131101110000",
+                        "denominacao": "Aluguéis e Arrendamentos - Principal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 1500000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4008.84
+                    },
+                    {
+                        "dataMovimento": "2024-01-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4532.9
+                    },
+                    {
+                        "dataMovimento": "2024-01-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 28692.42
+                    },
+                    {
+                        "dataMovimento": "2024-01-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 26704.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 40879.48
+                    },
+                    {
+                        "dataMovimento": "2024-01-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 62018.89
+                    },
+                    {
+                        "dataMovimento": "2024-01-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16808.9
+                    },
+                    {
+                        "dataMovimento": "2024-01-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5626.52
+                    },
+                    {
+                        "dataMovimento": "2024-01-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3016.3
+                    },
+                    {
+                        "dataMovimento": "2024-01-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3294.26
+                    },
+                    {
+                        "dataMovimento": "2024-01-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 9202.67
+                    },
+                    {
+                        "dataMovimento": "2024-01-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 22069.51
+                    },
+                    {
+                        "dataMovimento": "2024-01-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4841.73
+                    },
+                    {
+                        "dataMovimento": "2024-01-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2014.68
+                    },
+                    {
+                        "dataMovimento": "2024-01-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2771.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6119.9
+                    },
+                    {
+                        "dataMovimento": "2024-01-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3578.23
+                    },
+                    {
+                        "dataMovimento": "2024-01-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7862.19
+                    },
+                    {
+                        "dataMovimento": "2024-01-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 55.1
+                    },
+                    {
+                        "dataMovimento": "2024-01-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 884.66
+                    },
+                    {
+                        "dataMovimento": "2024-01-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3851.01
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2178.04
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7070.32
+                    },
+                    {
+                        "dataMovimento": "2024-02-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3725.32
+                    },
+                    {
+                        "dataMovimento": "2024-02-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 18718.47
+                    },
+                    {
+                        "dataMovimento": "2024-02-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 53252.68
+                    },
+                    {
+                        "dataMovimento": "2024-02-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 79229.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10525.99
+                    },
+                    {
+                        "dataMovimento": "2024-02-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7609.56
+                    },
+                    {
+                        "dataMovimento": "2024-02-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3906.65
+                    },
+                    {
+                        "dataMovimento": "2024-02-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10947.2
+                    },
+                    {
+                        "dataMovimento": "2024-02-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10446.11
+                    },
+                    {
+                        "dataMovimento": "2024-02-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14917.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5870.61
+                    },
+                    {
+                        "dataMovimento": "2024-02-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7347.26
+                    },
+                    {
+                        "dataMovimento": "2024-02-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8478.61
+                    },
+                    {
+                        "dataMovimento": "2024-02-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8222.9
+                    },
+                    {
+                        "dataMovimento": "2024-02-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4680.96
+                    },
+                    {
+                        "dataMovimento": "2024-02-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3899.2
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1133.44
+                    },
+                    {
+                        "dataMovimento": "2024-03-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4183.38
+                    },
+                    {
+                        "dataMovimento": "2024-03-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4941.28
+                    },
+                    {
+                        "dataMovimento": "2024-03-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 43908.88
+                    },
+                    {
+                        "dataMovimento": "2024-03-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20637.94
+                    },
+                    {
+                        "dataMovimento": "2024-03-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 82923.89
+                    },
+                    {
+                        "dataMovimento": "2024-03-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 9655.35
+                    },
+                    {
+                        "dataMovimento": "2024-03-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 9712.62
+                    },
+                    {
+                        "dataMovimento": "2024-03-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5241.5
+                    },
+                    {
+                        "dataMovimento": "2024-03-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7284.98
+                    },
+                    {
+                        "dataMovimento": "2024-03-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6636.94
+                    },
+                    {
+                        "dataMovimento": "2024-03-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1454.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11776.34
+                    },
+                    {
+                        "dataMovimento": "2024-03-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 19372.06
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6245.46
+                    },
+                    {
+                        "dataMovimento": "2024-03-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5673.61
+                    },
+                    {
+                        "dataMovimento": "2024-03-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4230.35
+                    },
+                    {
+                        "dataMovimento": "2024-03-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3205.41
+                    },
+                    {
+                        "dataMovimento": "2024-03-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2072.4
+                    },
+                    {
+                        "dataMovimento": "2024-03-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3071.8
+                    },
+                    {
+                        "dataMovimento": "2024-03-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1357.56
+                    },
+                    {
+                        "dataMovimento": "2024-04-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2113.86
+                    },
+                    {
+                        "dataMovimento": "2024-04-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4377.3
+                    },
+                    {
+                        "dataMovimento": "2024-04-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12056.18
+                    },
+                    {
+                        "dataMovimento": "2024-04-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 15441.24
+                    },
+                    {
+                        "dataMovimento": "2024-04-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5893.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 26672.77
+                    },
+                    {
+                        "dataMovimento": "2024-04-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 72257.89
+                    },
+                    {
+                        "dataMovimento": "2024-04-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 26500.89
+                    },
+                    {
+                        "dataMovimento": "2024-04-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 15877.42
+                    },
+                    {
+                        "dataMovimento": "2024-04-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4995.39
+                    },
+                    {
+                        "dataMovimento": "2024-04-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5693.88
+                    },
+                    {
+                        "dataMovimento": "2024-04-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11344.41
+                    },
+                    {
+                        "dataMovimento": "2024-04-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 19985.28
+                    },
+                    {
+                        "dataMovimento": "2024-04-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3400.68
+                    },
+                    {
+                        "dataMovimento": "2024-04-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7133.04
+                    },
+                    {
+                        "dataMovimento": "2024-04-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3441.72
+                    },
+                    {
+                        "dataMovimento": "2024-04-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8327.16
+                    },
+                    {
+                        "dataMovimento": "2024-04-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2519.79
+                    },
+                    {
+                        "dataMovimento": "2024-04-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 892.26
+                    },
+                    {
+                        "dataMovimento": "2024-04-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1959.71
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1002.8
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2952.23
+                    },
+                    {
+                        "dataMovimento": "2024-05-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 13685.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 13560.55
+                    },
+                    {
+                        "dataMovimento": "2024-05-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8948.51
+                    },
+                    {
+                        "dataMovimento": "2024-05-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 35385.72
+                    },
+                    {
+                        "dataMovimento": "2024-05-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 23116.84
+                    },
+                    {
+                        "dataMovimento": "2024-05-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 20359.87
+                    },
+                    {
+                        "dataMovimento": "2024-05-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 67182.41
+                    },
+                    {
+                        "dataMovimento": "2024-05-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6745.74
+                    },
+                    {
+                        "dataMovimento": "2024-05-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7617.41
+                    },
+                    {
+                        "dataMovimento": "2024-05-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7853.58
+                    },
+                    {
+                        "dataMovimento": "2024-05-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2390.75
+                    },
+                    {
+                        "dataMovimento": "2024-05-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12112.3
+                    },
+                    {
+                        "dataMovimento": "2024-05-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3416.49
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4281.55
+                    },
+                    {
+                        "dataMovimento": "2024-05-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 15694.06
+                    },
+                    {
+                        "dataMovimento": "2024-05-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6053.28
+                    },
+                    {
+                        "dataMovimento": "2024-05-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2012.02
+                    },
+                    {
+                        "dataMovimento": "2024-05-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3423.03
+                    },
+                    {
+                        "dataMovimento": "2024-05-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1642.36
+                    },
+                    {
+                        "dataMovimento": "2024-05-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8383.98
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7625.55
+                    },
+                    {
+                        "dataMovimento": "2024-06-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4511.12
+                    },
+                    {
+                        "dataMovimento": "2024-06-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 13661.82
+                    },
+                    {
+                        "dataMovimento": "2024-06-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 31760.97
+                    },
+                    {
+                        "dataMovimento": "2024-06-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 28464.45
+                    },
+                    {
+                        "dataMovimento": "2024-06-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 78885.67
+                    },
+                    {
+                        "dataMovimento": "2024-06-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 15519.47
+                    },
+                    {
+                        "dataMovimento": "2024-06-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7408.08
+                    },
+                    {
+                        "dataMovimento": "2024-06-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16418.29
+                    },
+                    {
+                        "dataMovimento": "2024-06-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8962.12
+                    },
+                    {
+                        "dataMovimento": "2024-06-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1916.64
+                    },
+                    {
+                        "dataMovimento": "2024-06-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 764.8
+                    },
+                    {
+                        "dataMovimento": "2024-06-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8307.04
+                    },
+                    {
+                        "dataMovimento": "2024-06-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 23775.66
+                    },
+                    {
+                        "dataMovimento": "2024-06-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1493.6
+                    },
+                    {
+                        "dataMovimento": "2024-06-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 514.2
+                    },
+                    {
+                        "dataMovimento": "2024-06-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1668.75
+                    },
+                    {
+                        "dataMovimento": "2024-06-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6475.08
+                    },
+                    {
+                        "dataMovimento": "2024-06-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1745.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3624.4
+                    },
+                    {
+                        "dataMovimento": "2024-06-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1294.34
+                    },
+                    {
+                        "dataMovimento": "2024-07-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4388.72
+                    },
+                    {
+                        "dataMovimento": "2024-07-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5318.39
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8435.08
+                    },
+                    {
+                        "dataMovimento": "2024-07-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14538.53
+                    },
+                    {
+                        "dataMovimento": "2024-07-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14412.64
+                    },
+                    {
+                        "dataMovimento": "2024-07-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25315.56
+                    },
+                    {
+                        "dataMovimento": "2024-07-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 67732.89
+                    },
+                    {
+                        "dataMovimento": "2024-07-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 15077.13
+                    },
+                    {
+                        "dataMovimento": "2024-07-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7572.68
+                    },
+                    {
+                        "dataMovimento": "2024-07-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10262.78
+                    },
+                    {
+                        "dataMovimento": "2024-07-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1785.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3187.54
+                    },
+                    {
+                        "dataMovimento": "2024-07-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 15171.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6481.67
+                    },
+                    {
+                        "dataMovimento": "2024-07-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 577.24
+                    },
+                    {
+                        "dataMovimento": "2024-07-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5518.92
+                    },
+                    {
+                        "dataMovimento": "2024-07-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2390.32
+                    },
+                    {
+                        "dataMovimento": "2024-07-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11755.39
+                    },
+                    {
+                        "dataMovimento": "2024-07-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 503.7
+                    },
+                    {
+                        "dataMovimento": "2024-07-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1423.67
+                    },
+                    {
+                        "dataMovimento": "2024-07-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1328.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8966.35
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1923.64
+                    },
+                    {
+                        "dataMovimento": "2024-08-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4516.75
+                    },
+                    {
+                        "dataMovimento": "2024-08-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5359.88
+                    },
+                    {
+                        "dataMovimento": "2024-08-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6860.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8886.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 81979.87
+                    },
+                    {
+                        "dataMovimento": "2024-08-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 22679.49
+                    },
+                    {
+                        "dataMovimento": "2024-08-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8968.7
+                    },
+                    {
+                        "dataMovimento": "2024-08-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11930.51
+                    },
+                    {
+                        "dataMovimento": "2024-08-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11583.34
+                    },
+                    {
+                        "dataMovimento": "2024-08-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6590.71
+                    },
+                    {
+                        "dataMovimento": "2024-08-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 647.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1738.04
+                    },
+                    {
+                        "dataMovimento": "2024-08-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11113.85
+                    },
+                    {
+                        "dataMovimento": "2024-08-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6402.3
+                    },
+                    {
+                        "dataMovimento": "2024-08-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3497.88
+                    },
+                    {
+                        "dataMovimento": "2024-08-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1607.7
+                    },
+                    {
+                        "dataMovimento": "2024-08-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6576.5
+                    },
+                    {
+                        "dataMovimento": "2024-08-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3159.52
+                    },
+                    {
+                        "dataMovimento": "2024-08-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 425.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4883.99
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 955.36
+                    },
+                    {
+                        "dataMovimento": "2024-08-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 737.9
+                    },
+                    {
+                        "dataMovimento": "2024-09-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3309.89
+                    },
+                    {
+                        "dataMovimento": "2024-09-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6460.51
+                    },
+                    {
+                        "dataMovimento": "2024-09-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11622.12
+                    },
+                    {
+                        "dataMovimento": "2024-09-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11724.57
+                    },
+                    {
+                        "dataMovimento": "2024-09-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 27407.77
+                    },
+                    {
+                        "dataMovimento": "2024-09-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 58940.87
+                    },
+                    {
+                        "dataMovimento": "2024-09-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12873.56
+                    },
+                    {
+                        "dataMovimento": "2024-09-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 22645.76
+                    },
+                    {
+                        "dataMovimento": "2024-09-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12929.87
+                    },
+                    {
+                        "dataMovimento": "2024-09-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3521.95
+                    },
+                    {
+                        "dataMovimento": "2024-09-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3188.49
+                    },
+                    {
+                        "dataMovimento": "2024-09-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1012.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 18797.53
+                    },
+                    {
+                        "dataMovimento": "2024-09-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10954.5
+                    },
+                    {
+                        "dataMovimento": "2024-09-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1520.87
+                    },
+                    {
+                        "dataMovimento": "2024-09-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2991.38
+                    },
+                    {
+                        "dataMovimento": "2024-09-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7207.24
+                    },
+                    {
+                        "dataMovimento": "2024-09-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4823.02
+                    },
+                    {
+                        "dataMovimento": "2024-09-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5805.77
+                    },
+                    {
+                        "dataMovimento": "2024-09-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1441.1
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2823.16
+                    },
+                    {
+                        "dataMovimento": "2024-10-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8354.36
+                    },
+                    {
+                        "dataMovimento": "2024-10-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6269.03
+                    },
+                    {
+                        "dataMovimento": "2024-10-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 16883.27
+                    },
+                    {
+                        "dataMovimento": "2024-10-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12304.8
+                    },
+                    {
+                        "dataMovimento": "2024-10-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 21935.64
+                    },
+                    {
+                        "dataMovimento": "2024-10-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34218.35
+                    },
+                    {
+                        "dataMovimento": "2024-10-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 49424.36
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 201,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43018,
+                    "denominacao": "Central de Abastecimento de Caruaru - CEACA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "199000000000",
+                        "denominacao": "Demais Receitas Correntes"
+                    },
+                    "rubrica": {
+                        "codigo": "199900000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "alinea": {
+                        "codigo": "199999000000",
+                        "denominacao": "Outras Receitas"
+                    },
+                    "subalinea": {
+                        "codigo": "199999200000",
+                        "denominacao": "Outras Receitas Não Arrecadadas e Não Projetadas pela RFB - Primárias  "
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "199999210000",
+                        "denominacao": "Outras Receitas - Primárias"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "199999210000",
+                        "denominacao": "Outras Receitas - Primárias"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "199999210000",
+                        "denominacao": "Outras Receitas - Primárias"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 4000000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 954.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 429.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 195.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 80325.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1200.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 39435.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 385.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 215.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 200.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2105.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 650.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 63861.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 115.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 150.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 918.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 57772.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 250.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 110.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 30.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1723.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 631.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 405.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 398.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 560.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 63279.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 588.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 585.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 180.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 215.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3256.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 53358.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 250.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2261.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 652.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 52626.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 155.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 56.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1842.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 548.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 365.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 185.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 60601.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1274.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 434.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 880.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 305.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 32507.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2320.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1128.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 59596.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 255.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1533.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 250.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 375.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 668.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 59953.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 213.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1227.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 680.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 473.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 58342.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1450.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 685.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 28566.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 130.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 205.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1752.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 53620.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 385.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 508.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 135.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1428.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 56701.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 518.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 285.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 153.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 981.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 52496.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 275.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 30.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 213.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1856.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34407.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 460.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 53.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1281.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 180.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 56439.43
+                    },
+                    {
+                        "dataMovimento": "2024-05-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 130.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 360.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1129.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 883.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 55480.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 120.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 358.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1316.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 610.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 54419.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 168.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 195.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1233.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 53119.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 482.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 193.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2282.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 804.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 493.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 43315.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 241.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1270.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 57850.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 835.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 230.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 160.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1492.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 58573.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 548.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 150.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 188.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1199.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 390.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 790.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 40349.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 280.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1702.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 50247.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 355.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 230.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 440.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1082.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 460.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 530.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 330.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 57863.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1066.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 554.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 56588.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 164.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 218.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1551.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 561.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 59630.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 369.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 175.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2041.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 675.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 453.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 59032.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 80.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1750.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 722.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 36611.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 180.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 407.5
+                    },
+                    {
+                        "dataMovimento": "2024-08-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1528.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 540.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 535.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 383.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 130.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1852.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 723.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 58281.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 198.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 275.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 897.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 59759.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 573.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 59417.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 250.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2026.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33731.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 380.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 323.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 185.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1716.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 690.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 55738.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 317.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 335.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1580.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 838.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 59614.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 325.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 220.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2656.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 646.45
+                    },
+                    {
+                        "dataMovimento": "2024-09-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 900.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 57846.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 363.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1618.0
+                    },
+                    {
+                        "dataMovimento": "2024-10-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 672.0
+                    },
+                    {
+                        "dataMovimento": "2024-10-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 35177.0
+                    },
+                    {
+                        "dataMovimento": "2024-10-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 195.0
+                    },
+                    {
+                        "dataMovimento": "2024-10-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 440.85
+                    },
+                    {
+                        "dataMovimento": "2024-10-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1321.0
+                    },
+                    {
+                        "dataMovimento": "2024-10-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 573.0
+                    },
+                    {
+                        "dataMovimento": "2024-10-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1210.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 202,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43018,
+                    "denominacao": "Central de Abastecimento de Caruaru - CEACA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010500",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010507",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados - CEACA"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 76000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1927.99
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1926.81
+                    },
+                    {
+                        "dataMovimento": "2024-03-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2021.37
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2002.26
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1184.03
+                    },
+                    {
+                        "dataMovimento": "2024-06-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2357.76
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3250.57
+                    },
+                    {
+                        "dataMovimento": "2024-08-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3398.25
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3450.77
+                    }
+                ]
+            }
+        }
+    ]
+}
