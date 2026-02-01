@@ -1,3 +1,0 @@
-# Dicionários de Dados
-
-TODO

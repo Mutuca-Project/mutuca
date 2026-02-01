@@ -1,3 +1,0 @@
-# Boas Práticas
-
-TODO

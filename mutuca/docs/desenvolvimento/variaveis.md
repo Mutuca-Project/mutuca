@@ -1,3 +1,0 @@
-# Variáveis de Ambiente
-
-TODO
