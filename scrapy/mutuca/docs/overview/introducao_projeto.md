@@ -1,3 +1,0 @@
-# Introdução ao Projeto Mutuca
-
-- [] Adicionar uma visão geral da api e suas principais funcionalidades...

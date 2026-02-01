@@ -1,3 +1,0 @@
-# Visão Arquiterual
-
-TODO

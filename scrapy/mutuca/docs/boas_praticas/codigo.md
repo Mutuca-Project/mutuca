@@ -1,3 +1,0 @@
-# Estilo de Código
-
-TODO

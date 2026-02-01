@@ -1,3 +1,0 @@
-# Introdução às Pipelines
-
-TODO

@@ -1,3 +1,0 @@
-# Desenvolvimento local
-
-TODO

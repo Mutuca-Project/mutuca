@@ -1,3 +1,0 @@
-# Guia para Contribuições
-
-TODO
