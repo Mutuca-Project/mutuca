@@ -1,0 +1,20 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Configurar o fundo do header para a cor slate */
+.md-header {
+    background-color: #2f3e46; /* Um tom de slate */
+}
+
+/* Configurar a cor do texto no header */
+.md-header-nav__title, .md-header-nav__link {
+    color: #ffffff; /* Deixa os textos no header brancos para contraste */
+}
+
+/* Cor ao passar o mouse sobre os links no header */
+.md-header-nav__link:hover {
+    color: #90caf9; /* Cor de destaque para hover, por exemplo, azul claro */
+}

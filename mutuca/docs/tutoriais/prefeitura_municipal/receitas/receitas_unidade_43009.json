@@ -1,0 +1,544 @@
+{
+    "informacao": "Receita",
+    "ultimaAtualizacao": "13/10/2024",
+    "totalRegistros": 6,
+    "registros": [
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 219,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43009,
+                    "denominacao": "Fundo Municipal da Criança e Adolescente de Caruaru - FUNDECA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010500",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010511",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados - FUMDECA"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 38632.77
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33208.04
+                    },
+                    {
+                        "dataMovimento": "2024-03-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34954.52
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 38088.06
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 37783.03
+                    },
+                    {
+                        "dataMovimento": "2024-06-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 36562.78
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 42237.02
+                    },
+                    {
+                        "dataMovimento": "2024-08-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 44189.33
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 175,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43009,
+                    "denominacao": "Fundo Municipal da Criança e Adolescente de Caruaru - FUNDECA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010400",
+                        "denominacao": "Remuneração de Depósitos Bancários - Assistência Social"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010402",
+                        "denominacao": "Rec Rem Depós Banc Rec Vinc - Fundeca"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 600000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 176,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43009,
+                    "denominacao": "Fundo Municipal da Criança e Adolescente de Caruaru - FUNDECA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "179000000000",
+                        "denominacao": "Demais Transferências Correntes"
+                    },
+                    "rubrica": {
+                        "codigo": "179100000000",
+                        "denominacao": "Transferências de Pessoas Físicas"
+                    },
+                    "alinea": {
+                        "codigo": "179101000000",
+                        "denominacao": "Transferências de Pessoas Físicas para Órgãos e Entidades da União"
+                    },
+                    "subalinea": {
+                        "codigo": "179101000000",
+                        "denominacao": "Transferências de Pessoas Físicas para Órgãos e Entidades da União"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "179101010000",
+                        "denominacao": "Transferências de Pessoas Físicas - FUMDECA"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "179101010000",
+                        "denominacao": "Transferências de Pessoas Físicas - FUMDECA"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "179101010000",
+                        "denominacao": "Transferências de Pessoas Físicas - FUMDECA"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 1800000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 177,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43009,
+                    "denominacao": "Fundo Municipal da Criança e Adolescente de Caruaru - FUNDECA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "192000000000",
+                        "denominacao": "Indenizações, Restituições e Ressarcimentos"
+                    },
+                    "rubrica": {
+                        "codigo": "192200000000",
+                        "denominacao": "Restituições"
+                    },
+                    "alinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subalinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "192299010000",
+                        "denominacao": "Outras Restituições - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "192299010400",
+                        "denominacao": "Outras Restituições (FUNDECA)"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "192299010400",
+                        "denominacao": "Outras Restituições (FUNDECA)"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 37000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 0.04
+                    },
+                    {
+                        "dataMovimento": "2024-03-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 203.91
+                    },
+                    {
+                        "dataMovimento": "2024-03-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8591.24
+                    },
+                    {
+                        "dataMovimento": "2024-05-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3024.22
+                    },
+                    {
+                        "dataMovimento": "2024-05-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 30.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 27.13
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 178,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43009,
+                    "denominacao": "Fundo Municipal da Criança e Adolescente de Caruaru - FUNDECA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "175000000000",
+                        "denominacao": "Transferências de Outras Instituições Públicas"
+                    },
+                    "rubrica": {
+                        "codigo": "175900000000",
+                        "denominacao": "Demais Transferências de Outras Instituições Públicas"
+                    },
+                    "alinea": {
+                        "codigo": "175999000000",
+                        "denominacao": "Demais Transferências de Outras Instituições Públicas"
+                    },
+                    "subalinea": {
+                        "codigo": "175999000000",
+                        "denominacao": "Demais Transferências de Outras Instituições Públicas"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "175999010000",
+                        "denominacao": "Demais Transferências de Instituições Públicas - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "175999010000",
+                        "denominacao": "Demais Transferências de Instituições Públicas - Principal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "175999010000",
+                        "denominacao": "Demais Transferências de Instituições Públicas - Principal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 300000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 658902.49
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 220,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43009,
+                    "denominacao": "Fundo Municipal da Criança e Adolescente de Caruaru - FUNDECA"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "174000000000",
+                        "denominacao": "Transferências de Instituições Privadas"
+                    },
+                    "rubrica": {
+                        "codigo": "174100000000",
+                        "denominacao": "Transferências de Instituições Privadas"
+                    },
+                    "alinea": {
+                        "codigo": "174199000000",
+                        "denominacao": "Outras Transferências de Instituições Privadas"
+                    },
+                    "subalinea": {
+                        "codigo": "174199000000",
+                        "denominacao": "Outras Transferências de Instituições Privadas"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "174199010000",
+                        "denominacao": "Outras Transferências de Instituições Privadas - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "174199010000",
+                        "denominacao": "Outras Transferências de Instituições Privadas - Principal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "174199010000",
+                        "denominacao": "Outras Transferências de Instituições Privadas - Principal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 4671.04
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 5988.4
+                    },
+                    {
+                        "dataMovimento": "2024-04-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 595.43
+                    },
+                    {
+                        "dataMovimento": "2024-04-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 460.51
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10040.95
+                    },
+                    {
+                        "dataMovimento": "2024-05-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 177000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 626.95
+                    },
+                    {
+                        "dataMovimento": "2024-06-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 30.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8311.09
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8096.37
+                    },
+                    {
+                        "dataMovimento": "2024-08-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 680.38
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 43130.53
+                    }
+                ]
+            }
+        }
+    ]
+}
