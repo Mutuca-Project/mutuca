@@ -1,3 +1,5 @@
+import os
+
 # Scrapy settings for mutuca project
 #
 # For simplicity, this file contains only settings considered important or
@@ -74,8 +76,18 @@ DOWNLOADER_MIDDLEWARES = {
 # }
 
 # FILES_STORE = ""
-
-# FEEDS = {"public_works.json": {"format": "json"}}
+AWS_ENDPOINT_URL = os.getenv("MINIO_ENDPOINT")  # Importante para MinIO
+AWS_USE_SSL = False
+AWS_VERIFY = False
+# --- CONFIGURAÇÃO MINIO (BRONZE LAYER) ---
+# O Scrapy usará o Feed Exporter para jogar direto no S3/MinIO
+FEEDS = {
+    "s3://bronze/%(name)s/%(time)s.jsonl": {
+        "format": "jsonlines",
+        "encoding": "utf8",
+        "store_empty": False,
+    }
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
