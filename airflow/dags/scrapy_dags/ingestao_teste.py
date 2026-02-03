@@ -5,7 +5,7 @@ from airflow.hooks.base import BaseHook
 from airflow.operators.python import PythonOperator  # <--- Faltava importar isso
 from airflow.providers.docker.operators.docker import DockerOperator
 from docker.types import Mount
-from scrapy_dags.silver_process_quotes import run_etl
+from scrapy_dags.load_to_bronze import run_etl
 
 from airflow import DAG
 

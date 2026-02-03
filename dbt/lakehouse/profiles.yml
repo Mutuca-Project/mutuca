@@ -1,0 +1,29 @@
+lakehouse:
+  outputs:
+
+    dev: # Perfil para desenvolvimento para rodar localmente
+      type: trino
+      method: none  # optional, one of {none | ldap | kerberos}
+      user: admin 
+      password: ""  # required if method is ldap or kerberos
+      host: localhost 
+      port: 8080
+      catalog: iceberg
+      schema: silver
+      threads: 1
+      http_scheme: http
+
+    prod: # Perfil de produção para rodar dentro do Docker/Airflow
+      type: trino
+      method: none  # optional, one of {none | ldap | kerberos}
+      user: admin 
+      password: ""  # required if method is ldap or kerberos
+      host: trino 
+      port: 8080
+      catalog: iceberg
+      schema: silver
+      threads: 4
+      http_scheme: http
+
+
+  target: dev

@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: lakehouse
+    database: iceberg
+    schema: bronze
+    tables:
+      - name: quotes
+        description: "Dados brutos extraídos pelo Scrapy do site Quotes to Scrape."
+        columns:
+          - name: texto
+            tests:
+              - not_null
+          - name: autor
+          - name: ingestion_at
