@@ -1,29 +1,39 @@
 {{ config(
     materialized='table',
     properties={
-        'format': "'PARQUET'",
-        'partitioning': "ARRAY['author_name']", 
-        'sorted_by': "ARRAY['quote_text']"
+      "format": "'PARQUET'",
+      "sorted_by": "ARRAY['author_name']"
     }
 ) }}
 
 WITH source_data AS (
-    SELECT
-        texto,
-        autor,
+    -- Lê da tabela Bronze definida no sources.yml
+    SELECT 
+        texto as quote_text,
+        autor as author_name,
         tags,
         url_origem,
-        ingestion_at,
-        -- Cria um "deduplicador" pegando a ingestão mais recente de cada frase
-        ROW_NUMBER() OVER (PARTITION BY texto, autor ORDER BY ingestion_at DESC) as row_num
+        ingestion_at
     FROM {{ source('lakehouse', 'quotes') }}
+),
+
+deduplicated AS (
+    SELECT 
+        *,
+        -- Cria um ranking para identificar duplicatas baseadas no texto e autor
+        -- Se houver duplicata, pegamos a mais recente (ingestion_at desc)
+        ROW_NUMBER() OVER (
+            PARTITION BY quote_text, author_name 
+            ORDER BY ingestion_at DESC
+        ) as row_num
+    FROM source_data
 )
 
-SELECT
-    texto as quote_text,
-    autor as author_name,
+SELECT 
+    quote_text,
+    author_name,
     tags,
-    url_origem as source_url,
+    url_origem,
     ingestion_at
-FROM source_data
-WHERE row_num = 1 -- Mantém apenas a versão mais recente
+FROM deduplicated
+WHERE row_num = 1 -- Filtra apenas a primeira ocorrência (remove duplicatas)

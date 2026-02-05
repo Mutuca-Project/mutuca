@@ -1,4 +1,4 @@
-version: 2
+version: 6
 
 models:
   - name: quotes_silver
