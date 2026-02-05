@@ -203,6 +203,8 @@ services:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
       - ./airflow/logs:/opt/airflow/logs
+      - ./scrapy/:/opt/airflow/project/scrapy
+      - ./dbt/:/opt/airflow/project/dbt
       - /var/run/docker.sock:/var/run/docker.sock # Permite o Airflow controlar o Docker no Host
     networks:
       - lakehouse-net
