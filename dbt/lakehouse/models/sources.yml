@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: lakehouse
+    database: iceberg
+    schema: bronze
+    tables:
+      - name: quotes
+        description: "Tabela bruta de citações"
+        # Opcional: Freshness check (alerta se dados ficarem velhos)
+        loaded_at_field: ingestion_at
+        freshness:
+          warn_after: {count: 24, period: hour}
