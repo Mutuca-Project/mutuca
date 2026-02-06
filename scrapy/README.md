@@ -1,106 +1,52 @@
-# Mutuca
+# 🕷 Módulo de Ingestão: Scrapy
 
-Mutuca é uma plataforma open source dedicada à coleta, tratamento e disponibilização de dados
-públicos de municípios do interior do Nordeste brasileiro.
+> **A realidade é desestruturada. O Scrapy é a ferramenta para dar forma ao caos.**
 
-Nosso objetivo é facilitar o acesso à informação pública por meio da automação e padronização de
-dados que, embora disponíveis em portais oficiais, muitas vezes estão em formatos fragmentados,
-inconsistentes ou de difícil análise. A Mutuca busca tornar esses dados mais acessíveis,
-compreensíveis e úteis para jornalistas, pesquisadores, organizações da sociedade civil e cidadãos
-interessados em acompanhar e fiscalizar a gestão pública local.
+Este diretório contém os *spiders* responsáveis por coletar dados da web. No contexto do **Mutuca**, o Scrapy é a principal porta de entrada dos dados brutos.
 
-**O que a Mutuca faz**:
+## 📍 Papel na Arquitetura
+Consulte a visão global em [../README.md](../README.md).
 
-- Coleta dados de fontes públicas e oficiais;
+O Scrapy é responsável pela etapa **Extract** (Extração). Ele não realiza limpezas nem transformações complexas; sua única missão é capturar o dado da fonte (HTML, API, PDF) e preservá-lo fielmente no Data Lake (MinIO) nos formatos JSON ou Parquet.
 
-- Realiza limpeza, transformação e padronização dos dados;
+**Fluxo:** `Internet` → `Scrapy` → `MinIO (Bucket Bronze)`
 
-- Disponibiliza os conjuntos de dados em formatos reutilizáveis;
+## 🛠 Por que Scrapy?
+Para jornalismo investigativo, ferramentas "no-code" de scraping raramente são suficientes. O Scrapy oferece:
+1.  **Resiliência:** Lida bem com redes instáveis e portais governamentais lentos.
+2.  **Assincronismo:** Alta performance para baixar milhares de dados.
+3.  **Ecossistema Python:** Integração nativa com nossa stack de Engenharia de Dados.
 
-- Documenta metodologias e processos para facilitar a reprodutibilidade.
-
-Nos alinhamos aos princípios da
-[Lei de Acesso à Informação (Lei nº 12.527/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm)
-e da
-[Lei da Transparência (Lei Complementar nº 131/2009)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp131.htm),
-reforçando o papel da sociedade civil no monitoramento das políticas públicas e no fortalecimento da
-democracia.
-
-## Código aberto
-
-A Mutuca é um projeto inteiramente open source. Todo o código, pipelines, metodologias e
-documentações estão disponíveis neste repositório para consulta, reutilização e colaboração.
-Acreditamos que a abertura do conhecimento é essencial para criar soluções mais robustas,
-sustentáveis e conectadas com as necessidades reais de cada território.
-
----
-
-## Requisitos
-
-- [Python 3.10+](https://www.python.org/downloads/)
-- [Poetry](https://python-poetry.org/docs/)
-- Git
-- (Opcional) Docker, para execução via containers
-
----
-
-## Instalação
-
-1. Clone o repositório:
-
-```bash
-git clone https://github.com/seu-usuario/mutuca.git
-cd mutuca
-```
-
-2. Instale as dependencia com poetry:
-
-```bash
-poetry install
-```
-
-3. Ative o ambiente virtual:
-
-```bash
-poetry shell
-```
-
-4. Configure as variáveis de ambiente:
-
-```bash
-cp .env_example .env
-```
-
----
-
-## Estrutura do projeto
+## 📂 Estrutura do Diretório
 
 ```
-TODO
+scrapy/
+├── scrapy.cfg          # Configuração do deploy
+├── mutuca/
+│   ├── items.py        # Definição dos campos (Schema on Read)
+│   ├── middlewares.py  # Rotação de User-Agent, Proxies
+│   ├── pipelines.py    # (Opcional) Processamento pré-upload
+│   ├── settings.py     # Configurações globais (Throttling, MinIO keys)
+│   └── spiders/        # Onde vivem os robôs
+│       └── portal_transparencia.py
+
 ```
 
----
+## ⚙️ Como Usar
 
-## Acessando a documentação localmente
+### Desenvolvimento Local
 
-```bash
-# Na raiz do projeto:
-mkdocs serve
+Para criar ou testar um spider isoladamente:
+
+```
+# Instale as dependências
+pip install -r requirements.txt
+
+# Execute um spider e salve o output localmente para inspeção
+scrapy crawl nome_do_spider -o teste.json
 ```
 
----
+### Integração com o Lakehouse
 
-## Como Contribuir
-
-- Faça um fork deste repositório;
-
-- Crie uma branch para sua feature ou correção (git checkout -b minha-feature);
-
-- Faça commit das suas alterações (git commit -m 'Adiciona minha feature');
-
-- Envie sua branch (git push origin minha-feature);
-
-- Abra um Pull Request.
-
-Siga as boas práticas de codificação, adicione testes sempre que necessário e descreva claramente o
-que está sendo proposto.
+Em produção (via Airflow), os spiders são configurados para usar o Feed Exporter do Scrapy, enviando os dados diretamente para o MinIO (S3 Compatible).
+Certifique-se que o settings.py contém as credenciais corretas ou que elas sejam injetadas via variáveis de ambiente (AWS_ACCESS_KEY_ID, etc).
