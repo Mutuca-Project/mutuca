@@ -81,7 +81,6 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-.virtual_documents/
 
 # IPython
 profile_default/
@@ -132,8 +131,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-credentials.json
-logs/
+
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -178,4 +176,3 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python
 
 # Generated using ignr.py - github.com/Antrikshy/ignr.py
-
