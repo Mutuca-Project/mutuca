@@ -1,0 +1,213 @@
+# ====================================
+# System / OS files
+# ====================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ====================================
+# Python
+# ====================================
+# Compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+env/
+.envrc/
+.venv/
+
+# pip cache
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+dist/
+build/
+
+# pytest cache
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Python packaging
+*.egg
+*.whl
+
+# ====================================
+# Jupyter Notebook / Lab
+# ====================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+*.nbconvert.ipynb
+
+# ====================================
+# Airflow
+# ====================================
+# Airflow local folders
+airflow/airflow.db
+airflow/logs/
+airflow/plugins/__pycache__/
+airflow/unittests.cfg
+airflow/webserver_config.py
+# Airflow scheduler & executor
+*.executor.log
+*.scheduler.log
+
+# ====================================
+# dbt
+# ====================================
+# Local dbt artifacts
+dbt_modules/
+target/
+dbt_packages/
+
+# ====================================
+# Scrapy
+# ====================================
+.scrapy/
+# Crawl output
+*.jl
+*.csv
+*.json
+
+# ====================================
+# Trino / Infra / Nessie
+# ====================================
+# Trino local temp, logs
+trino-logs/
+trino-data/
+# Nessie artifacts
+nessie-db/
+nessie-artifacts/
+
+# ====================================
+# Docker / Compose
+# ====================================
+# Docker
+docker-compose.override.yml
+*.log
+*.tmp
+*.temp
+
+# Docker images
+tmp-docker/
+docker-build/
+!docker-compose.yml
+
+# Docker credential helpers
+**/docker.config
+
+# ====================================
+# Terraform / Infrastructure tools (if present)
+# ====================================
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terragrunt
+.terragrunt-cache/
+
+# ====================================
+# Logs
+# ====================================
+*.log
+logs/
+
+# ====================================
+# IDEs / Editors
+# ====================================
+# VSCode
+.vscode/
+.vscode/*
+
+# JetBrains (PyCharm etc.)
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Emacs
+*~
+\#*\#
+
+# Nano
+*.swp
+*~
+
+# ====================================
+# Node / Front-end (se houver)
+# ====================================
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+dist/
+build/
+
+# ====================================
+# OS generated files
+# ====================================
+*.bak
+*.tmp
+*.temp
+*.orig
+
+# ====================================
+# Secrets / Environment files
+# ====================================
+.env
+.env.*
+secret.*
+credentials.*
+*.key
+*.pem
+*.p12
+*.crt
+*.cer
+
+# ====================================
+# Coverage / Reports
+# ====================================
+coverage/
+htmlcov/
+report/
+
+# ====================================
+# Database / SQLite
+# ====================================
+*.sqlite3
+*.db
+*.db-journal
+
+# ====================================
+# Misc
+# ====================================
+# Python bytecode
+*.pyc
+# Bytecode caches
+__pycache__/
