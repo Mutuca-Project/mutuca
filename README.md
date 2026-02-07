@@ -48,7 +48,7 @@ O Mutuca é composto por cinco pilares fundamentais pensados como um departament
 
 ### 5. [Editor de pauta (Airflow)](./airflow/README.md)
 * **Módulo:** Orquestração. 
-* **Função:** Define a hora da coleta, garante a sequência lógica (coletar -> Transformar -> Testar) e avisa de algo der errado.
+* **Função:** Define a hora da coleta, garante a sequência lógica (Coletar -> Transformar -> Testar) e avisa se algo der errado.
 
 ---
 ## Guia de Início Rápido (Quickstart)
@@ -76,7 +76,6 @@ cp env_example .env
 ### Passo 2: Ambientes Virtuais (Venvs)
 
 ⚠️ Atenção: Um erro comum é tentar instalar tudo no mesmo Python. Não faça isso. Cada componente (Scrapy, dbt, Airflow) tem dependências conflitantes. Crie ambientes isolados para desenvolvimento:
-Bash
 
 #### Para desenvolver os Spiders
 
@@ -96,7 +95,7 @@ source ./dbt/.venv/bin/activate && uv sync --project dbt && deactivate
 
 ```
 
-# Para testar DAGs localmente (opcional, pois o Docker resolve isso)
+#### Para testar DAGs localmente (opcional, pois o Docker resolve isso)
 
 ```
 
@@ -124,19 +123,19 @@ Antes de começar a desenvolver pipelines, garanta que todos os "departamentos d
 - [ ] Nessie: Deve estar (healthy) ou Up.
 - [ ] Airflow-Webserver: Deve estar (healthy).
 
-Teste de Acesso (Interfaces):
+2. Teste de Acesso (Interfaces):
 
 - [ ] Consigo abrir o MinIO (localhost:9001) e logar?
 - [ ] Consigo abrir o Airflow (localhost:8081) e ver as DAGs?
 - [ ] O bucket bronze existe no MinIO? (Se não, crie-o manualmente ou via script).
 
-Teste de Conexão SQL:
+3. Teste de Conexão SQL:
 
 - [ ] Abra o DBeaver (ou outro cliente SQL). Conecte no Trino (localhost:8080).
 - [ ] Execute: SHOW CATALOGS;. O resultado deve incluir `iceberg`.
 - [ ] Execute: `SELECT * FROM iceberg.information_schema.tables`;. Não deve dar erro.
 
-2. Cinto de utilidades Docker:
+4. Cinto de utilidades Docker:
 - "O que está acontecendo agora?" (Logs em tempo real) Se uma tarefa falhar ou o banco travar, o log conta a história.
 
 ```bash
@@ -203,12 +202,12 @@ networks:
     driver: bridge
 ```
 
-Use os comando abaixo para simular avisão que um componente tem do outro:
+Use os comando abaixo para simular a visão que um componente tem do outro:
 
 1. Testar o Airflow -> Docker (DooD Check)
 
 ```bash 
-# Execute denteo da pasta do projeto 
+# Execute dentro da pasta do projeto 
 docker compose exec airflow docker ps
 
 # Sucesso: Lista de containers rodando (Trino, MinIO, etc)
@@ -255,7 +254,7 @@ docker compose exec airflow python3 -c "import socket; print(socket.gethostbynam
 
 5. Testar Credenciais S3 (Python Script)
 
-Se o Scrapy falha ao salvar, valide se as chaves no .env funcionam de verdade. Crie um arquivo teste_s3.py temporário:
+Se o Scrapy falha ao salvar, valide se as chaves no .env funcionam de verdade. Crie um arquivo `teste_s3.py` temporário:
 
 ```python
 
