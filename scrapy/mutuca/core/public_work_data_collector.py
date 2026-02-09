@@ -12,11 +12,10 @@ import re
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from scrapy.http import Response
-
 from mutuca.items.public_works_cityhall_items import CityHallPublicWorksItem
 from mutuca.utils.logger import get_logger
 from mutuca.utils.xpath_cleaner import XPathCleaner
+from scrapy.http import Response
 
 logger = get_logger(__name__)
 
