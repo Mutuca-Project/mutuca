@@ -20,8 +20,7 @@ O Mutuca resolve isso implementando uma arquitetura **Lakehouse** com **Versiona
 
 1.  **Soberania e Baixo Custo:** A arquitetura não depende de serviços gerenciados proprietários. Tudo roda sobre Linux e Docker.
 2.  **Auditabilidade por Design:** O projeto utiliza **Nessie + Apache Iceberg**. Isso nos permite "viajar no tempo" nos dados de maneira rápida e padronizada. Por exemplo, podemos provar qual era o valor de um contrato público no dia exato da publicação da matéria, mesmo que o governo (ou entidade pública) altere o dado no dia seguinte.
-3.  **Arquitetura Medallion (refinamento):** Um padrão de design de dados para Lakehouse, popularizado pelo Databricks, que abstrai o armazenamento em três camadas de refinamento:
-    * **Bronze:** Dado bruto, exatamente como coletado (Histórico imutável).
+3.  **Arquitetura Medallion (refinamento):** Um padrão de design de dados para Lakehouse, popularizado pelo Databricks, que abstrai o armazenamento em três camadas de refinamento: **Bronze:** Dado bruto, exatamente como coletado (Histórico imutável).
     * **Silver:** Dado limpo, deduplicado, tipado e catalogado.
     * **Gold:** Dados agregados prontos para visualização e reportagem.
 4.  **Monorepo Modular:** Infraestrutura centralizada, ingestão e transformação em um único repositório para facilitar a visão holística e o deploy, mas mantendo a separação lógica de responsabilidades.
