@@ -2,12 +2,11 @@ import logging
 import re
 from datetime import datetime
 
-from scrapy import Request, Spider
-
 from mutuca.core.public_work_data_collector import PublicWorksDataCollector
 from mutuca.items.public_works_cityhall_items import CityHallPublicWorksItem
 from mutuca.utils.constants import PUBLIC_WORK_DEFAULT_SELECTORS
 from mutuca.utils.logger import get_logger
+from scrapy import Request, Spider
 
 logger = get_logger(__name__)
 
@@ -40,19 +39,6 @@ class PublicWorksCityHallSpider(Spider):
 
     name = "public_works_cityhall"
     start_urls = ["https://caruaru.pe.gov.br/portal-da-transparencia/obras-publicas/"]
-
-    custom_settings = {
-        "FEEDS": {
-            "public_works_test.json": {
-                "format": "json",
-                "encoding": "utf-8",
-                "indent": 2,
-                "overwrite": True,
-            }
-        },
-        "CONCURRENT_REQUESTS": 8,  # Controle de concorrência
-        "DOWNLOAD_DELAY": 0.5,  # Delay entre requisições (boa prática)
-    }
 
     def __init__(self, *args, **kwargs):
         """
