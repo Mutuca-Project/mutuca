@@ -7,10 +7,8 @@ classe PublicWorksDataColector que deverá coletar os dados e retornálos simies
    5. Retornar um Scrapy Item na estrutura semiestruturada modelada.  
 """
 
-import json
-import re
 from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 from mutuca.items.public_works_cityhall_items import CityHallPublicWorksItem
 from mutuca.utils.logger import get_logger
