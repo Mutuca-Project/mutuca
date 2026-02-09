@@ -1,5 +1,9 @@
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Scrapy settings for mutuca project
 #
 # For simplicity, this file contains only settings considered important or
@@ -21,7 +25,7 @@ USER_AGENT = 'User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKi
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-# CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 8
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -76,9 +80,14 @@ DOWNLOADER_MIDDLEWARES = {
 # }
 
 # FILES_STORE = ""
+AWS_ACCESS_KEY_ID = os.getenv("MINIO_ROOT_USER")
+AWS_SECRET_ACCESS_KEY = os.getenv("MINIO_ROOT_PASSWORD")
 AWS_ENDPOINT_URL = os.getenv("MINIO_ENDPOINT")  # Importante para MinIO
 AWS_USE_SSL = False
 AWS_VERIFY = False
+AWS_S3_PARAMETERS = {
+    "addressing_style": "path",
+}
 # --- CONFIGURAÇÃO MINIO (BRONZE LAYER) ---
 # O Scrapy usará o Feed Exporter para jogar direto no S3/MinIO
 FEEDS = {
