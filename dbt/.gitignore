@@ -9,6 +9,7 @@ target/
 dbt_packages/
 dbt_modules/
 
+nbs/data/*.*
 # Logs
 logs/
 *.log

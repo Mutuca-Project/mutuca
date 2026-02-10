@@ -2,7 +2,7 @@ import logging
 import re
 from datetime import datetime
 
-from mutuca.core.public_work_data_collector import PublicWorksDataCollector
+from mutuca.core.public_work_data_collector import CaruaruPublicWorksDataCollector
 from mutuca.items.public_works_cityhall_items import CityHallPublicWorksItem
 from mutuca.utils.constants import PUBLIC_WORK_DEFAULT_SELECTORS
 from mutuca.utils.logger import get_logger
@@ -37,7 +37,7 @@ class PublicWorksCityHallSpider(Spider):
         data_collector (PublicWorksDataColector): Instância do coletor
     """
 
-    name = "public_works_cityhall"
+    name = "caruaru_public_works_contracts"
     start_urls = ["https://caruaru.pe.gov.br/portal-da-transparencia/obras-publicas/"]
 
     def __init__(self, *args, **kwargs):
@@ -49,7 +49,7 @@ class PublicWorksCityHallSpider(Spider):
         """
         super().__init__(*args, **kwargs)
 
-        self.data_collector = PublicWorksDataCollector(
+        self.data_collector = CaruaruPublicWorksDataCollector(
             selectors=PUBLIC_WORK_DEFAULT_SELECTORS
         )
 
