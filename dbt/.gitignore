@@ -10,6 +10,7 @@ dbt_packages/
 dbt_modules/
 
 nbs/data/*.*
+nbs/assets/**
 # Logs
 logs/
 *.log
