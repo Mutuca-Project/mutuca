@@ -18,7 +18,7 @@ from scrapy.http import Response
 logger = get_logger(__name__)
 
 
-class PublicWorksDataCollector:
+class CaruaruPublicWorksDataCollector:
     """
     Coleta, limpa e estrutura os dados de obras públicas.
 
