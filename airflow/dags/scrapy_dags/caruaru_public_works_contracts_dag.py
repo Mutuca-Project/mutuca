@@ -5,8 +5,6 @@ from airflow.operators.python import PythonOperator
 from airflow.providers.docker.operators.docker import DockerOperator
 from airflow.operators.bash import BashOperator
 
-from docker.types import Mount
-
 default_args = {
     "owner": "data_engineer",
     "start_date": datetime(2024, 1, 1),
@@ -14,7 +12,7 @@ default_args = {
 }
 
 with DAG(
-    "caruaru_public_works",
+    "caruaru_public_works_contracts",
     default_args=default_args,
     schedule_interval=None,
     catchup=False,
@@ -38,18 +36,18 @@ with DAG(
     """
 
     setup_env = BashOperator(
-        task_id="0_setup_docker_env",
+        task_id="setup_docker_env",
         bash_command=build_script
     )
 
     # --- 1. SCRAPY ---
     run_scraper = DockerOperator(
-        task_id="rodar_scraper_quotes",
+        task_id="crawl_public_works_contracts",
         image="lakehouse-scraper:latest",
         container_name="task_scraper_run",
         auto_remove=True,
         network_mode="mutuca-lakehouse_lakehouse-net",
-        command="scrapy crawl public_works_cityhall -s HTTPCACHE_ENABLED=True",
+        command="scrapy crawl caruaru_public_works_contracts -s HTTPCACHE_ENABLED=True",
         environment={
             "AWS_ACCESS_KEY_ID": conn.login,
             "AWS_SECRET_ACCESS_KEY": conn.password,
