@@ -7,7 +7,7 @@ from docker.types import Mount
 
 from airflow import DAG
 
-from dags.scrapy_dags.guia_nordeste import load_to_iceberg
+from scrapy_dags.guia_nordeste.load_to_iceberg import load_jsonl_to_iceberg
 
 default_args = {
     "owner": "ufpe-ova",
@@ -42,7 +42,7 @@ with DAG(
     docker build --no-cache -t lakehouse-scraper:latest /opt/airflow/project/scrapy
     """
 
-    setup_env = BashOperator(
+    setup_docker_env = BashOperator(
         task_id="setup_docker_env",
         bash_command=build_script,
     )
@@ -79,7 +79,7 @@ with DAG(
 
     load_to_iceberg_task = PythonOperator(
         task_id="load_to_iceberg",
-        python_callable=load_to_iceberg,
+        python_callable=load_jsonl_to_iceberg,
         provide_context=True
     )
 
@@ -88,5 +88,5 @@ with DAG(
         task_id="increment_batch_offset", python_callable=increment_offset_func
     )
 
-    setup_env >> extract_lattes_task >> load_to_iceberg_task >> increment_offset_task
+    setup_docker_env >> extract_lattes_task >> load_to_iceberg_task >> increment_offset_task
 
