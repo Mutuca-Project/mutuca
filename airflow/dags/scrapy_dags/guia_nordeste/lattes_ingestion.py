@@ -7,6 +7,8 @@ from docker.types import Mount
 
 from airflow import DAG
 
+from dags.scrapy_dags.guia_nordeste import load_to_iceberg
+
 default_args = {
     "owner": "ufpe-ova",
     "depends_on_past": False,
@@ -75,23 +77,16 @@ with DAG(
         ],
     )
 
-    ## DEBUG
+    load_to_iceberg_task = PythonOperator(
+        task_id="load_to_iceberg",
+        python_callable=load_to_iceberg,
+        provide_context=True
+    )
 
-    debug_conn_task = BashOperator(
-            task_id="debug_minio_connection",
-            bash_command="""
-            echo "=== DEBUG DAS VARIÁVEIS ==="
-            echo "Endpoint URL: {{ conn.minio_s3_connection.extra_dejson.get('endpoint_url') }}"
-            echo "Login (Access Key): {{ conn.minio_s3_connection.login }}"
-            # A senha a gente evita printar, mas se for ambiente local de teste:
-            echo "Senha (Secret Key): {{ conn.minio_s3_connection.password }}"
-            echo "==========================="
-            """
-        )
     # 3. CONTROLE: Atualiza o marcador (Offset) para o lote seguinte
     increment_offset_task = PythonOperator(
         task_id="increment_batch_offset", python_callable=increment_offset_func
     )
 
-    setup_env >> extract_lattes_task >> increment_offset_task
+    setup_env >> extract_lattes_task >> load_to_iceberg_task >> increment_offset_task
 
