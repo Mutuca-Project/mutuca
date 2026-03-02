@@ -16,7 +16,7 @@ def load_jsonl_to_iceberg(**kwargs):
     )
 
     trino_conn = connect(
-        host="trino_coordinator", # nome do serviço no docker compose
+        host="lakehouse-trino", # nome do serviço no docker compose
         port=8080,
         user="airflow",
         catalog="iceberg",
@@ -26,8 +26,8 @@ def load_jsonl_to_iceberg(**kwargs):
     cursor = trino_conn.cursor()
 
     bucket = "bronze"
-    raw_path = f"{bucket}/lattes_raw"
-    processed_path = f"{bucket}/processed/lattes_raw" 
+    raw_path = f"{bucket}/lattes_raw/"
+    processed_path = f"{raw_path}processed/" 
 
     # Busca apenas os arquivos .jsonl do lote autal
     files = fs.glob(f"{raw_path}lote_*.jsonl")
@@ -39,30 +39,33 @@ def load_jsonl_to_iceberg(**kwargs):
             df = pd.read_json(f, lines=True)
 
         for _, row in df.iterrows():
-            insert_query = """
-                            INSERT INTO lattes_raw (
-                                id_lattes, nome, uf_atuacao, data_extracao, 
-                                atuacoes_profissionais, projetos_pesquisa, producoes_bibliograficas
-                            ) VALUES (
-                                ?, ?, ?, CURRENT_TIMESTAMP, 
-                                CAST(JSON_PARSE(?) AS ARRAY(ROW(instituicao VARCHAR, cargo VARCHAR, ano_inicio VARCHAR, ano_fim VARCHAR))),
-                                CAST(JSON_PARSE(?) AS ARRAY(ROW(titulo VARCHAR, ano_inicio VARCHAR, situacao VARCHAR))),
-                                CAST(JSON_PARSE(?) AS ARRAY(ROW(titulo VARCHAR, ano VARCHAR, tipo VARCHAR)))
-                            )
-                        """
-            params = (
-                str(row['id_lattes']),
-                row['nome'],
-                row['uf_atuacao'],
-                json.dumps(row.get('atuacoes_profissionais', [])),
-                json.dumps(row.get('projetos_pesquisa', [])),
-                json.dumps(row.get('producoes_bibliograficas', []))
-            )
+                    # A query aceita os JSONs diretamente como strings (?)
+                    insert_query = """
+                        INSERT INTO lattes_raw (
+                            id_lattes, nome, uf_atuacao, data_extracao, 
+                            atuacoes_profissionais, projetos_pesquisa, producoes_bibliograficas
+                        ) VALUES (
+                            ?, ?, ?, CURRENT_TIMESTAMP, 
+                            ?, ?, ?
+                        )
+                    """
+                    
+                    params = (
+                        str(row['id_lattes']),
+                        row['nome'],
+                        row['uf_atuacao'],
+                        json.dumps(row.get('profetional_performances', [])), # Chave do Scrapy
+                        json.dumps(row.get('research_projects', [])),        # Chave do Scrapy
+                        json.dumps(row.get('bibliographic_productions', [])) # Chave do Scrapy
+                    )
 
-            cursor.execute(insert_query, params)
+                    cursor.execute(insert_query, params)
 
-        fs.rename(file_path, f"{processed_path}{filename}")
         filename = file_path.split("/")[-1]
+        destine = f"{processed_path}{filename}"
+        fs.cp_file(file_path, destine)
+        fs.rm(file_path)
+
         print(f"Arquivo {filename} processado e movido.")
 
     trino_conn.close()
