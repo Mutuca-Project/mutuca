@@ -65,7 +65,7 @@ class LattesSSDSpider(scrapy.Spider):
             # Algumas tags no Lattes têm sub-tags que precisam ser coletadas também.
             data[child.tag] = {
                 k: self._clean_corrupted_caracters(v) for k, v in child.attrib.items()
-            }  # BUG FIX: chave de fechamento do dict estava ausente no original
+            }
 
         return data
 
