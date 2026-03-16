@@ -80,9 +80,15 @@ DOWNLOADER_MIDDLEWARES = {
 # }
 
 # FILES_STORE = ""
-AWS_ACCESS_KEY_ID = os.getenv("MINIO_ROOT_USER")
-AWS_SECRET_ACCESS_KEY = os.getenv("MINIO_ROOT_PASSWORD")
-AWS_ENDPOINT_URL = os.getenv("MINIO_ENDPOINT")  # Importante para MinIO
+# Tenta usar a variável injetada pelo Airflow. Se não achar, usa a do .env local (fallback).
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", os.getenv("MINIO_ROOT_USER"))
+AWS_SECRET_ACCESS_KEY = os.getenv(
+    "AWS_SECRET_ACCESS_KEY", os.getenv("MINIO_ROOT_PASSWORD")
+)
+AWS_ENDPOINT_URL = os.getenv("AWS_ENDPOINT_URL", os.getenv("MINIO_ENDPOINT"))
+# AWS_ACCESS_KEY_ID = os.getenv("MINIO_ROOT_USER")
+# AWS_SECRET_ACCESS_KEY = os.getenv("MINIO_ROOT_PASSWORD")
+# AWS_ENDPOINT_URL = os.getenv("MINIO_ENDPOINT")  # Importante para MinIO
 AWS_USE_SSL = False
 AWS_VERIFY = False
 AWS_S3_PARAMETERS = {
@@ -90,13 +96,13 @@ AWS_S3_PARAMETERS = {
 }
 # --- CONFIGURAÇÃO MINIO (BRONZE LAYER) ---
 # O Scrapy usará o Feed Exporter para jogar direto no S3/MinIO
-FEEDS = {
-    "s3://bronze/%(name)s/%(time)s.jsonl": {
-        "format": "jsonlines",
-        "encoding": "utf8",
-        "store_empty": False,
-    }
-}
+# FEEDS = {
+#     "s3://bronze/%(name)s/%(time)s.jsonl": {
+#         "format": "jsonlines",
+#         "encoding": "utf8",
+#         "store_empty": False,
+#     }
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
