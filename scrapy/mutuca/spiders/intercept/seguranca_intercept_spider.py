@@ -34,12 +34,39 @@ class InterceptSegurancaSpider(scrapy.Spider):
 
         item = InterceptArticleItem()
 
-        manchete = response.xpath(
-            '//div[contains(@class, "single-head")]//h1/text()'
-        ).get()
+        item["url"] = response.url
+
+        manchete_xpath = response.xpath(
+            '//div[contains(@class, "single-head")]//h1//text()'
+        ).getall()
+        manchete = "".join(manchete_xpath).strip() if manchete_xpath else None
+
+        if not manchete:
+            manchete_xpath = response.xpath(
+                '//section[contains(@class, "single-hero-full")]//h1[contains(@class, "content-excert")]//text()'
+            ).getall()
+            manchete = "".join(manchete_xpath).strip() if manchete_xpath else None
+
+        if not manchete:
+            # Fallback SEO
+            manchete = response.xpath('//meta[@property="og:title"]/@content').get()
+
         item["manchete"] = manchete.strip() if manchete else None
 
-        lide = response.xpath('//div[contains(@class, "single-head")]//p/text()').get()
+        lide = response.xpath('//meta[@property="og:description"]/@content').get()
+
+        if not lide:
+            lide = response.xpath('//meta[@name="description"]/@content').get()
+
+        # Fallback de segurança: Se o SEO falhar, tentamos a raspagem visual do template padrão.
+        # O [1] garante que pegaremos apenas o PRIMEIRO parágrafo.
+        # A condição not(ancestor::...) garante que ignoraremos o bloco de autores.
+        if not lide:
+            lide_xpath = response.xpath(
+                '(//div[contains(@class, "single-head")]//p[not(ancestor::div[contains(@class, "single-authors-body")])])[1]//text()'
+            ).getall()
+            lide = "".join(lide_xpath).strip() if lide_xpath else None
+
         item["lide"] = lide.strip() if lide else None
 
         autores = '//div[contains(@class, "single-authors-body")]/p/a/@title'
@@ -59,5 +86,7 @@ class InterceptSegurancaSpider(scrapy.Spider):
         item["corpo_materia"] = " ".join(text_clean_list)
 
         item["data_publicacao"] = datetime.now(timezone.utc).isoformat()
+
+        item["data_extracao"] = datetime.now(timezone.utc).isoformat()
 
         yield item
