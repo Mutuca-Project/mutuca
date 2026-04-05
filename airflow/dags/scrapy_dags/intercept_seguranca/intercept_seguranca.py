@@ -24,19 +24,18 @@ with DAG(
     max_active_runs=1,
 ) as dag:
 
-    # 1. SETUP: Compila a imagem Docker do Scrapy com os spiders atualizados
-    build_script = """
+    # 1. Compila a imagem Docker do Scrapy
+    build_scrapy_image = """
     echo "--- BUILD SCRAPY ---"
-    # O contexto é o diretório 'scrapy' mapeado no container do Airflow
     docker build --no-cache -t lakehouse-scraper:latest /opt/airflow/project/scrapy
     """
-
-    setup_docker_env = BashOperator(
-        task_id="setup_docker_env",
-        bash_command=build_script,
+    # 2. Setup do ambiente Scrapy
+    setup_scrapy_env = BashOperator(
+        task_id="setup_scrapy_env",
+        bash_command=build_scrapy_image,
     )
 
-    # 2. EXTRAÇÃO: Executa o spider dentro do container e transmite via S3 API para o MinIO
+    # 3. EXTRAÇÃO: Executa o spider dentro do container e transmite via S3 API para o MinIO
     extract_intercept_task = DockerOperator(
         task_id="extract_intercept_seguranca",
         image="lakehouse-scraper:latest",
@@ -55,15 +54,38 @@ with DAG(
             "AWS_REGION_NAME": "us-east-1",
             "AWS_EC2_METADATA_DISABLED": "true",
         },
-        # Sem a propriedade 'mounts' aqui, pois os dados vêm da internet e vão direto para a rede interna (MinIO)
     )
 
-    # 3. CARGA: Lê os arquivos do lote atual no MinIO e faz o INSERT no Trino/Iceberg
+    # 4. CARGA: Lê os arquivos do lote atual no MinIO e faz o INSERT no Trino/Iceberg
     load_to_iceberg_task = PythonOperator(
         task_id="load_to_iceberg",
         python_callable=load_jsonl_to_iceberg,
         provide_context=True
     )
 
+    # 5. Compila a imagem do DBT
+    build_dbt_image = """
+    echo "--- BUILD DBT ---"
+    docker build --no-cache -t lakehouse-dbt:latest /opt/airflow/project/dbt
+    """
+    # 6. Setup do ambiente Scrapy
+    setup_dbt_env = BashOperator(
+        task_id="setup_dbt_env",
+        bash_command=build_dbt_image,
+    )
+    # 7. TRANSFORMAÇÃO: dbt (Camada Silver)
+    dbt_silver_task = DockerOperator(
+        task_id="transformation_silver_dbt",
+        image="lakehouse-dbt:latest",
+        container_name="intercept_dbt_silver_ephemeral",
+        api_version="auto",
+        auto_remove=True,
+        mount_tmp_dir=False, # Evita erro de mount do /tmp no DooD
+        network_mode="mutuca-lakehouse_lakehouse-net",
+        # O parâmetro --select garante que apenas o modelo do intercept seja executado, economizando processamento.
+        command="run --select silver_intercept_seguranca --profiles-dir . --project-dir . --target prod",
+        docker_url="unix://var/run/docker.sock"
+    )
+
     # Orquestração: define a ordem estrita de execução
-    setup_docker_env >> extract_intercept_task >> load_to_iceberg_task
+    setup_scrapy_env >> extract_intercept_task >> load_to_iceberg_task >> setup_dbt_env >> dbt_silver_task
