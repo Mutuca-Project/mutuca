@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: iceberg  # O catálogo Trino mapeado
+    schema: bronze
+    tables:
+      - name: intercept_seguranca
+        description: "Dados brutos das matérias da editoria de Segurança do The Intercept Brasil, extraídos via Scrapy."
+
+models:
+  - name: silver_intercept_seguranca
+    description: "Tabela limpa e deduplicada das matérias. Textos higienizados e datas tipadas."
+    config:
+      materialized: table
+    columns:
+      - name: url
+        description: "URL única da matéria. Chave primária."
+        tests:
+          - unique
+          - not_null
+      - name: manchete
+        description: "Título principal da matéria, sem espaços residuais."
+      - name: lide
+        description: "Linha fina ou descrição SEO da matéria."
+      - name: autores
+        description: "Array contendo os nomes dos autores."
+      - name: data_publicacao
+        description: "Timestamp com fuso horário (timezone) da publicação original."
+      - name: corpo_materia
+        description: "Texto integral da reportagem higienizado."
+      - name: data_extracao
+        description: "Data em que o robô coletou a informação."
