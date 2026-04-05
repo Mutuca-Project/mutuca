@@ -35,9 +35,8 @@ cleaned AS (
         -- Garante que autores nunca retorne nulo. Se for nulo, devolve um array vazio.
         COALESCE(autores, ARRAY[]) AS autores,
         
-        -- Tenta converter a string ISO para o tipo Timestamp com Time Zone nativo.
-        -- O try_cast evita que o pipeline quebre se uma matéria vier com a data corrompida.
-        try_cast(data_publicacao AS TIMESTAMP WITH TIME ZONE) AS data_publicacao,
+        -- Usamos from_iso8601_timestamp para lidar com o offset e microssegundos.
+        from_iso8601_timestamp(data_publicacao) AS data_publicacao,
         
         trim(corpo_materia) AS corpo_materia,
         
