@@ -211,3 +211,4 @@ report/
 *.pyc
 # Bytecode caches
 __pycache__/
+CLAUDE.md
