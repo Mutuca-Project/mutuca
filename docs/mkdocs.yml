@@ -1,0 +1,60 @@
+site_name: Mutuca
+site_description: Uma plataforma de dados aberta para jornalismo investigativo e pesquisa cívica
+site_url: https://mutuca-project.github.io/mutuca
+repo_url: https://github.com/Mutuca-Project/mutuca
+repo_name: Mutuca-Project/mutuca
+edit_uri: edit/main/docs/content/
+
+docs_dir: content
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  palette:
+    scheme: slate
+    primary: teal
+    accent: cyan
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Início: index.md
+  - Conceitos:
+      - O que é jornalismo de dados?: conceitos/jornalismo-de-dados.md
+      - O que é um Data Lakehouse?: conceitos/data-lakehouse.md
+      - As camadas dos dados: conceitos/camadas-de-dados.md
+      - Git para dados: conceitos/git-para-dados.md
+  - A Plataforma:
+      - Visão geral da arquitetura: arquitetura/visao-geral.md
+  - Decisões de Design:
+      - Por que documentamos decisões?: decisoes/index.md
+      - Runtime e infraestrutura local: decisoes/runtime-e-infraestrutura.md
+      - Armazenamento e versionamento: decisoes/armazenamento.md
+      - Motor de consulta SQL: decisoes/motor-de-consulta.md
+      - Estratégia de ingestão: decisoes/ingestao-de-dados.md
+      - Transformação transparente: decisoes/transformacao.md
+  - Sobre:
+      - Missão e contexto: sobre/index.md
