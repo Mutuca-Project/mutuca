@@ -1,0 +1,10 @@
+dag_id: caruaru_public_works_contracts
+description: "Contratos de obras públicas - Prefeitura de Caruaru"
+owner: data_engineer
+start_date: "2024-01-01"
+schedule: null
+
+scrapy:
+  spider: caruaru_public_works_contracts
+  settings:
+    HTTPCACHE_ENABLED: true
