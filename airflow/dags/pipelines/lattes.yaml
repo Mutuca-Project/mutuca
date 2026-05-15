@@ -21,7 +21,9 @@ load_iceberg:
   target_table: lattes_raw
   batch_size: 5
   rename:
-    profetional_performances: atuacoes_profissionais
+    professional_performances: atuacoes_profissionais
+    research_projects: projetos_pesquisa
+    bibliographic_productions: producoes_bibliograficas
 
 offset_control:
   variable: lattes_offset
