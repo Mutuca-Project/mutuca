@@ -1,0 +1,41 @@
+##
+## profiles.yml — Branch Validator (dbt-duckdb + PyIceberg)
+##
+## Este perfil é usado exclusivamente pelo container lakehouse-dbt-validator
+## para validar dados em uma branch Nessie ANTES do merge para main (ADR 007 / Issue #60).
+##
+## NÃO confundir com dbt/lakehouse/profiles.yml (produção, usa dbt-trino para Silver/Gold).
+##
+## Variáveis de ambiente injetadas pelo DockerOperator:
+##   NESSIE_ICEBERG_ENDPOINT  — endpoint REST do Nessie (ex: http://nessie:19120/iceberg/)
+##   NESSIE_BRANCH            — nome da branch de ingestão (do XCom)
+##   MINIO_ENDPOINT           — endpoint MinIO (ex: http://minio:9000)
+##   MINIO_ACCESS_KEY
+##   MINIO_SECRET_KEY
+##
+
+branch_validator:
+  target: branch_validation
+  outputs:
+
+    branch_validation:
+      type: duckdb
+      path: ':memory:'
+
+      # Plugin iceberg: pyiceberg.catalog.load_catalog(catalog, **config)
+      #   - `catalog` → primeiro arg posicional = nome do catálogo (string)
+      #   - demais chaves do config → **kwargs passados para load_catalog()
+      #
+      # Estrutura flat: catalog é string, todas as propriedades no mesmo nível.
+      plugins:
+        - module: iceberg
+          alias: iceberg_branch
+          config:
+            catalog: nessie_branch
+            type: rest
+            uri: "{{ env_var('NESSIE_ICEBERG_ENDPOINT') }}"
+            prefix: "{{ env_var('NESSIE_BRANCH') }}"
+            s3.endpoint: "{{ env_var('MINIO_ENDPOINT') }}"
+            s3.access-key-id: "{{ env_var('MINIO_ACCESS_KEY') }}"
+            s3.secret-access-key: "{{ env_var('MINIO_SECRET_KEY') }}"
+            s3.path-style-access: "true"

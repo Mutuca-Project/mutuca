@@ -1,0 +1,48 @@
+version: 2
+
+## Declaração da fonte Bronze e testes de qualidade para lattes_raw.
+##
+## Executados pelo gate dbt_test_branch ANTES do merge para main (ADR 007).
+## Falha em qualquer teste com severity: error bloqueia o merge e dispara
+## delete_branch — os dados ruins ficam isolados na branch.
+##
+## O plugin iceberg_branch (profiles.yml) usa PyIceberg RestCatalog com
+## prefix=NESSIE_BRANCH para rotear as leituras para a branch de ingestão.
+## Mecanismo validado empiricamente em poc_duckdb_iceberg.py (issue #60).
+
+sources:
+  - name: bronze
+    description: >
+      Fonte de dados brutos da camada Bronze, lida via PyIceberg na branch
+      de ingestão isolada (ADR 007). O plugin iceberg_branch do dbt-duckdb
+      roteia as leituras para a branch especificada em NESSIE_BRANCH.
+    tables:
+      - name: lattes_raw
+        description: "Currículos Lattes coletados do SSD externo."
+        meta:
+          plugin: iceberg_branch
+          table: bronze.lattes_raw
+        columns:
+          - name: data_extracao
+            description: "Timestamp de quando o dado foi coletado pelo Scrapy."
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+
+          - name: id_lattes
+            description: "Identificador único do currículo Lattes (16 dígitos)."
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+              - unique:
+                  config:
+                    severity: warn   # warn: duplicatas possíveis entre lotes
+
+          - name: nome
+            description: "Nome completo do pesquisador."
+            tests:
+              - not_null:
+                  config:
+                    severity: warn   # Lattes incompletos podem não ter nome
