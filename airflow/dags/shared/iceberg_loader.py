@@ -132,6 +132,16 @@ def _load_via_pyiceberg(
     catalog = _pyiceberg_catalog(branch_name, s3_conn)
     iceberg_table = catalog.load_table(f"{target_schema}.{target_table}")
 
+    # Tabelas criadas via Trino podem não ter write.parquet.compression-codec
+    # definido no metadata Iceberg (o codec fica só no catálogo do Trino).
+    # PyIceberg lê a propriedade vazia e o PyArrow falha ao criar o ParquetWriter.
+    # Solução: setar zstd explicitamente via transaction (operação idempotente).
+    if not iceberg_table.properties.get("write.parquet.compression-codec"):
+        with iceberg_table.transaction() as tx:
+            tx.set_properties({"write.parquet.compression-codec": "zstd"})
+        iceberg_table = catalog.load_table(f"{target_schema}.{target_table}")
+        print("  Propriedade write.parquet.compression-codec=zstd definida na tabela.")
+
     for file_path in files:
         print(f"[branch={branch_name}] Lendo {file_path}...")
         with fs.open(file_path, "rb") as f:

@@ -192,6 +192,9 @@ services:
       AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
       AWS_DEFAULT_REGION: us-east-1
       MINIO_ENDPOINT: http://minio:9000
+      # Endpoints Nessie (dentro da rede Docker — não usar localhost)
+      NESSIE_ENDPOINT: http://nessie:19120/api/v1
+      NESSIE_ICEBERG_ENDPOINT: http://nessie:19120/iceberg/
       # Conexão Trino (Setup via ENV para Infra-as-Code)
       # Formato: trino://login:password@host:port
       AIRFLOW_CONN_TRINO_LAKEHOUSE: trino://admin:@trino:8080
