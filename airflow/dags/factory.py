@@ -19,9 +19,14 @@ from shared.nessie_client import (
 
 PIPELINES_DIR = Path(__file__).parent / "pipelines"
 
-_BUILD_SCRIPT = """
+_BUILD_SCRAPY_SCRIPT = """
 echo "--- BUILD SCRAPY ---"
 docker build -t lakehouse-scraper:latest /opt/airflow/project/scrapy
+"""
+
+_BUILD_DBT_VALIDATOR_SCRIPT = """
+echo "--- BUILD DBT VALIDATOR ---"
+docker build -t lakehouse-dbt-validator:latest /opt/airflow/project/dbt/branch_validator
 """
 
 
@@ -145,8 +150,14 @@ def create_dag(config: dict) -> DAG:
         # --- Setup e Scrapy ---
         setup_env = BashOperator(
             task_id="setup_docker_env",
-            bash_command=_BUILD_SCRIPT,
+            bash_command=_BUILD_SCRAPY_SCRIPT,
         )
+
+        if branching_enabled:
+            build_dbt_validator = BashOperator(
+                task_id="build_dbt_validator",
+                bash_command=_BUILD_DBT_VALIDATOR_SCRIPT,
+            )
 
         run_scraper = DockerOperator(
             task_id=f"crawl_{scrapy_cfg['spider']}",
@@ -168,10 +179,15 @@ def create_dag(config: dict) -> DAG:
             mounts=_build_mounts(scrapy_cfg.get("mounts", [])),
         )
 
-        # [create_nessie_branch →] setup_docker_env → crawl_*
+        # [create_nessie_branch →] setup_docker_env + build_dbt_validator → crawl_*
         if branching_enabled:
             create_branch_task >> setup_env
-        setup_env >> run_scraper
+            create_branch_task >> build_dbt_validator
+            # O scraper e o build do validador são independentes — rodam em paralelo
+            # para aproveitar o tempo de espera do build do scraper.
+            [setup_env, build_dbt_validator] >> run_scraper
+        else:
+            setup_env >> run_scraper
 
         # --- Load Iceberg ---
         if load_cfg:
@@ -191,9 +207,45 @@ def create_dag(config: dict) -> DAG:
             if branching_enabled:
                 # Grafo de branching:
                 #
-                # load_to_iceberg → merge_to_main → [increment_offset] → delete_branch
-                #         └─────────────────────────────────────────────────────┘
-                #                           (ALL_DONE garante cleanup em falhas)
+                # load_to_iceberg → dbt_test_branch → merge_to_main → [increment_offset] → delete_branch
+                #         └──────────────────────────────────────────────────────────────────────┘
+                #                                    (ALL_DONE garante cleanup em falhas)
+                #
+                # Se dbt_test_branch falhar (dados ruins), merge é bloqueado e delete
+                # limpa a branch isolada — os dados ruins nunca chegam a main (ADR 007).
+
+                nessie_iceberg_endpoint = branching_cfg.get(
+                    "nessie_iceberg_endpoint", "http://lakehouse-nessie:19120/iceberg/"
+                )
+                minio_endpoint = conn.extra_dejson.get("endpoint_url", "http://lakehouse-minio:9000")
+
+                dbt_test_task = DockerOperator(
+                    task_id="dbt_test_branch",
+                    image="lakehouse-dbt-validator:latest",
+                    container_name=f"dbt_validator_{dag_id}_ephemeral",
+                    api_version="auto",
+                    auto_remove="force",
+                    mount_tmp_dir=False,
+                    network_mode="mutuca-lakehouse_lakehouse-net",
+                    # Código baked-in na imagem (build em build_dbt_validator).
+                    # WORKDIR=/dbt/branch_validator — profiles.yml resolvido automaticamente.
+                    command=(
+                        "dbt test "
+                        "--target branch_validation "
+                        "--select source:bronze"
+                    ),
+                    environment={
+                        "NESSIE_ICEBERG_ENDPOINT": nessie_iceberg_endpoint,
+                        # XCom do create_nessie_branch — Jinja resolvido pelo Airflow
+                        "NESSIE_BRANCH": (
+                            "{{ ti.xcom_pull(task_ids='create_nessie_branch') }}"
+                        ),
+                        "MINIO_ENDPOINT": minio_endpoint,
+                        "MINIO_ACCESS_KEY": conn.login,
+                        "MINIO_SECRET_KEY": conn.password,
+                    },
+                    docker_url="unix://var/run/docker.sock",
+                )
 
                 merge_task = PythonOperator(
                     task_id="merge_to_main",
@@ -205,7 +257,7 @@ def create_dag(config: dict) -> DAG:
                     trigger_rule=TriggerRule.ALL_DONE,
                 )
 
-                load_task >> merge_task
+                load_task >> dbt_test_task >> merge_task
                 last_success_task = merge_task
 
                 if offset_cfg:
@@ -221,7 +273,7 @@ def create_dag(config: dict) -> DAG:
                     last_success_task = offset_task
 
                 # delete depende do último task do caminho de sucesso
-                # e também diretamente de load_task (caminho de falha)
+                # e de load_task (caminho de falha em load ou dbt)
                 last_success_task >> delete_task
                 load_task >> delete_task
 
