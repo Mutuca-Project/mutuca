@@ -4,6 +4,15 @@ owner: ufpe-ova
 start_date: "2023-01-01"
 schedule: null
 
+# Branching por execução via Nessie (ADR 007).
+# Quando enabled: true, o factory.py gera as tasks:
+#   create_nessie_branch → ... → load_iceberg → merge_to_main → delete_branch
+#                                             ↘ (falha) delete_branch
+# from_ref: branch de origem para criação (padrão: main).
+branching:
+  enabled: true
+  from_ref: main
+
 scrapy:
   spider: lattes_ssd
   output: "s3://bronze/lattes_raw/lote_{{ ts_nodash }}.jsonl"
