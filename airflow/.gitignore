@@ -1,0 +1,138 @@
+# =====================================================
+# Airflow core artifacts
+# =====================================================
+
+# Airflow database (LocalExecutor / SequentialExecutor)
+airflow.db
+airflow.db-journal
+
+# Logs (scheduler, workers, webserver)
+logs/
+airflow/logs/
+
+# PID files
+airflow-webserver.pid
+airflow-scheduler.pid
+
+# Local config overrides
+webserver_config.py
+airflow.cfg
+
+# =====================================================
+# Airflow runtime & temp files
+# =====================================================
+*.log
+*.out
+*.err
+*.pid
+
+# Serialized DAGs (K8s / Celery)
+serialized_dags/
+
+# Triggerer & executor artifacts
+*.executor.log
+*.scheduler.log
+*.triggerer.log
+
+# =====================================================
+# Python
+# =====================================================
+
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+.envrc/
+
+# Packaging
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Test & coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+
+# =====================================================
+# Jupyter / experimentation
+# =====================================================
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# =====================================================
+# Secrets & credentials (CRÍTICO)
+# =====================================================
+.env
+.env.*
+secrets.*
+credentials.*
+*.key
+*.pem
+*.p12
+*.crt
+*.cer
+service-account*.json
+
+# Airflow connections / variables dumps
+connections.json
+variables.json
+
+# =====================================================
+# Docker / Compose (Airflow local)
+# =====================================================
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Docker volumes (se bindados no repo)
+docker-data/
+airflow-data/
+postgres-data/
+redis-data/
+
+# =====================================================
+# Kubernetes / Helm (se aplicável)
+# =====================================================
+charts/**/charts/
+charts/**/tmp/
+*.tgz
+
+# =====================================================
+# IDEs / Editors
+# =====================================================
+
+# VSCode
+.vscode/
+
+# JetBrains
+.idea/
+*.iml
+
+# Vim / Emacs
+*.swp
+*~
+\#*\#
+
+# =====================================================
+# OS files
+# =====================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# =====================================================
+# Misc
+# =====================================================
+*.bak
+*.tmp
+*.orig

@@ -1,0 +1,31 @@
+lakehouse:
+  target: dev # Padrão para quando você roda no terminal do seu PC
+  outputs:
+
+    dev: # Roda no seu terminal local (acessa Trino via porta exposta)
+      type: trino
+      method: none
+      user: admin
+      password: ""
+      host: localhost # IMPORTANTE: Só funciona fora do Docker
+      port: 8080
+      catalog: iceberg
+      schema: silver
+      threads: 1
+      http_scheme: http
+      session_properties:
+        query_max_memory: '2GB' # Proteção para não travar seu PC testando
+
+    prod: # Roda DENTRO do container Docker (acessa Trino via rede interna)
+      type: trino
+      method: none
+      user: admin
+      password: ""
+      host: trino     # IMPORTANTE: Nome do serviço no docker-compose
+      port: 8080
+      catalog: iceberg
+      schema: silver
+      threads: 4
+      http_scheme: http
+      session_properties:
+        query_max_memory: '4GB' # Limite para não derrubar o container em prod

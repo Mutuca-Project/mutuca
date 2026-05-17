@@ -1,0 +1,4306 @@
+{
+    "informacao": "Receita",
+    "ultimaAtualizacao": "13/10/2024",
+    "totalRegistros": 47,
+    "registros": [
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 153,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350200000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Especializada"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350210000",
+                        "denominacao": "Transferência de Recursos do SUS - Atenção Especializada - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350210600",
+                        "denominacao": "SAMU 192"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350210600",
+                        "denominacao": "SAMU 192"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 4316000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 374950.55
+                    },
+                    {
+                        "dataMovimento": "2024-02-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 374950.55
+                    },
+                    {
+                        "dataMovimento": "2024-03-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 374950.55
+                    },
+                    {
+                        "dataMovimento": "2024-04-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 374950.55
+                    },
+                    {
+                        "dataMovimento": "2024-05-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 374950.55
+                    },
+                    {
+                        "dataMovimento": "2024-06-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 374950.55
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 316584.45
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 316584.45
+                    },
+                    {
+                        "dataMovimento": "2024-09-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 316584.45
+                    },
+                    {
+                        "dataMovimento": "2024-10-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 316584.45
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 151,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350119900",
+                        "denominacao": "Outros Programas Financ. por Transf. Fundo a Fundo - APS "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350119900",
+                        "denominacao": "Outros Programas Financ. por Transf. Fundo a Fundo - APS "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 2000000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 152,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350200000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Especializada"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350210000",
+                        "denominacao": "Transferência de Recursos do SUS - Atenção Especializada - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350210100",
+                        "denominacao": "Atenção à Saúde da População para Procedimentos na Atenção Especializada "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350210100",
+                        "denominacao": "Atenção à Saúde da População para Procedimentos na Atenção Especializada "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 46000000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3378550.4
+                    },
+                    {
+                        "dataMovimento": "2024-02-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3878550.4
+                    },
+                    {
+                        "dataMovimento": "2024-03-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3628550.4
+                    },
+                    {
+                        "dataMovimento": "2024-04-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3628550.4
+                    },
+                    {
+                        "dataMovimento": "2024-05-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3628550.4
+                    },
+                    {
+                        "dataMovimento": "2024-06-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3628550.4
+                    },
+                    {
+                        "dataMovimento": "2024-07-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3628550.4
+                    },
+                    {
+                        "dataMovimento": "2024-07-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 514800.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3675350.4
+                    },
+                    {
+                        "dataMovimento": "2024-09-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3675350.4
+                    },
+                    {
+                        "dataMovimento": "2024-10-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3675350.4
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 143,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010300",
+                        "denominacao": "Receita de Remuneração de Depósitos Bancários - Saúde"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010301",
+                        "denominacao": "Receita de Remuneração de Outros Depósitos Bancários de Recursos Vinculados - FMS - Custeio"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 4000000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 72348.26
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 64558.76
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 51623.44
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 46285.41
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 49125.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 73847.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 107584.17
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 74807.19
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 44805.94
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 144,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010300",
+                        "denominacao": "Receita de Remuneração de Depósitos Bancários - Saúde"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010302",
+                        "denominacao": "Receita de Remuneração de Outros Depósitos Bancários de Recursos Vinculados - FMS - Investimento"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 152,
+                        "denominacao": "MSC - 1.601.0000 Recursos SUS Bloco de Estruturação da Rede de Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 850000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33494.25
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 27224.99
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 27584.72
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25148.11
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Estorno de arrecadação de receita",
+                        "valorMovimento": 11620.61
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25642.54
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14359.4
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 15437.24
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 13034.51
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11766.02
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 145,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010500",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010501",
+                        "denominacao": "Remuneração de Outros Depósitos de Recursos não Vinculados - FMS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 103,
+                        "denominacao": "MSC - 1.500.1002 15% de Impostos e Transferência para a Saúde (LC nº 141/2012)",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 400000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3546.39
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 62960.65
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11051.44
+                    },
+                    {
+                        "dataMovimento": "2024-03-04",
+                        "tipoMovimento": "Estorno de arrecadação de receita",
+                        "valorMovimento": 54618.29
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6687.26
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3728.13
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1764.81
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3145.41
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1587.8
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2517.98
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 146,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350110100",
+                        "denominacao": "Incentivo para Ações Estratégicas "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350110100",
+                        "denominacao": "Incentivo para Ações Estratégicas "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 4500000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 298114.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 19000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 298114.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11000.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 167614.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 707664.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 147,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350110200",
+                        "denominacao": "Agente Comunitário de Saúde "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350110200",
+                        "denominacao": "Agente Comunitário de Saúde "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 141,
+                        "denominacao": "MSC - 1.604.0000 Tranf SUS ref ACS e ACE",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 13500000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1321632.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1321632.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1318808.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1318808.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1318808.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1313160.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1310336.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1310336.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1307512.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 148,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350110400",
+                        "denominacao": "Incentivo Financeiro as APS - Desempenho "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350110400",
+                        "denominacao": "Incentivo Financeiro as APS - Desempenho "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 4000000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 261360.97
+                    },
+                    {
+                        "dataMovimento": "2024-02-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 258256.72
+                    },
+                    {
+                        "dataMovimento": "2024-03-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 264706.72
+                    },
+                    {
+                        "dataMovimento": "2024-04-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 264706.72
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 149,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350110500",
+                        "denominacao": "Incentivo Financeiro da APS - Capitação Ponderada "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350110500",
+                        "denominacao": "Incentivo Financeiro da APS - Capitação Ponderada "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 20500000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1583279.18
+                    },
+                    {
+                        "dataMovimento": "2024-02-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1560954.13
+                    },
+                    {
+                        "dataMovimento": "2024-03-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1538600.27
+                    },
+                    {
+                        "dataMovimento": "2024-04-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1588146.27
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 150,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350110600",
+                        "denominacao": "Incremento Temporário ao Custeio dos Serviços de Atenção Primária em Saúde"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350110600",
+                        "denominacao": "Incremento Temporário ao Custeio dos Serviços de Atenção Primária em Saúde"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 17000000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1089306.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 757019.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 500000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 163,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "alinea": {
+                        "codigo": "172350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subalinea": {
+                        "codigo": "172350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172350010000",
+                        "denominacao": "Transferência de Recursos do Estado para Programas de Saúde – Repasse Fundo a Fundo - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172350010200",
+                        "denominacao": "Transf Rec Estado p/Programas Saúde - Fundo a Fundo - Especializada"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172350010200",
+                        "denominacao": "Transf Rec Estado p/Programas Saúde - Fundo a Fundo - Especializada"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 153,
+                        "denominacao": "MSC - 1.621.0000 Recursos do SUS Governo Estadual - CUSTEIO",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 6719000.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1907602.28
+                    },
+                    {
+                        "dataMovimento": "2024-05-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1252857.31
+                    },
+                    {
+                        "dataMovimento": "2024-06-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 683061.26
+                    },
+                    {
+                        "dataMovimento": "2024-07-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 572260.96
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Estorno de arrecadação de receita",
+                        "valorMovimento": 409955.09
+                    },
+                    {
+                        "dataMovimento": "2024-08-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 572260.96
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 164,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "alinea": {
+                        "codigo": "172350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subalinea": {
+                        "codigo": "172350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172350010000",
+                        "denominacao": "Transferência de Recursos do Estado para Programas de Saúde – Repasse Fundo a Fundo - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172350010300",
+                        "denominacao": "Outras Transferências de Recursos do Estado "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172350010300",
+                        "denominacao": "Outras Transferências de Recursos do Estado "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 153,
+                        "denominacao": "MSC - 1.621.0000 Recursos do SUS Governo Estadual - CUSTEIO",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 400000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 261,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350500000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Gestão do SUS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350510000",
+                        "denominacao": "Transferências de Recursos do Sus - Gestão do SUS - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350510400",
+                        "denominacao": "Transformação Digital no SUS - Gestão SUS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350510400",
+                        "denominacao": "Transformação Digital no SUS - Gestão SUS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-04-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 141098.3
+                    },
+                    {
+                        "dataMovimento": "2024-08-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 141098.3
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 162,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350900000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Outros Programas"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350910000",
+                        "denominacao": "Outros programas Financ. por Transf. Fundo a Fundo "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350919900",
+                        "denominacao": "Demais Programas Fundo a Fundo - Outras"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350919900",
+                        "denominacao": "Demais Programas Fundo a Fundo - Outras"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 100000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-10-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 154,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350200000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Especializada"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350210000",
+                        "denominacao": "Transferência de Recursos do SUS - Atenção Especializada - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350219900",
+                        "denominacao": "Outros Programas Financ. por Transf. Fundo a Fundo - Atenção Especializada "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350219900",
+                        "denominacao": "Outros Programas Financ. por Transf. Fundo a Fundo - Atenção Especializada "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 700000.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 167724.95
+                    },
+                    {
+                        "dataMovimento": "2024-03-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 413067.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 562320.81
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6800.84
+                    },
+                    {
+                        "dataMovimento": "2024-05-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 471264.3
+                    },
+                    {
+                        "dataMovimento": "2024-05-28",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 333452.34
+                    },
+                    {
+                        "dataMovimento": "2024-06-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 486659.86
+                    },
+                    {
+                        "dataMovimento": "2024-07-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 387039.35
+                    },
+                    {
+                        "dataMovimento": "2024-08-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 262282.47
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 38749.93
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 155,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350300000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Vigilância em Saúde"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350310000",
+                        "denominacao": "Transferência de Recursos do SUS - Viligancia em Saúde - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350310100",
+                        "denominacao": "Incentivo Financeiro aos Estados Distrito Federal e Municípios para a Viligancia em Saúde - Despesas Diversas"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350310100",
+                        "denominacao": "Incentivo Financeiro aos Estados Distrito Federal e Municípios para a Viligancia em Saúde - Despesas Diversas"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 2000000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 97941.93
+                    },
+                    {
+                        "dataMovimento": "2024-02-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 97941.93
+                    },
+                    {
+                        "dataMovimento": "2024-03-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 97941.93
+                    },
+                    {
+                        "dataMovimento": "2024-03-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 71550.13
+                    },
+                    {
+                        "dataMovimento": "2024-03-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 176031.39
+                    },
+                    {
+                        "dataMovimento": "2024-04-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 97941.93
+                    },
+                    {
+                        "dataMovimento": "2024-05-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 157941.93
+                    },
+                    {
+                        "dataMovimento": "2024-06-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 97941.93
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 97941.93
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 97941.93
+                    },
+                    {
+                        "dataMovimento": "2024-09-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 97941.93
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 156,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350300000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Vigilância em Saúde"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350310000",
+                        "denominacao": "Transferência de Recursos do SUS - Viligancia em Saúde - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350310200",
+                        "denominacao": "Incentivo Financeiro aos Estados Distrito Federal e Municípios para Execução de Ações de Vigilância Sanitária "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350310200",
+                        "denominacao": "Incentivo Financeiro aos Estados Distrito Federal e Municípios para Execução de Ações de Vigilância Sanitária "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 500000.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 18909.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 56727.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 18909.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 18909.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 37818.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 18909.0
+                    },
+                    {
+                        "dataMovimento": "2024-10-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 18909.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 157,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350300000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Vigilância em Saúde"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350310000",
+                        "denominacao": "Transferência de Recursos do SUS - Viligancia em Saúde - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350310400",
+                        "denominacao": "Incentivo Financeiro às Ações de Vigilância e Prevenção e Controle das DST/AIDS e Hepatites Virais"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350310400",
+                        "denominacao": "Incentivo Financeiro às Ações de Vigilância e Prevenção e Controle das DST/AIDS e Hepatites Virais"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 479000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    },
+                    {
+                        "dataMovimento": "2024-02-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    },
+                    {
+                        "dataMovimento": "2024-03-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    },
+                    {
+                        "dataMovimento": "2024-04-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    },
+                    {
+                        "dataMovimento": "2024-05-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    },
+                    {
+                        "dataMovimento": "2024-06-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    },
+                    {
+                        "dataMovimento": "2024-08-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    },
+                    {
+                        "dataMovimento": "2024-09-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    },
+                    {
+                        "dataMovimento": "2024-10-07",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 34633.26
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 158,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350300000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Vigilância em Saúde"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350310000",
+                        "denominacao": "Transferência de Recursos do SUS - Viligancia em Saúde - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350319900",
+                        "denominacao": "Outros Programas Financ. por transf. Fundo a Fundo - Vigilância Sanitária "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350319900",
+                        "denominacao": "Outros Programas Financ. por transf. Fundo a Fundo - Vigilância Sanitária "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 500000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 159,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350400000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Assistência Farmacêutica"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350410000",
+                        "denominacao": "Transferências de Recursos do SUS - Assistêcia Farmacêutica - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350410100",
+                        "denominacao": "Prom. da Assistêcia Farmacêutica e Insumos Estratégicos na Atenção Básica em Saúde "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350410100",
+                        "denominacao": "Prom. da Assistêcia Farmacêutica e Insumos Estratégicos na Atenção Básica em Saúde "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 4000000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 179054.34
+                    },
+                    {
+                        "dataMovimento": "2024-02-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 179054.34
+                    },
+                    {
+                        "dataMovimento": "2024-03-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 179054.34
+                    },
+                    {
+                        "dataMovimento": "2024-03-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 577789.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 179054.34
+                    },
+                    {
+                        "dataMovimento": "2024-05-10",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 179054.34
+                    },
+                    {
+                        "dataMovimento": "2024-06-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 179054.34
+                    },
+                    {
+                        "dataMovimento": "2024-07-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 179054.34
+                    },
+                    {
+                        "dataMovimento": "2024-08-20",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 179054.34
+                    },
+                    {
+                        "dataMovimento": "2024-09-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 179054.34
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 160,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350400000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Assistência Farmacêutica"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350410000",
+                        "denominacao": "Transferências de Recursos do SUS - Assistêcia Farmacêutica - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350419900",
+                        "denominacao": "Outros Programas Financ. por Transf. Fundo a Fundo - Assistêcia Farmacêutica "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350419900",
+                        "denominacao": "Outros Programas Financ. por Transf. Fundo a Fundo - Assistêcia Farmacêutica "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 250000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 161,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350500000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Gestão do SUS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350510000",
+                        "denominacao": "Transferências de Recursos do Sus - Gestão do SUS - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350519900",
+                        "denominacao": "Outros Programas Financ. por Transf. Fundo a Fundo - Gestão SUS "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350519900",
+                        "denominacao": "Outros Programas Financ. por Transf. Fundo a Fundo - Gestão SUS "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 1500000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 259,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350400000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Assistência Farmacêutica"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350410000",
+                        "denominacao": "Transferências de Recursos do SUS - Assistêcia Farmacêutica - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350410200",
+                        "denominacao": "Organização dos Serviços de Assistência Farmacêutica no SUS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350410200",
+                        "denominacao": "Organização dos Serviços de Assistência Farmacêutica no SUS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-04-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 6000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 173,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "200000000000",
+                        "denominacao": "Receitas de Capital"
+                    },
+                    "origem": {
+                        "codigo": "240000000000",
+                        "denominacao": "Transferências de Capital"
+                    },
+                    "especie": {
+                        "codigo": "242000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "242900000000",
+                        "denominacao": "Outras Transferências de Recursos dos Estados"
+                    },
+                    "alinea": {
+                        "codigo": "242999000000",
+                        "denominacao": "Outras Transferências de Recursos dos Estados"
+                    },
+                    "subalinea": {
+                        "codigo": "242999000000",
+                        "denominacao": "Outras Transferências de Recursos dos Estados"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "242999010000",
+                        "denominacao": "Outras Transferências de Recursos dos Estados - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "242999010200",
+                        "denominacao": "Outras Transf do Estado - Emendas Parlamentares "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "242999010200",
+                        "denominacao": "Outras Transf do Estado - Emendas Parlamentares "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 168,
+                        "denominacao": "MSC - 1.710.0000 - Emenda Especial do Estado",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 2000000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 174,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350500000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Gestão do SUS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350510000",
+                        "denominacao": "Transferências de Recursos do Sus - Gestão do SUS - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350510200",
+                        "denominacao": "Assistência Financeira Complementar da União para Pagamento dos Pisos Salariais dos Profissionais da Enfermagem."
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350510200",
+                        "denominacao": "Assistência Financeira Complementar da União para Pagamento dos Pisos Salariais dos Profissionais da Enfermagem."
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 182,
+                        "denominacao": "MSC - 1.605.0000 Assistência financeira da União destinada à complementação ao pagamento dos pisos salariais para profissionais da enfermagem.",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 29800000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1193982.1
+                    },
+                    {
+                        "dataMovimento": "2024-03-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1149783.08
+                    },
+                    {
+                        "dataMovimento": "2024-04-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1147152.91
+                    },
+                    {
+                        "dataMovimento": "2024-05-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1079998.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1143195.01
+                    },
+                    {
+                        "dataMovimento": "2024-06-26",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2496900.12
+                    },
+                    {
+                        "dataMovimento": "2024-07-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1133499.42
+                    },
+                    {
+                        "dataMovimento": "2024-08-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1128594.58
+                    },
+                    {
+                        "dataMovimento": "2024-09-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1125831.68
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 165,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "192000000000",
+                        "denominacao": "Indenizações, Restituições e Ressarcimentos"
+                    },
+                    "rubrica": {
+                        "codigo": "192200000000",
+                        "denominacao": "Restituições"
+                    },
+                    "alinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subalinea": {
+                        "codigo": "192299000000",
+                        "denominacao": "Outras Restituições"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "192299010000",
+                        "denominacao": "Outras Restituições - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "192299010200",
+                        "denominacao": "Outras Restituições (FMS)"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "192299010200",
+                        "denominacao": "Outras Restituições (FMS)"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 4000000.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-01",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8242.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 895.83
+                    },
+                    {
+                        "dataMovimento": "2024-04-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 670.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1791.66
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 262,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350111200",
+                        "denominacao": "Incentivo Financeiro da APS - Equipes de Saúde da Família/ESF Equipes de Atenção Primária/EAP"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350111200",
+                        "denominacao": "Incentivo Financeiro da APS - Equipes de Saúde da Família/ESF Equipes de Atenção Primária/EAP"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2052000.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2064000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2064000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2052000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2052000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 166,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350200000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Especializada"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350210000",
+                        "denominacao": "Transferência de Recursos do SUS - Atenção Especializada - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350210200",
+                        "denominacao": "Incremento Temporário ao Custeio dos Serviços de Assistência Hospitalar e Ambulatorial "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350210200",
+                        "denominacao": "Incremento Temporário ao Custeio dos Serviços de Assistência Hospitalar e Ambulatorial "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 9300000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3910694.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-27",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 442981.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 3000000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 263,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350111300",
+                        "denominacao": "Incentivo Financeiro da APS - Demais Programas, Serviços e Equipes da Atenção Primária à Saúde"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350111300",
+                        "denominacao": "Incentivo Financeiro da APS - Demais Programas, Serviços e Equipes da Atenção Primária à Saúde"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 39000.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 36000.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 13000.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 33000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 61500.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 30000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 57000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 167,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "200000000000",
+                        "denominacao": "Receitas de Capital"
+                    },
+                    "origem": {
+                        "codigo": "240000000000",
+                        "denominacao": "Transferências de Capital"
+                    },
+                    "especie": {
+                        "codigo": "241000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "241100000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde - SUS"
+                    },
+                    "alinea": {
+                        "codigo": "241150000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "241150900000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Outros Programas"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "241150910000",
+                        "denominacao": "Transferências de Recursos do SUS - Outros Programas - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "241150910000",
+                        "denominacao": "Transferências de Recursos do SUS - Outros Programas - Principal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "241150910000",
+                        "denominacao": "Transferências de Recursos do SUS - Outros Programas - Principal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 152,
+                        "denominacao": "MSC - 1.601.0000 Recursos SUS Bloco de Estruturação da Rede de Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 2933000.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 226307.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 264,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350111400",
+                        "denominacao": "Icentivo Financeiro da APS - Equipes Multiprofissionais - EMULTI"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350111400",
+                        "denominacao": "Icentivo Financeiro da APS - Equipes Multiprofissionais - EMULTI"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 280750.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 259000.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 198000.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 259000.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 259000.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 259000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 168,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "200000000000",
+                        "denominacao": "Receitas de Capital"
+                    },
+                    "origem": {
+                        "codigo": "240000000000",
+                        "denominacao": "Transferências de Capital"
+                    },
+                    "especie": {
+                        "codigo": "241000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "241400000000",
+                        "denominacao": "Transferências de Convênios da União e de suas Entidades "
+                    },
+                    "alinea": {
+                        "codigo": "241450000000",
+                        "denominacao": "Transferências de Convênios da União para o Sistema Único de Saúde – SUS"
+                    },
+                    "subalinea": {
+                        "codigo": "241450000000",
+                        "denominacao": "Transferências de Convênios da União para o Sistema Único de Saúde – SUS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "241450010000",
+                        "denominacao": "Transferências de Convênio da União p/ o SUS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "241450010000",
+                        "denominacao": "Transferências de Convênio da União p/ o SUS - Principal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "241450010000",
+                        "denominacao": "Transferências de Convênio da União p/ o SUS - Principal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 126,
+                        "denominacao": "MSC - 1.631.0000 Recursos de Convênios para Saúde do Governo Federal",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 2000000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 265,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350111500",
+                        "denominacao": "Incentivo Financeiro da APS - Componente Per Capita de Base Populacional"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350111500",
+                        "denominacao": "Incentivo Financeiro da APS - Componente Per Capita de Base Populacional"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-15",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 936904.35
+                    },
+                    {
+                        "dataMovimento": "2024-06-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 187380.87
+                    },
+                    {
+                        "dataMovimento": "2024-07-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 187380.87
+                    },
+                    {
+                        "dataMovimento": "2024-08-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 187380.87
+                    },
+                    {
+                        "dataMovimento": "2024-09-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 187380.87
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 169,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010300",
+                        "denominacao": "Receita de Remuneração de Depósitos Bancários - Saúde"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010303",
+                        "denominacao": "Rec Rem Outros Depósitos Bancários Rec Vinc - Convênios Saúde União"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 126,
+                        "denominacao": "MSC - 1.631.0000 Recursos de Convênios para Saúde do Governo Federal",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 50000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 266,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350200000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Especializada"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350210000",
+                        "denominacao": "Transferência de Recursos do SUS - Atenção Especializada - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350210500",
+                        "denominacao": "Emenda Individual - Incremento Temporário ao Custeio dos Serviços de Assistência Hospitalar e Ambulatorial"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350210500",
+                        "denominacao": "Emenda Individual - Incremento Temporário ao Custeio dos Serviços de Assistência Hospitalar e Ambulatorial"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 175,
+                        "denominacao": "MSC - 1.600.3110 - Recursos do SUS do Bloco de Manuenção das Ações e Serviços Públicos de Saúde - Emendas Individuais ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-05-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 100000.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-21",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1635792.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-24",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2500000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 170,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "200000000000",
+                        "denominacao": "Receitas de Capital"
+                    },
+                    "origem": {
+                        "codigo": "240000000000",
+                        "denominacao": "Transferências de Capital"
+                    },
+                    "especie": {
+                        "codigo": "242000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "242100000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS dos Estados e DF"
+                    },
+                    "alinea": {
+                        "codigo": "242150000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subalinea": {
+                        "codigo": "242150000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "242150010000",
+                        "denominacao": "Transferências de Rec do Sistema Único - SUS - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "242150010000",
+                        "denominacao": "Transferências de Rec do Sistema Único - SUS - Principal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "242150010000",
+                        "denominacao": "Transferências de Rec do Sistema Único - SUS - Principal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 154,
+                        "denominacao": "MSC - 1.621.0000 Recursos do SUS Governo Estadual - INVESTIMENTOS",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 1235000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 267,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010300",
+                        "denominacao": "Receita de Remuneração de Depósitos Bancários - Saúde"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010307",
+                        "denominacao": "Rec Rem Outros Depósitos Bancários Rec Vinc - Emenda Parlamentar Estado "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 168,
+                        "denominacao": "MSC - 1.710.0000 - Emenda Especial do Estado",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 13996.62
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 171,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350300000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Vigilância em Saúde"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350310000",
+                        "denominacao": "Transferência de Recursos do SUS - Viligancia em Saúde - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350310300",
+                        "denominacao": "Assistência Financeira Complementar aos Estados, Distrito Federal e Municípios para Agentes de Combate às Endemias "
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350310300",
+                        "denominacao": "Assistência Financeira Complementar aos Estados, Distrito Federal e Municípios para Agentes de Combate às Endemias "
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 141,
+                        "denominacao": "MSC - 1.604.0000 Tranf SUS ref ACS e ACE",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 7300000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-02",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 386232.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-25",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 434896.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 434896.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 434896.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 434896.0
+                    },
+                    {
+                        "dataMovimento": "2024-05-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 434896.0
+                    },
+                    {
+                        "dataMovimento": "2024-06-05",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 410468.4
+                    },
+                    {
+                        "dataMovimento": "2024-06-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 21603.6
+                    },
+                    {
+                        "dataMovimento": "2024-07-03",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 434896.0
+                    },
+                    {
+                        "dataMovimento": "2024-08-06",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 432072.0
+                    },
+                    {
+                        "dataMovimento": "2024-09-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 432072.0
+                    },
+                    {
+                        "dataMovimento": "2024-10-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 432072.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 172,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "190000000000",
+                        "denominacao": "Outras Receitas Correntes"
+                    },
+                    "especie": {
+                        "codigo": "192000000000",
+                        "denominacao": "Indenizações, Restituições e Ressarcimentos"
+                    },
+                    "rubrica": {
+                        "codigo": "192100000000",
+                        "denominacao": "Indenizações"
+                    },
+                    "alinea": {
+                        "codigo": "192199000000",
+                        "denominacao": "Outras Indenizações"
+                    },
+                    "subalinea": {
+                        "codigo": null,
+                        "denominacao": null
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "192199110000",
+                        "denominacao": "Outras Indenizações - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "192199110200",
+                        "denominacao": "OUTRAS INDENIZAÇÕES (FMS)"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "192199110200",
+                        "denominacao": "OUTRAS INDENIZAÇÕES (FMS)"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 103,
+                        "denominacao": "MSC - 1.500.1002 15% de Impostos e Transferência para a Saúde (LC nº 141/2012)",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 1300000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 279,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "alinea": {
+                        "codigo": "172350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subalinea": {
+                        "codigo": "172350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172350010000",
+                        "denominacao": "Transferência de Recursos do Estado para Programas de Saúde – Repasse Fundo a Fundo - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172350010100",
+                        "denominacao": "Transferência de Recursos do Estado para Programas de Saúde Repasse Fundo a Fundo - Atenção Primária"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172350010100",
+                        "denominacao": "Transferência de Recursos do Estado para Programas de Saúde Repasse Fundo a Fundo - Atenção Primária"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 153,
+                        "denominacao": "MSC - 1.621.0000 Recursos do SUS Governo Estadual - CUSTEIO",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-07-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 28316.3
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 84948.9
+                    },
+                    {
+                        "dataMovimento": "2024-08-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 14158.15
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 280,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "172000000000",
+                        "denominacao": "Transferências dos Estados e do Distrito Federal e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "172300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "alinea": {
+                        "codigo": "172350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subalinea": {
+                        "codigo": "172350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "172350010000",
+                        "denominacao": "Transferência de Recursos do Estado para Programas de Saúde – Repasse Fundo a Fundo - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "172350010400",
+                        "denominacao": "Transferência de Recursos do Estado para Programas de Saúde Repasse Fundo a Fundo - Assistência Farmacêutica"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "172350010400",
+                        "denominacao": "Transferência de Recursos do Estado para Programas de Saúde Repasse Fundo a Fundo - Assistência Farmacêutica"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 153,
+                        "denominacao": "MSC - 1.621.0000 Recursos do SUS Governo Estadual - CUSTEIO",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-07-19",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 108335.4
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 325006.19
+                    },
+                    {
+                        "dataMovimento": "2024-08-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 54167.7
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 276,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350110900",
+                        "denominacao": "Emenda Individual - Incremento Temporário ao Custeio dos Serviços de Atenção Primária em Saúde"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350110900",
+                        "denominacao": "Emenda Individual - Incremento Temporário ao Custeio dos Serviços de Atenção Primária em Saúde"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 175,
+                        "denominacao": "MSC - 1.600.3110 - Recursos do SUS do Bloco de Manuenção das Ações e Serviços Públicos de Saúde - Emendas Individuais ",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-06-18",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 2000000.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 214,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350111000",
+                        "denominacao": "Incentivo Financeiro para Atenção à Saúde Bucal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350111000",
+                        "denominacao": "Incentivo Financeiro para Atenção à Saúde Bucal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 449389.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-22",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 145675.38
+                    },
+                    {
+                        "dataMovimento": "2024-02-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 145675.38
+                    },
+                    {
+                        "dataMovimento": "2024-02-23",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 415639.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 195384.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 595064.38
+                    },
+                    {
+                        "dataMovimento": "2024-04-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 601527.38
+                    },
+                    {
+                        "dataMovimento": "2024-05-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 568500.26
+                    },
+                    {
+                        "dataMovimento": "2024-06-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 568499.88
+                    },
+                    {
+                        "dataMovimento": "2024-06-17",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 12926.0
+                    },
+                    {
+                        "dataMovimento": "2024-07-08",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 891354.26
+                    },
+                    {
+                        "dataMovimento": "2024-08-09",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 422824.88
+                    },
+                    {
+                        "dataMovimento": "2024-08-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 145675.38
+                    },
+                    {
+                        "dataMovimento": "2024-09-16",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 556798.76
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 215,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "170000000000",
+                        "denominacao": "Transferências Correntes"
+                    },
+                    "especie": {
+                        "codigo": "171000000000",
+                        "denominacao": "Transferências da União e de suas Entidades"
+                    },
+                    "rubrica": {
+                        "codigo": "171300000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS "
+                    },
+                    "alinea": {
+                        "codigo": "171350000000",
+                        "denominacao": "Transferências de Recursos do Sistema Único de Saúde – SUS – Repasses Fundo a Fundo - Bloco de Manutenção das Ações e Serviços Públicos de Saúde"
+                    },
+                    "subalinea": {
+                        "codigo": "171350100000",
+                        "denominacao": "Transferências de Recursos do Bloco de Manutenção das Ações e Serviços Públicos de Saúde – Atenção Primária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "171350110000",
+                        "denominacao": "Transferência de Recursos do SUS – Atenção Primária - Principal "
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "171350111100",
+                        "denominacao": "Programa de Informatização da APS"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "171350111100",
+                        "denominacao": "Programa de Informatização da APS"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 151,
+                        "denominacao": "MSC - 1.600.0000 Recursos do SUS do Bloco de Manutenção das Ações e Serviços Públicos de Saúde",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-12",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 138550.0
+                    },
+                    {
+                        "dataMovimento": "2024-02-14",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 138550.0
+                    },
+                    {
+                        "dataMovimento": "2024-03-13",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 137700.0
+                    },
+                    {
+                        "dataMovimento": "2024-04-11",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 137700.0
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 228,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "130000000000",
+                        "denominacao": "Receita Patrimonial"
+                    },
+                    "especie": {
+                        "codigo": "132000000000",
+                        "denominacao": "Valores Mobiliários"
+                    },
+                    "rubrica": {
+                        "codigo": "132100000000",
+                        "denominacao": "Juros e Correções Monetárias"
+                    },
+                    "alinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subalinea": {
+                        "codigo": "132101000000",
+                        "denominacao": "Remuneração de Depósitos Bancários"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "132101010000",
+                        "denominacao": "Remuneração de Depósitos Bancários - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "132101010300",
+                        "denominacao": "Receita de Remuneração de Depósitos Bancários - Saúde"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "132101010305",
+                        "denominacao": "Receita de Rem. de Outros Dep. Bancários de Rec. Vinculados - Piso Emfermagem"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 182,
+                        "denominacao": "MSC - 1.605.0000 Assistência financeira da União destinada à complementação ao pagamento dos pisos salariais para profissionais da enfermagem.",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 11062.72
+                    },
+                    {
+                        "dataMovimento": "2024-02-29",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8027.77
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10445.17
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10136.68
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 8876.31
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10645.11
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 19745.85
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 7745.52
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 1130703.79
+                    }
+                ]
+            }
+        },
+        {
+            "registro": {
+                "receita": {
+                    "codigo": 142,
+                    "tipoReceita": "Bruta"
+                },
+                "unidadeGestora": {
+                    "codigo": 43008,
+                    "denominacao": "Fundo Municipal de Saúde de Caruaru"
+                },
+                "naturezaReceita": {
+                    "categoriaEconomica": {
+                        "codigo": "100000000000",
+                        "denominacao": "Receitas Correntes"
+                    },
+                    "origem": {
+                        "codigo": "110000000000",
+                        "denominacao": "Impostos, Taxas e Contribuições de Melhoria"
+                    },
+                    "especie": {
+                        "codigo": "112000000000",
+                        "denominacao": "Taxas"
+                    },
+                    "rubrica": {
+                        "codigo": "112100000000",
+                        "denominacao": "Taxas pelo Exercício do Poder de Polícia"
+                    },
+                    "alinea": {
+                        "codigo": "112150000000",
+                        "denominacao": "Taxa de Fiscalização de Vigilância Sanitária"
+                    },
+                    "subalinea": {
+                        "codigo": "112150000000",
+                        "denominacao": "Taxa de Fiscalização de Vigilância Sanitária"
+                    },
+                    "subdetalhamento1": {
+                        "codigo": "112150010000",
+                        "denominacao": "Taxa de Fiscalização de Vigilância Sanitária - Principal"
+                    },
+                    "subdetalhamento2": {
+                        "codigo": "112150010000",
+                        "denominacao": "Taxa de Fiscalização de Vigilância Sanitária - Principal"
+                    },
+                    "subdetalhamento3": {
+                        "codigo": "112150010000",
+                        "denominacao": "Taxa de Fiscalização de Vigilância Sanitária - Principal"
+                    }
+                },
+                "listFonteRecursos": [
+                    {
+                        "codigo": 101,
+                        "denominacao": "MSC - 1.501.0000 Recursos Próprios",
+                        "percentual": 100.0
+                    }
+                ],
+                "exercicio": {
+                    "exercicio": 2024
+                },
+                "listMovimentos": [
+                    {
+                        "dataMovimento": "2024-01-01",
+                        "tipoMovimento": "Previsão de Receita",
+                        "valorMovimento": 242000.0
+                    },
+                    {
+                        "dataMovimento": "2024-01-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 25501.79
+                    },
+                    {
+                        "dataMovimento": "2024-03-04",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 54618.29
+                    },
+                    {
+                        "dataMovimento": "2024-03-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 72479.42
+                    },
+                    {
+                        "dataMovimento": "2024-04-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 38582.59
+                    },
+                    {
+                        "dataMovimento": "2024-05-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 30177.71
+                    },
+                    {
+                        "dataMovimento": "2024-06-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 22976.07
+                    },
+                    {
+                        "dataMovimento": "2024-07-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 23815.59
+                    },
+                    {
+                        "dataMovimento": "2024-08-31",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 22038.17
+                    },
+                    {
+                        "dataMovimento": "2024-09-30",
+                        "tipoMovimento": "Arrecadação de receita",
+                        "valorMovimento": 10230.22
+                    }
+                ]
+            }
+        }
+    ]
+}

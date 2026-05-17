@@ -1,0 +1,13 @@
+version: 6
+
+models:
+  - name: quotes_silver
+    description: "Tabela contendo citações limpas e deduplicadas. A granularidade é uma linha por citação única."
+    columns:
+      - name: quote_text
+        description: "O texto integral da citação em inglês."
+        tests:
+          - unique
+          - not_null
+      - name: author_name
+        description: "Nome do autor do texto."

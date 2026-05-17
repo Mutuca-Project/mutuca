@@ -1,0 +1,9 @@
+[project]
+name = "mutuca-docs"
+version = "0.1.0"
+description = "Documentação pública do Mutuca"
+requires-python = ">=3.11"
+dependencies = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.5.39",
+]

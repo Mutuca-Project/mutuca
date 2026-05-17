@@ -1,0 +1,239 @@
+name: ${PROJECT_NAME}
+
+services:
+  # --- STORAGE LAYER ---
+  minio:
+    image: minio/minio
+    container_name: lakehouse-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_BROWSER_REDIRECT_URL: ${MINIO_BROWSER_REDIRECT_URL}
+    ports:
+      - "9000:9000" # API S3
+      - "9001:9001" # Web Console
+    volumes:
+      - minio_data:/data
+    networks:
+      - lakehouse-net
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  # --- METADATA STORAGE ---
+  postgres:
+    image: postgres:15-alpine
+    container_name: lakehouse-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      TZ: ${TZ}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - lakehouse-net
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # --- INIT SERVICE (Cria todos os bancos extras) ---
+  postgres-init:
+    image: postgres:15-alpine
+    container_name: lakehouse-postgres-init
+    environment:
+      PGHOST: postgres
+      PGUSER: ${POSTGRES_USER}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+    # Comando único que orquestra tudo
+    command: >
+      sh -c "
+        echo '>> Aguardando Postgres ficar saudável...'
+        until pg_isready; do sleep 2; done;
+        
+        echo '>> Verificando banco Nessie...'
+        # Se o grep não achar '1' (banco não existe), executa o CREATE
+        psql -tc \"SELECT 1 FROM pg_database WHERE datname = 'nessie'\" | grep -q 1 || psql -c \"CREATE DATABASE nessie\"
+        
+        echo '>> Verificando banco Airflow...'
+        psql -tc \"SELECT 1 FROM pg_database WHERE datname = 'airflow'\" | grep -q 1 || psql -c \"CREATE DATABASE airflow\"
+        
+        echo '>>> Inicialização de bancos concluída.'
+      "
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - lakehouse-net
+
+# --- DATA CATALOG (GIT-LIKE) ---
+  nessie:
+    image: ghcr.io/projectnessie/nessie:0.95.0
+    # image: projectnessie/nessie:0.106.1
+    container_name: lakehouse-nessie
+    environment:
+
+      # --- CONFIGURAÇÃO JDBC PARA POSTGRES ---
+      QUARKUS_DATASOURCE_DB_KIND: postgresql
+      QUARKUS_DATASOURCE_JDBC_URL: jdbc:postgresql://postgres:5432/nessie
+      QUARKUS_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      QUARKUS_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+
+      # --- CONFIGURAÇÃO AVANÇADA NESSIE ---
+      NESSIE_VERSION_STORE_TYPE: JDBC
+      NESSIE_SERVER_DEFAULT_BRANCH: main
+      QUARKUS_HTTP_PORT: 19120
+      
+      # --- CONFIGURAÇÃO DE CATALOG/STORAGE ---
+      NESSIE_CATALOG_ENABLED: "true"
+      NESSIE_CATALOG_DEFAULT_WAREHOUSE: warehouse
+      NESSIE_CATALOG_WAREHOUSES_WAREHOUSE_LOCATION: s3://warehouse/
+
+      # --- S3 CONFIG ---
+      NESSIE_CATALOG_SERVICE_S3_DEFAULT_OPTIONS_ACCESS_KEY_NAME: ${MINIO_ROOT_USER}
+      NESSIE_CATALOG_SERVICE_S3_DEFAULT_OPTIONS_ACCESS_KEY_SECRET: ${MINIO_ROOT_PASSWORD}
+      NESSIE_CATALOG_SERVICE_S3_DEFAULT_OPTIONS_ENDPOINT: http://minio:9000
+      NESSIE_CATALOG_SERVICE_S3_DEFAULT_OPTIONS_PATH_STYLE_ACCESS: true
+      NESSIE_CATALOG_SERVICE_S3_DEFAULT_OPTIONS_SSL_ENABLED: false
+      NESSIE_CATALOG_SERVICE_S3_DEFAULT_OPTIONS_REGION: us-east-1
+      # NESSIE_CATALOG_SERVICE_S3_DEFAULT_OPTIONS_AUTH_TYPE: STATIC
+
+      # --- CREDENCIAIS DO STORAGE ---
+      # NESSIE_CATALOG_SECRETS_ACCESS__KEY_NAME: ${MINIO_ROOT_USER}
+      # NESSIE_CATALOG_SECRETS_ACCESS__KEY_SECRET: ${MINIO_ROOT_PASSWORD}     
+
+    ports:
+      - "19120:19120"
+    networks:
+      - lakehouse-net
+    depends_on:
+      postgres:
+        condition: service_healthy
+      postgres-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:19120/api/v2/config"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+
+  # --- QUERY ENGINE ---
+  trino:
+    image: trinodb/trino
+    container_name: lakehouse-trino
+    ports:
+      - "8080:8080"
+    environment:
+      - AWS_ACCESS_KEY_ID=${MINIO_ROOT_USER}
+      - AWS_SECRET_ACCESS_KEY=${MINIO_ROOT_PASSWORD}
+      - AWS_REGION=us-east-1
+      # Injeção da variável de ambiente na JVM para conexão com MinIO (via arquivo de configuração não estava funcionando)
+      - JAVA_TOOL_OPTIONS=-Daws.accessKeyId=${MINIO_ROOT_USER} -Daws.secretKey=${MINIO_ROOT_PASSWORD} -Daws.region=us-east-1
+    volumes:
+      # Montar configurações
+      - ./infrastructure/trino/config.properties:/etc/trino/config.properties
+      - ./infrastructure/trino/jvm.config:/etc/trino/jvm.config
+      - ./infrastructure/trino/catalog:/etc/trino/catalog
+    networks:
+      - lakehouse-net
+    depends_on:
+      nessie:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 11G  # Limite duro para evitar crash do OS
+        reservations:
+          memory: 8G
+
+  # --- ORCHESTRATION ---
+  airflow:
+    build: ./airflow
+    container_name: lakehouse-airflow
+    restart: always
+    environment:
+      # Configurações Core
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/airflow
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW_ADMIN_USER: ${AIRFLOW_ADMIN_USER}
+      AIRFLOW_ADMIN_PASSWORD: ${AIRFLOW_ADMIN_PASSWORD}
+      AIRFLOW_ADMIN_EMAIL: ${AIRFLOW_ADMIN_EMAIL}   
+      AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+      AWS_DEFAULT_REGION: us-east-1
+      MINIO_ENDPOINT: http://minio:9000
+      # Endpoints Nessie (dentro da rede Docker — não usar localhost)
+      NESSIE_ENDPOINT: http://nessie:19120/api/v1
+      NESSIE_ICEBERG_ENDPOINT: http://nessie:19120/iceberg/
+      # Conexão Trino (Setup via ENV para Infra-as-Code)
+      # Formato: trino://login:password@host:port
+      AIRFLOW_CONN_TRINO_LAKEHOUSE: trino://admin:@trino:8080
+      
+    ports:
+      - "8081:8080" # Porta 8081 para não conflitar com Trino
+    user: root # Forma mais simples de fazer o DockerOparator funcionar localmente sem confito de permissão no /var/run/docker.sock
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/logs:/opt/airflow/logs
+      - ./scrapy/:/opt/airflow/project/scrapy
+      - ./dbt/:/opt/airflow/project/dbt
+      - /var/run/docker.sock:/var/run/docker.sock # Permite o Airflow controlar o Docker no Host
+    networks:
+      - lakehouse-net
+    depends_on:
+      postgres:
+        condition: service_healthy
+      trino:
+        condition: service_healthy
+      postgres-init:
+        condition: service_completed_successfully
+    deploy:
+      resources:
+        limits:
+          memory: 3G
+        reservations:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+networks:
+  lakehouse-net:
+    driver: bridge
+
+volumes:
+  minio_data:
+  pg_data:

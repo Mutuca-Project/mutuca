@@ -1,0 +1,39 @@
+dag_id: ingestao_lattes_ssd
+description: "Pipeline de ingestão em lotes do Lattes via SSD externo"
+owner: ufpe-ova
+start_date: "2023-01-01"
+schedule: null
+
+# Branching por execução via Nessie (ADR 007).
+# Quando enabled: true, o factory.py gera as tasks:
+#   create_nessie_branch → ... → load_iceberg → merge_to_main → delete_branch
+#                                             ↘ (falha) delete_branch
+# from_ref: branch de origem para criação (padrão: main).
+branching:
+  enabled: true
+  from_ref: main
+
+scrapy:
+  spider: lattes_ssd
+  output: "s3://bronze/lattes_raw/lote_{{ ts_nodash }}.jsonl"
+  settings:
+    DOWNLOAD_DELAY: 0
+    CONCURRENT_REQUESTS: 32
+  mounts:
+    - source: /media/datafixer/f57a7a83-c2e6-48e4-a82c-bdfa502ac0bf/cvs
+      target: /mnt/ssd_lattes
+      read_only: true
+
+load_iceberg:
+  source_glob: "bronze/lattes_raw/lote_*.jsonl"
+  target_schema: bronze
+  target_table: lattes_raw
+  batch_size: 5
+  rename:
+    professional_performances: atuacoes_profissionais
+    research_projects: projetos_pesquisa
+    bibliographic_productions: producoes_bibliograficas
+
+offset_control:
+  variable: lattes_offset
+  batch_size: 100000

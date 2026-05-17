@@ -1,0 +1,102 @@
+# =====================================================
+# dbt core artifacts (runtime)
+# =====================================================
+
+# Compiled models, manifests & run artifacts
+target/
+
+# dbt dependencies (packages)
+dbt_packages/
+dbt_modules/
+
+nbs/data/*.*
+nbs/assets/**
+# Logs
+logs/
+*.log
+
+# =====================================================
+# dbt local state
+# =====================================================
+
+# Partial parsing cache
+.partial_parse.msgpack
+
+# Local dbt profiles (NUNCA versionar — exceto branch_validator que usa só env_var)
+profiles.yml
+!branch_validator/profiles.yml
+
+# Environment overrides
+.env
+.env.*
+.envrc
+
+# =====================================================
+# Credentials & secrets
+# =====================================================
+*.key
+*.pem
+*.p12
+*.crt
+*.cer
+service-account*.json
+credentials.*
+secrets.*
+
+# =====================================================
+# Python (dbt adapters / tooling)
+# =====================================================
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Packaging
+*.egg-info/
+dist/
+build/
+
+# =====================================================
+# Test & coverage (se houver)
+# =====================================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# =====================================================
+# IDEs / Editors
+# =====================================================
+
+# VSCode
+.vscode/
+
+# JetBrains
+.idea/
+*.iml
+
+# Vim / Emacs
+*.swp
+*~
+\#*\#
+
+# =====================================================
+# OS files
+# =====================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# =====================================================
+# Misc
+# =====================================================
+*.bak
+*.tmp
+*.orig

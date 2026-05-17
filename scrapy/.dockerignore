@@ -1,0 +1,18 @@
+# Ignorar ambiente virtual local (CRÍTICO)
+.venv/
+venv/
+env/
+
+# Ignorar cache e builds
+__pycache__/
+*.pyc
+.git/
+.pytest_cache/
+.mypy_cache/
+dbt_packages/
+logs/
+target/
+
+# Ignorar arquivos do Docker e Airflow locais
+docker-compose.yml
+Dockerfile
