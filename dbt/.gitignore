@@ -22,8 +22,9 @@ logs/
 # Partial parsing cache
 .partial_parse.msgpack
 
-# Local dbt profiles (NUNCA versionar)
+# Local dbt profiles (NUNCA versionar — exceto branch_validator que usa só env_var)
 profiles.yml
+!branch_validator/profiles.yml
 
 # Environment overrides
 .env
