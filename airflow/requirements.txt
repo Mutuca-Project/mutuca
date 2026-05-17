@@ -3,3 +3,5 @@ apache-airflow-providers-amazon
 apache-airflow-providers-docker
 pandas
 s3fs
+pynessie
+pyiceberg[pyarrow,s3]

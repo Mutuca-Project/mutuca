@@ -94,6 +94,29 @@ source ./dbt/.venv/bin/activate && uv sync --project dbt && deactivate
 
 ```
 
+#### Para operações manuais de branches Nessie (diagnóstico de infraestrutura)
+
+Este venv é usado apenas no host, para inspecionar e manipular branches diretamente no terminal,
+sem precisar do Airflow. Em produção, o `pynessie` roda dentro do container Airflow.
+
+```bash
+
+uv venv ./infrastructure/nessie/.venv
+source infrastructure/nessie/.venv/bin/activate && uv sync --project infrastructure/nessie && deactivate
+
+```
+
+O ponto de entrada CLI é sempre `airflow/dags/shared/nessie_client.py`:
+
+```bash
+source infrastructure/nessie/.venv/bin/activate
+
+python airflow/dags/shared/nessie_client.py hash main          # ver hash HEAD da main
+python airflow/dags/shared/nessie_client.py create minha-branch
+python airflow/dags/shared/nessie_client.py merge  minha-branch
+python airflow/dags/shared/nessie_client.py delete minha-branch
+```
+
 #### Para testar DAGs localmente (opcional, pois o Docker resolve isso)
 
 ```
