@@ -7,9 +7,15 @@ from airflow.hooks.base import BaseHook
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 from airflow.providers.docker.operators.docker import DockerOperator
+from airflow.utils.trigger_rule import TriggerRule
 from docker.types import Mount
 
 from shared.iceberg_loader import increment_offset, load_jsonl_to_iceberg
+from shared.nessie_client import (
+    create_branch as nessie_create_branch,
+    delete_branch as nessie_delete_branch,
+    merge_to_main as nessie_merge_to_main,
+)
 
 PIPELINES_DIR = Path(__file__).parent / "pipelines"
 
@@ -18,6 +24,41 @@ echo "--- BUILD SCRAPY ---"
 docker build -t lakehouse-scraper:latest /opt/airflow/project/scrapy
 """
 
+
+# ---------------------------------------------------------------------------
+# Callables de branching Nessie (ADR 007)
+# ---------------------------------------------------------------------------
+
+def _nessie_create_branch(dag_id: str, from_ref: str, **context) -> str:
+    """
+    Gera o nome da branch, cria no Nessie e retorna o nome via XCom.
+    Convenção: ingest_{dag_id}_{YYYYMMDD_HHmmss} (ADR 007).
+    O retorno é capturado automaticamente pelo Airflow como XCom.
+    """
+    ts = context["logical_date"].strftime("%Y%m%d_%H%M%S")
+    branch_name = f"ingest_{dag_id}_{ts}"
+    nessie_create_branch(branch_name, from_ref)
+    return branch_name
+
+
+def _nessie_merge(**context) -> None:
+    """Faz merge da branch de ingestão para main."""
+    branch_name = context["ti"].xcom_pull(task_ids="create_nessie_branch")
+    nessie_merge_to_main(branch_name)
+
+
+def _nessie_delete(**context) -> None:
+    """
+    Deleta a branch de ingestão. Roda com TriggerRule.ALL_DONE para
+    garantir limpeza em ambos os caminhos: sucesso e falha (ADR 007).
+    """
+    branch_name = context["ti"].xcom_pull(task_ids="create_nessie_branch")
+    nessie_delete_branch(branch_name)
+
+
+# ---------------------------------------------------------------------------
+# Helpers do factory
+# ---------------------------------------------------------------------------
 
 def _build_scrapy_command(scrapy_cfg: dict, offset_cfg: dict | None) -> str:
     spider = scrapy_cfg["spider"]
@@ -53,11 +94,23 @@ def _build_mounts(mounts_cfg: list) -> list:
     ]
 
 
+# ---------------------------------------------------------------------------
+# Factory principal
+# ---------------------------------------------------------------------------
+
 def create_dag(config: dict) -> DAG:
     dag_id = config["dag_id"]
     scrapy_cfg = config["scrapy"]
     load_cfg = config.get("load_iceberg")
     offset_cfg = config.get("offset_control")
+    branching_cfg = config.get("branching")
+    branching_enabled = bool(branching_cfg and branching_cfg.get("enabled"))
+
+    if branching_enabled and not load_cfg:
+        raise ValueError(
+            f"DAG '{dag_id}': branching.enabled=true requer a seção "
+            "load_iceberg definida no YAML."
+        )
 
     default_args = {
         "owner": config.get("owner", "mutuca"),
@@ -72,26 +125,35 @@ def create_dag(config: dict) -> DAG:
         dag_id,
         default_args=default_args,
         description=config.get("description", ""),
-        schedule_interval=config.get("schedule"),
+        schedule=config.get("schedule"),
         start_date=start_date,
         catchup=False,
         max_active_runs=1,
     )
 
     with dag:
+
+        # --- Branching: cria branch antes de tudo ---
+        if branching_enabled:
+            from_ref = branching_cfg.get("from_ref", "main")
+            create_branch_task = PythonOperator(
+                task_id="create_nessie_branch",
+                python_callable=_nessie_create_branch,
+                op_kwargs={"dag_id": dag_id, "from_ref": from_ref},
+            )
+
+        # --- Setup e Scrapy ---
         setup_env = BashOperator(
             task_id="setup_docker_env",
             bash_command=_BUILD_SCRIPT,
         )
-
-        mounts = _build_mounts(scrapy_cfg.get("mounts", []))
 
         run_scraper = DockerOperator(
             task_id=f"crawl_{scrapy_cfg['spider']}",
             image="lakehouse-scraper:latest",
             container_name=f"scraper_{dag_id}_ephemeral",
             api_version="auto",
-            auto_remove=True,
+            auto_remove="force",
             mount_tmp_dir=False,
             network_mode="mutuca-lakehouse_lakehouse-net",
             command=_build_scrapy_command(scrapy_cfg, offset_cfg),
@@ -103,40 +165,78 @@ def create_dag(config: dict) -> DAG:
                 "AWS_EC2_METADATA_DISABLED": "true",
             },
             docker_url="unix://var/run/docker.sock",
-            mounts=mounts,
+            mounts=_build_mounts(scrapy_cfg.get("mounts", [])),
         )
 
-        chain = [setup_env, run_scraper]
+        # [create_nessie_branch →] setup_docker_env → crawl_*
+        if branching_enabled:
+            create_branch_task >> setup_env
+        setup_env >> run_scraper
 
+        # --- Load Iceberg ---
         if load_cfg:
-            chain.append(
-                PythonOperator(
-                    task_id="load_to_iceberg",
-                    python_callable=load_jsonl_to_iceberg,
-                    op_kwargs={
-                        "source_glob": load_cfg["source_glob"],
-                        "target_schema": load_cfg["target_schema"],
-                        "target_table": load_cfg["target_table"],
-                        "batch_size": load_cfg.get("batch_size", 100),
-                        "rename": load_cfg.get("rename"),
-                    },
-                )
+            load_task = PythonOperator(
+                task_id="load_to_iceberg",
+                python_callable=load_jsonl_to_iceberg,
+                op_kwargs={
+                    "source_glob": load_cfg["source_glob"],
+                    "target_schema": load_cfg["target_schema"],
+                    "target_table": load_cfg["target_table"],
+                    "batch_size": load_cfg.get("batch_size", 100),
+                    "rename": load_cfg.get("rename"),
+                },
             )
+            run_scraper >> load_task
 
-        if offset_cfg:
-            chain.append(
-                PythonOperator(
-                    task_id="increment_batch_offset",
-                    python_callable=increment_offset,
-                    op_kwargs={
-                        "variable": offset_cfg["variable"],
-                        "batch_size": offset_cfg["batch_size"],
-                    },
+            if branching_enabled:
+                # Grafo de branching:
+                #
+                # load_to_iceberg → merge_to_main → [increment_offset] → delete_branch
+                #         └─────────────────────────────────────────────────────┘
+                #                           (ALL_DONE garante cleanup em falhas)
+
+                merge_task = PythonOperator(
+                    task_id="merge_to_main",
+                    python_callable=_nessie_merge,
                 )
-            )
+                delete_task = PythonOperator(
+                    task_id="delete_branch",
+                    python_callable=_nessie_delete,
+                    trigger_rule=TriggerRule.ALL_DONE,
+                )
 
-        for i in range(len(chain) - 1):
-            chain[i] >> chain[i + 1]
+                load_task >> merge_task
+                last_success_task = merge_task
+
+                if offset_cfg:
+                    offset_task = PythonOperator(
+                        task_id="increment_batch_offset",
+                        python_callable=increment_offset,
+                        op_kwargs={
+                            "variable": offset_cfg["variable"],
+                            "batch_size": offset_cfg["batch_size"],
+                        },
+                    )
+                    merge_task >> offset_task
+                    last_success_task = offset_task
+
+                # delete depende do último task do caminho de sucesso
+                # e também diretamente de load_task (caminho de falha)
+                last_success_task >> delete_task
+                load_task >> delete_task
+
+            else:
+                # Sem branching: fluxo original
+                if offset_cfg:
+                    offset_task = PythonOperator(
+                        task_id="increment_batch_offset",
+                        python_callable=increment_offset,
+                        op_kwargs={
+                            "variable": offset_cfg["variable"],
+                            "batch_size": offset_cfg["batch_size"],
+                        },
+                    )
+                    load_task >> offset_task
 
     return dag
 
