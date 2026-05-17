@@ -1,4 +1,21 @@
+"""
+iceberg_loader.py — Loader genérico de dados JSONL para tabelas Iceberg.
+
+Dois caminhos de escrita (selecionados automaticamente via XCom):
+
+  • PyIceberg + RestCatalog com prefix=branch_name  (branching habilitado no YAML)
+    Escreve na branch de ingestão isolada antes do merge para main (ADR 007).
+
+  • Trino INSERT (sem branching)
+    Comportamento original: escreve diretamente em main.
+
+PRÉ-REQUISITO: a tabela alvo deve existir antes da primeira execução.
+Este módulo apenas insere dados — não cria nem altera tabelas.
+"""
+
 import json
+import os
+from datetime import datetime, timezone
 
 import pandas as pd
 import s3fs
@@ -10,9 +27,16 @@ TRINO_PORT = 8080
 TRINO_USER = "airflow"
 TRINO_CATALOG = "iceberg"
 
+# URI do endpoint Iceberg REST do Nessie (dentro da rede Docker)
+NESSIE_ICEBERG_URI = os.getenv("NESSIE_ICEBERG_ENDPOINT", "http://nessie:19120/iceberg/")
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 
 def _coerce(value) -> str | None:
-    """Converte um valor Python para str compatível com Trino VARCHAR."""
+    """Converte um valor Python para str compatível com Trino/Iceberg VARCHAR."""
     if value is None:
         return None
     if isinstance(value, (dict, list)):
@@ -25,6 +49,27 @@ def _coerce(value) -> str | None:
     return str(value)
 
 
+def _pyiceberg_catalog(branch_name: str, s3_conn):
+    """Retorna um RestCatalog PyIceberg apontando para a branch especificada."""
+    from pyiceberg.catalog.rest import RestCatalog
+
+    return RestCatalog(
+        name="nessie",
+        uri=NESSIE_ICEBERG_URI,
+        prefix=branch_name,
+        **{
+            "s3.endpoint": s3_conn.extra_dejson.get("endpoint_url"),
+            "s3.access-key-id": s3_conn.login,
+            "s3.secret-access-key": s3_conn.password,
+            "s3.path-style-access": "true",
+        },
+    )
+
+
+# ---------------------------------------------------------------------------
+# Função principal
+# ---------------------------------------------------------------------------
+
 def load_jsonl_to_iceberg(
     source_glob: str,
     target_schema: str,
@@ -34,25 +79,23 @@ def load_jsonl_to_iceberg(
     **context,
 ):
     """
-    Carrega arquivos JSONL do MinIO em uma tabela Iceberg via Trino.
+    Carrega arquivos JSONL do MinIO em uma tabela Iceberg.
 
-    Todos os campos presentes no JSONL são inseridos automaticamente — não é necessário
-    declarar o schema no YAML. Tipos complexos (dict, list) são serializados com
-    json.dumps para VARCHAR. A coluna data_extracao é sempre adicionada via
-    CURRENT_TIMESTAMP e não deve ser declarada no JSONL nem no pipeline YAML.
+    Quando executada num DAG com branching habilitado (ADR 007), lê o nome
+    da branch via XCom da task 'create_nessie_branch' e usa PyIceberg para
+    escrever na branch isolada. Sem branching, usa o caminho Trino original.
 
     Parâmetros:
         source_glob:   Caminho glob no MinIO (ex: "bronze/lattes_raw/lote_*.jsonl").
         target_schema: Schema Iceberg alvo (ex: "bronze").
         target_table:  Tabela Iceberg alvo (ex: "lattes_raw").
-        batch_size:    Linhas por INSERT. Reduza para 50 se os JSONs forem grandes.
-        rename:        Renomeação opcional de campos do JSONL para colunas da tabela
-                       (ex: {"profetional_performances": "atuacoes_profissionais"}).
-
-    PRÉ-REQUISITO: a tabela alvo deve existir no Trino antes da primeira execução.
-    Este módulo apenas insere dados — ele não cria nem altera tabelas.
-    Use CREATE TABLE no Trino com o schema esperado antes de ativar o pipeline.
+        batch_size:    Linhas por INSERT no caminho Trino. Ignorado no caminho
+                       PyIceberg (cada arquivo JSONL gera um único arquivo Parquet).
+        rename:        Renomeação opcional de campos do JSONL para colunas da tabela.
     """
+    ti = context.get("ti")
+    branch_name = ti.xcom_pull(task_ids="create_nessie_branch") if ti else None
+
     s3_conn = BaseHook.get_connection("minio_s3_connection")
     fs = s3fs.S3FileSystem(
         key=s3_conn.login,
@@ -60,6 +103,69 @@ def load_jsonl_to_iceberg(
         client_kwargs={"endpoint_url": s3_conn.extra_dejson.get("endpoint_url")},
     )
 
+    base_path = source_glob.rsplit("/", 1)[0]
+    processed_path = f"{base_path}/processed"
+
+    files = fs.glob(source_glob)
+    if not files:
+        raise FileNotFoundError(f"Nenhum arquivo encontrado em {source_glob}")
+
+    if branch_name:
+        _load_via_pyiceberg(
+            files, fs, processed_path, branch_name, s3_conn,
+            target_schema, target_table, rename,
+        )
+    else:
+        _load_via_trino(
+            files, fs, processed_path,
+            target_schema, target_table, batch_size, rename,
+        )
+
+
+def _load_via_pyiceberg(
+    files, fs, processed_path, branch_name, s3_conn,
+    target_schema, target_table, rename,
+):
+    """Escrita via PyIceberg na branch de ingestão isolada (ADR 007)."""
+    import pyarrow as pa
+
+    catalog = _pyiceberg_catalog(branch_name, s3_conn)
+    iceberg_table = catalog.load_table(f"{target_schema}.{target_table}")
+
+    for file_path in files:
+        print(f"[branch={branch_name}] Lendo {file_path}...")
+        with fs.open(file_path, "rb") as f:
+            df = pd.read_json(f, lines=True)
+
+        if rename:
+            df = df.rename(columns=rename)
+
+        # Coerce para str (mesmo comportamento do caminho Trino)
+        for col in df.columns:
+            df[col] = df[col].apply(_coerce)
+
+        # Adiciona data_extracao como primeira coluna
+        df.insert(0, "data_extracao", datetime.now(timezone.utc))
+
+        # Converte para PyArrow e anexa à tabela na branch
+        # PyIceberg mapeia colunas por nome — ordem não é crítica
+        arrow_df = pa.Table.from_pandas(df, preserve_index=False)
+        iceberg_table.append(arrow_df)
+
+        filename = file_path.split("/")[-1]
+        print(f"  {filename}: {len(df)} linhas inseridas na branch '{branch_name}'.")
+
+        dest = f"{processed_path}/{filename}"
+        fs.cp_file(file_path, dest)
+        fs.rm(file_path)
+        print(f"  {filename} movido para processed/.")
+
+
+def _load_via_trino(
+    files, fs, processed_path,
+    target_schema, target_table, batch_size, rename,
+):
+    """Escrita via Trino INSERT direto em main (sem branching)."""
     trino_conn = connect(
         host=TRINO_HOST,
         port=TRINO_PORT,
@@ -68,13 +174,6 @@ def load_jsonl_to_iceberg(
         schema=target_schema,
     )
     cursor = trino_conn.cursor()
-
-    base_path = source_glob.rsplit("/", 1)[0]
-    processed_path = f"{base_path}/processed"
-
-    files = fs.glob(source_glob)
-    if not files:
-        raise FileNotFoundError(f"Nenhum arquivo encontrado em {source_glob}")
 
     for file_path in files:
         print(f"Lendo {file_path}...")
@@ -108,10 +207,14 @@ def load_jsonl_to_iceberg(
         dest = f"{processed_path}/{filename}"
         fs.cp_file(file_path, dest)
         fs.rm(file_path)
-        print(f"Arquivo {filename} movido para processed/.")
+        print(f"  {filename} movido para processed/.")
 
     trino_conn.close()
 
+
+# ---------------------------------------------------------------------------
+# Offset control
+# ---------------------------------------------------------------------------
 
 def increment_offset(variable: str, batch_size: int, **context):
     from airflow.models import Variable
