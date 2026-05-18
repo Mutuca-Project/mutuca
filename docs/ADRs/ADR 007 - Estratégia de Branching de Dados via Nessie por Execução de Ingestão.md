@@ -151,10 +151,11 @@ começando por `lattes_ssd` como piloto (issue #59).
 - ✅ Issues #53, #54: ambiente Nessie operacional e pynessie funcionando
 - ✅ Issue #56: mecanismo de escrita em branch definido (PyIceberg `RestCatalog` com `prefix`)
 - ✅ Issue #55: `airflow/dags/shared/nessie_client.py` implementado e validado (create / merge / delete)
-- 🔧 Issue #57: seção `branching` no YAML dos pipelines (próximo passo)
-- 🔧 Issue #58: atualização do `factory.py` para gerar as tasks de branching
-- 🔜 Issue #59: piloto no pipeline `lattes_ssd`
-- 🔜 Issue #60: integração do `dbt test` como gate de validação
+- ✅ Issue #57: seção `branching` adicionada ao `lattes.yaml`
+- ✅ Issue #58: `factory.py` atualizado para gerar as tasks de branching
+- ✅ Issue #59: piloto no pipeline `lattes_ssd` — fluxo completo validado em produção
+- ✅ Issue #60: gate `dbt test` integrado e validado (PASS=3 WARN=1 ERROR=0 em 53.893 linhas)
 
-O caminho crítico atual é #57 → #58 → #59. O piloto `lattes_ssd` será o primeiro pipeline a
-ativar o branching em produção. A extensão aos demais pipelines ocorre após o piloto validado.
+O piloto `lattes_ssd` está em produção com branching completo. A extensão aos demais pipelines
+(`caruaru`, RFB CNPJ) ocorre quando cada fonte tiver `load_iceberg` configurado e testes
+de qualidade definidos no `branch_validator`. Ver ADR 008 para os detalhes do gate dbt.
