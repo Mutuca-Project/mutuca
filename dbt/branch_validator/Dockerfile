@@ -17,9 +17,11 @@ RUN pip install --no-cache-dir \
     "dbt-duckdb>=1.8,<2.0" \
     "pyiceberg[pyarrow,s3]==0.11.1"
 
-# O projeto dbt é montado em tempo de execução pelo DockerOperator.
-# O profiles.yml vem junto com o projeto montado.
+# O projeto dbt (incluindo profiles.yml) é baked-in na imagem em tempo de build.
+# DBT_PROFILES_DIR aponta para o WORKDIR para que o dbt encontre o profiles.yml
+# sem precisar de --profiles-dir explícito no comando.
 WORKDIR /dbt/branch_validator
+ENV DBT_PROFILES_DIR=/dbt/branch_validator
 
 # Ponto de entrada flexível:
 # - Em produção (DockerOperator): CMD = ["test", "--target", "branch_validation", ...]
