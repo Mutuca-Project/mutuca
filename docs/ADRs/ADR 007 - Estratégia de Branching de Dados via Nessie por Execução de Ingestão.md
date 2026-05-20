@@ -137,8 +137,10 @@ começando por `lattes_ssd` como piloto (issue #59).
   usar o `RestCatalog` do PyIceberg com `prefix=branch_name` para escrever e ler na branch correta.
   O Trino não suporta seleção de branch via `session_properties` com `catalog.type=rest` — tentativas
   retornam `INVALID_SESSION_PROPERTY`. Isso implica uma arquitetura split: PyIceberg para escrita em
-  branches de ingestão; Trino para consultas analíticas (sempre aponta para `main`). A integração
-  do `iceberg_loader.py` com PyIceberg é realizada na issue #55.
+  branches de ingestão; Trino para consultas analíticas (sempre aponta para `main`). O
+  `iceberg_loader.py` implementa ambos os caminhos: `_load_via_pyiceberg()` (selecionado quando
+  `create_nessie_branch` popula o XCom) e `_load_via_trino()` (pipelines sem branching). Concluído
+  como parte do piloto `lattes_ssd` (maio de 2026).
 - **Nessie/PostgreSQL como ponto único de falha:** Se o catálogo Nessie estiver indisponível,
   nenhuma ingestão com branching pode prosseguir. O design atual não prevê fallback para escrita
   direta em `main` — isso é intencional (não contaminar produção), mas implica que a disponibilidade
@@ -149,11 +151,13 @@ começando por `lattes_ssd` como piloto (issue #59).
 **Estado de implementação (maio de 2026):**
 
 - ✅ Issues #53, #54: ambiente Nessie operacional e pynessie funcionando
-- ✅ Issue #56: mecanismo de escrita em branch definido (PyIceberg `RestCatalog` com `prefix`)
 - ✅ Issue #55: `airflow/dags/shared/nessie_client.py` implementado e validado (create / merge / delete)
+- ✅ Issue #56: mecanismo de escrita em branch definido (PyIceberg `RestCatalog` com `prefix`)
 - ✅ Issue #57: seção `branching` adicionada ao `lattes.yaml`
 - ✅ Issue #58: `factory.py` atualizado para gerar as tasks de branching
-- ✅ Issue #59: piloto no pipeline `lattes_ssd` — fluxo completo validado em produção
+- ✅ Issue #59: piloto no pipeline `lattes_ssd` — fluxo completo validado em produção; inclui
+  migração do `iceberg_loader.py` para arquitetura de dois caminhos (`_load_via_pyiceberg` e
+  `_load_via_trino`)
 - ✅ Issue #60: gate `dbt test` integrado e validado (PASS=3 WARN=1 ERROR=0 em 53.893 linhas)
 
 O piloto `lattes_ssd` está em produção com branching completo. A extensão aos demais pipelines
