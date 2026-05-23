@@ -1,13 +1,39 @@
 version: 2
 
+# dbt/lakehouse/models/sources.yml
+#
+# Declara as fontes Bronze para os modelos Silver/Gold de produção.
+# Esta camada usa dbt-trino (motor: Trino + catálogo Iceberg).
+#
+# ATENÇÃO: esta configuração é separada de dbt/branch_validator/ (que usa dbt-duckdb
+# para validação pré-merge em branches isoladas do Nessie).
+#
+# Adicione fontes conforme os primeiros modelos Silver forem criados.
+#
+# Referência de schema:
+#   database: iceberg
+#   schema: bronze  → tabelas brutas imutáveis
+#   schema: silver  → destino dos primeiros modelos Silver
+
 sources:
-  - name: lakehouse
+  - name: bronze
     database: iceberg
     schema: bronze
     tables:
-      - name: quotes
-        description: "Tabela bruta de citações"
-        # Opcional: Freshness check (alerta se dados ficarem velhos)
-        loaded_at_field: ingestion_at
+      - name: rfb_cnpj_empresas
+        description: "Empresas cadastradas na Receita Federal — dado bruto (CNPJ). Layout: 7 campos VARCHAR + data_extracao."
+        loaded_at_field: data_extracao
         freshness:
-          warn_after: {count: 24, period: hour}
+          warn_after: {count: 90, period: day}
+
+      - name: rfb_cnpj_estabelecimentos
+        description: "Estabelecimentos CNPJ — dado bruto. Layout: 30 campos VARCHAR + data_extracao."
+        loaded_at_field: data_extracao
+        freshness:
+          warn_after: {count: 90, period: day}
+
+      - name: rfb_cnpj_socios
+        description: "QSA — Quadro de Sócios e Administradores — dado bruto. Layout: 11 campos VARCHAR + data_extracao."
+        loaded_at_field: data_extracao
+        freshness:
+          warn_after: {count: 90, period: day}
