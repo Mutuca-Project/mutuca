@@ -11,6 +11,7 @@ from airflow.utils.trigger_rule import TriggerRule
 from docker.types import Mount
 
 from shared.iceberg_loader import increment_offset, load_jsonl_to_iceberg
+from shared.rfb_csv_loader import load_csv_to_iceberg
 from shared.nessie_client import (
     create_branch as nessie_create_branch,
     delete_branch as nessie_delete_branch,
@@ -105,16 +106,23 @@ def _build_mounts(mounts_cfg: list) -> list:
 
 def create_dag(config: dict) -> DAG:
     dag_id = config["dag_id"]
-    scrapy_cfg = config["scrapy"]
+    scrapy_cfg = config.get("scrapy")          # opcional: ausente em pipelines sem scraping
     load_cfg = config.get("load_iceberg")
+    load_csv_cfg = config.get("load_csv")      # loader CSV do HD externo (ex: RFB CNPJ)
     offset_cfg = config.get("offset_control")
     branching_cfg = config.get("branching")
     branching_enabled = bool(branching_cfg and branching_cfg.get("enabled"))
 
-    if branching_enabled and not load_cfg:
+    if branching_enabled and not load_cfg and not load_csv_cfg:
         raise ValueError(
             f"DAG '{dag_id}': branching.enabled=true requer a seção "
-            "load_iceberg definida no YAML."
+            "load_iceberg ou load_csv definida no YAML."
+        )
+
+    if load_csv_cfg and not branching_enabled:
+        raise ValueError(
+            f"DAG '{dag_id}': load_csv requer branching.enabled=true. "
+            "A carga de CSVs do HD externo só opera via branch Nessie isolada."
         )
 
     default_args = {
@@ -147,11 +155,34 @@ def create_dag(config: dict) -> DAG:
                 op_kwargs={"dag_id": dag_id, "from_ref": from_ref},
             )
 
-        # --- Setup e Scrapy ---
-        setup_env = BashOperator(
-            task_id="setup_docker_env",
-            bash_command=_BUILD_SCRAPY_SCRIPT,
-        )
+        # --- Setup e Scrapy (opcionais) ---
+        # Pipelines sem seção scrapy (ex: rfb_cnpj — dados já no HD)
+        # não geram setup_docker_env nem crawl_*.
+        if scrapy_cfg:
+            setup_env = BashOperator(
+                task_id="setup_docker_env",
+                bash_command=_BUILD_SCRAPY_SCRIPT,
+            )
+
+            run_scraper = DockerOperator(
+                task_id=f"crawl_{scrapy_cfg['spider']}",
+                image="lakehouse-scraper:latest",
+                container_name=f"scraper_{dag_id}_ephemeral",
+                api_version="auto",
+                auto_remove="force",
+                mount_tmp_dir=False,
+                network_mode="mutuca-lakehouse_lakehouse-net",
+                command=_build_scrapy_command(scrapy_cfg, offset_cfg),
+                environment={
+                    "AWS_ACCESS_KEY_ID": conn.login,
+                    "AWS_SECRET_ACCESS_KEY": conn.password,
+                    "AWS_ENDPOINT_URL": conn.extra_dejson.get("endpoint_url"),
+                    "AWS_REGION_NAME": "us-east-1",
+                    "AWS_EC2_METADATA_DISABLED": "true",
+                },
+                docker_url="unix://var/run/docker.sock",
+                mounts=_build_mounts(scrapy_cfg.get("mounts", [])),
+            )
 
         if branching_enabled:
             build_dbt_validator = BashOperator(
@@ -159,37 +190,43 @@ def create_dag(config: dict) -> DAG:
                 bash_command=_BUILD_DBT_VALIDATOR_SCRIPT,
             )
 
-        run_scraper = DockerOperator(
-            task_id=f"crawl_{scrapy_cfg['spider']}",
-            image="lakehouse-scraper:latest",
-            container_name=f"scraper_{dag_id}_ephemeral",
-            api_version="auto",
-            auto_remove="force",
-            mount_tmp_dir=False,
-            network_mode="mutuca-lakehouse_lakehouse-net",
-            command=_build_scrapy_command(scrapy_cfg, offset_cfg),
-            environment={
-                "AWS_ACCESS_KEY_ID": conn.login,
-                "AWS_SECRET_ACCESS_KEY": conn.password,
-                "AWS_ENDPOINT_URL": conn.extra_dejson.get("endpoint_url"),
-                "AWS_REGION_NAME": "us-east-1",
-                "AWS_EC2_METADATA_DISABLED": "true",
-            },
-            docker_url="unix://var/run/docker.sock",
-            mounts=_build_mounts(scrapy_cfg.get("mounts", [])),
-        )
-
-        # [create_nessie_branch →] setup_docker_env + build_dbt_validator → crawl_*
-        if branching_enabled:
-            create_branch_task >> setup_env
-            create_branch_task >> build_dbt_validator
-            # O scraper e o build do validador são independentes — rodam em paralelo
-            # para aproveitar o tempo de espera do build do scraper.
-            [setup_env, build_dbt_validator] >> run_scraper
+        # --- Grafo de dependências: scraping ---
+        if scrapy_cfg:
+            if branching_enabled:
+                # [create_nessie_branch →] setup_docker_env + build_dbt_validator → crawl_*
+                create_branch_task >> setup_env
+                create_branch_task >> build_dbt_validator
+                [setup_env, build_dbt_validator] >> run_scraper
+            else:
+                setup_env >> run_scraper
+            last_ingestion_task = run_scraper
         else:
-            setup_env >> run_scraper
+            # Sem scrapy: branch → build_dbt_validator (sem crawl)
+            if branching_enabled:
+                last_ingestion_task = build_dbt_validator
+            else:
+                last_ingestion_task = None
 
-        # --- Load Iceberg ---
+        # --- Load CSV do HD externo (ex: RFB CNPJ) ---
+        if load_csv_cfg:
+            load_csv_task = PythonOperator(
+                task_id="load_csv_to_iceberg",
+                python_callable=load_csv_to_iceberg,
+                op_kwargs={
+                    "source_mount": load_csv_cfg["source_mount"],
+                    "tables": load_csv_cfg["tables"],
+                    "chunk_size": load_csv_cfg.get("chunk_size", 500_000),
+                    "encoding": load_csv_cfg.get("encoding", "latin-1"),
+                    "separator": load_csv_cfg.get("separator", ";"),
+                },
+            )
+            if last_ingestion_task:
+                last_ingestion_task >> load_csv_task
+            elif branching_enabled:
+                create_branch_task >> load_csv_task
+            last_ingestion_task = load_csv_task
+
+        # --- Load Iceberg (JSONL — caminho original) ---
         if load_cfg:
             load_task = PythonOperator(
                 task_id="load_to_iceberg",
@@ -202,13 +239,15 @@ def create_dag(config: dict) -> DAG:
                     "rename": load_cfg.get("rename"),
                 },
             )
-            run_scraper >> load_task
+            if last_ingestion_task:
+                last_ingestion_task >> load_task
+            last_ingestion_task = load_task
 
             if branching_enabled:
                 # Grafo de branching:
                 #
-                # load_to_iceberg → dbt_test_branch → merge_to_main → [increment_offset] → delete_branch
-                #         └──────────────────────────────────────────────────────────────────────┘
+                # [load_csv_to_iceberg |] load_to_iceberg → dbt_test_branch → merge_to_main → [increment_offset] → delete_branch
+                #         └────────────────────────────────────────────────────────────────────────────────────────────────────┘
                 #                                    (ALL_DONE garante cleanup em falhas)
                 #
                 # Se dbt_test_branch falhar (dados ruins), merge é bloqueado e delete
@@ -257,7 +296,9 @@ def create_dag(config: dict) -> DAG:
                     trigger_rule=TriggerRule.ALL_DONE,
                 )
 
-                load_task >> dbt_test_task >> merge_task
+                # last_ingestion_task aponta para o último task de carga
+                # (load_to_iceberg ou load_csv_to_iceberg, dependendo do YAML)
+                last_ingestion_task >> dbt_test_task >> merge_task
                 last_success_task = merge_task
 
                 if offset_cfg:
@@ -273,9 +314,9 @@ def create_dag(config: dict) -> DAG:
                     last_success_task = offset_task
 
                 # delete depende do último task do caminho de sucesso
-                # e de load_task (caminho de falha em load ou dbt)
+                # e do primeiro task de carga (cleanup em caso de falha no load ou no dbt)
                 last_success_task >> delete_task
-                load_task >> delete_task
+                last_ingestion_task >> delete_task
 
             else:
                 # Sem branching: fluxo original
@@ -288,7 +329,7 @@ def create_dag(config: dict) -> DAG:
                             "batch_size": offset_cfg["batch_size"],
                         },
                     )
-                    load_task >> offset_task
+                    last_ingestion_task >> offset_task
 
     return dag
 

@@ -1,0 +1,49 @@
+dag_id: ingestao_rfb_cnpj
+description: "Ingestão dos dados abertos de CNPJ da Receita Federal — Bronze"
+owner: teopolitica
+start_date: "2023-01-01"
+schedule: null  # execução sempre manual
+
+# Branching por execução via Nessie (ADR 007).
+# Cada carga abre uma branch isolada, valida com dbt e mergeia para main.
+branching:
+  enabled: true
+  from_ref: main
+
+# Seção scrapy ausente: este pipeline parte do HD externo já populado.
+# Para executar o download de novos lotes, rode a spider rfb_cnpj diretamente:
+#   scrapy crawl dados_abertos_receita_federal_cnpj
+# e depois dispare este DAG manualmente para carregar os novos arquivos.
+
+load_csv:
+  # Caminho do HD externo DENTRO do container Airflow (bind mount via docker-compose).
+  # No host: configurado em RFB_CNPJ_HD_PATH no .env
+  # No container: /mnt/hd_rfb (fixo — não alterar aqui)
+  source_mount: /mnt/hd_rfb
+
+  # Linhas por arquivo Parquet gerado no Iceberg.
+  # 100k linhas ~ 10-30 MB por Parquet — adequado para MinIO em HD externo (USB).
+  # Arquivos maiores aumentam o risco de timeout S3 (curlCode 28) durante upload.
+  # Aumentar para 300000 apenas se o armazenamento for NVMe local.
+  chunk_size: 100000
+
+  encoding: latin-1   # encoding padrão dos arquivos da Receita Federal
+  separator: ";"      # separador padrão dos arquivos da Receita Federal
+
+  # Mapeamento arquivo → tabela Iceberg.
+  # Os CSVs da RFB não têm header — as colunas são definidas em rfb_csv_loader.py
+  # conforme o layout oficial publicado pela Receita Federal.
+  tables:
+    # Nomenclatura real dos arquivos extraídos do ZIP da RFB:
+    # K3241.K03200Y*.D30311.EMPRECSV / .ESTABELE / .SOCIOCSV
+    - file_pattern: "*.EMPRECSV"
+      target_schema: bronze
+      target_table: rfb_cnpj_empresas
+
+    - file_pattern: "*.ESTABELE"
+      target_schema: bronze
+      target_table: rfb_cnpj_estabelecimentos
+
+    - file_pattern: "*.SOCIOCSV"
+      target_schema: bronze
+      target_table: rfb_cnpj_socios
