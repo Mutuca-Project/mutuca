@@ -1,6 +1,6 @@
 version: 2
 
-## Declaração da fonte Bronze e testes de qualidade para lattes_raw.
+## Declaração da fonte Bronze e testes de qualidade.
 ##
 ## Executados pelo gate dbt_test_branch ANTES do merge para main (ADR 007).
 ## Falha em qualquer teste com severity: error bloqueia o merge e dispara
@@ -17,6 +17,11 @@ sources:
       de ingestão isolada (ADR 007). O plugin iceberg_branch do dbt-duckdb
       roteia as leituras para a branch especificada em NESSIE_BRANCH.
     tables:
+
+      # ------------------------------------------------------------------
+      # Lattes — Currículos da Plataforma Lattes (CNPq)
+      # Pipeline: ingestao_lattes_ssd (lattes.yaml)
+      # ------------------------------------------------------------------
       - name: lattes_raw
         description: "Currículos Lattes coletados do SSD externo."
         meta:
@@ -46,3 +51,77 @@ sources:
               - not_null:
                   config:
                     severity: warn   # Lattes incompletos podem não ter nome
+
+      # ------------------------------------------------------------------
+      # RFB CNPJ — Dados Abertos da Receita Federal
+      # Pipeline: ingestao_rfb_cnpj (rfb_cnpj.yaml)
+      # Loader:   rfb_csv_loader.py (CSV do HD externo → PyIceberg)
+      # ------------------------------------------------------------------
+      - name: rfb_cnpj_empresas
+        description: >
+          Dados cadastrais das empresas (CNPJ básico, razão social, natureza
+          jurídica, porte, capital social). Fonte: Receita Federal — layout oficial.
+        meta:
+          plugin: iceberg_branch
+          table: bronze.rfb_cnpj_empresas
+        columns:
+          - name: data_extracao
+            description: "Timestamp UTC de quando a linha foi carregada pelo loader."
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+          - name: cnpj_basico
+            description: "Raiz do CNPJ (8 dígitos). Chave de junção com Estabelecimentos e Socios."
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+
+      - name: rfb_cnpj_estabelecimentos
+        description: >
+          Dados de endereço e situação cadastral de cada estabelecimento
+          (CNPJ completo = basico + ordem + dv, CNAE principal, UF, município).
+        meta:
+          plugin: iceberg_branch
+          table: bronze.rfb_cnpj_estabelecimentos
+        columns:
+          - name: data_extracao
+            description: "Timestamp UTC de quando a linha foi carregada pelo loader."
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+          - name: cnpj_basico
+            description: "Raiz do CNPJ (8 dígitos)."
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+          - name: cnae_fiscal_principal
+            description: "CNAE primário do estabelecimento. Alvo: 9491000 (organizações religiosas)."
+            tests:
+              - not_null:
+                  config:
+                    severity: warn
+
+      - name: rfb_cnpj_socios
+        description: >
+          Quadro de Sócios e Administradores (QSA). Contém nome, CPF/CNPJ
+          e qualificação de cada sócio. Chave para o match societário da investigação.
+        meta:
+          plugin: iceberg_branch
+          table: bronze.rfb_cnpj_socios
+        columns:
+          - name: data_extracao
+            description: "Timestamp UTC de quando a linha foi carregada pelo loader."
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+          - name: cnpj_basico
+            description: "Raiz do CNPJ (8 dígitos). Chave de junção com Empresas."
+            tests:
+              - not_null:
+                  config:
+                    severity: error

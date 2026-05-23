@@ -1,0 +1,20 @@
+# docker-compose.hd.yml — Override para uso com HD externo
+#
+# Substitui o volume Docker nomeado do MinIO por um bind mount no HD externo.
+# Útil quando o armazenamento interno é insuficiente para o volume de dados
+# (ex: investigações com dados da RFB, TSE ou outros conjuntos de vários GBs).
+#
+# Uso:
+#   make up-hd            (via Makefile — recomendado)
+#
+#   docker compose -f docker-compose.yml -f docker-compose.hd.yml up -d
+#
+# Pré-requisito:
+#   MINIO_DATA_PATH deve estar definido no .env com o caminho do HD externo.
+#   Exemplo: MINIO_DATA_PATH=/media/datafixer/Expansion/DATALAKE/MINIO
+#   O diretório deve existir antes do primeiro `up-hd`.
+
+services:
+  minio:
+    volumes:
+      - ${MINIO_DATA_PATH}:/data

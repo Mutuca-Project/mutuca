@@ -209,6 +209,12 @@ services:
       - ./scrapy/:/opt/airflow/project/scrapy
       - ./dbt/:/opt/airflow/project/dbt
       - /var/run/docker.sock:/var/run/docker.sock # Permite o Airflow controlar o Docker no Host
+      # HD externo com CSVs da Receita Federal.
+      # Configure RFB_CNPJ_HD_PATH no .env com o caminho completo no host.
+      # Ex: RFB_CNPJ_HD_PATH=/media/datafixer/<UUID>/rfb_cnpj
+      # Deixe comentado se o HD não estiver conectado — o Airflow não iniciará
+      # se o bind mount apontar para um diretório inexistente no host.
+      - ${RFB_CNPJ_HD_PATH}:/mnt/hd_rfb:ro
     networks:
       - lakehouse-net
     depends_on:
@@ -235,5 +241,5 @@ networks:
     driver: bridge
 
 volumes:
-  minio_data:
+  minio_data:   # padrão: volume Docker gerenciado no armazenamento local
   pg_data:

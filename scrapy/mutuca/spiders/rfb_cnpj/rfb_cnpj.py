@@ -27,8 +27,12 @@ class ReceitaFederalCnpjSpider(Spider):
 
     def parse(self, response: Response, **kwargs: Any) -> Any:
 
+        # Captura todos os diretórios de data disponíveis no site.
+        # O padrão "20" cobre 2023, 2024, 2025, 2026 e anos futuros.
+        # Anteriormente hardcoded para '2023' (execução inicial interrompida);
+        # agora genérico para cobrir o escopo completo da investigação.
         date_directories = response.xpath(
-            "//td/a[starts-with(@href, '2023')]/@href"
+            "//td/a[starts-with(@href, '20')]/@href"
         ).getall()
 
         for date_directory in date_directories:
