@@ -18,6 +18,7 @@ PRÉ-REQUISITO: as três tabelas Iceberg devem existir antes da primeira execuç
 Ver: sql/create_tables_rfb_cnpj.sql
 """
 
+import gc
 import glob
 import os
 import time
@@ -198,7 +199,8 @@ def _garantir_codec(iceberg_table, catalog, schema: str, table: str):
 def load_csv_to_iceberg(
     source_mount: str,
     tables: list[dict],
-    chunk_size: int = 500_000,
+    chunk_size: int = 100_000,
+    chunks_por_append: int = 10,
     encoding: str = "latin-1",
     separator: str = ";",
     **context,
@@ -207,11 +209,15 @@ def load_csv_to_iceberg(
     Carrega CSVs do HD externo em tabelas Iceberg via PyIceberg na branch Nessie.
 
     Parâmetros (injetados pelo factory a partir do YAML load_csv):
-        source_mount:  Caminho do HD no container (ex: /mnt/hd_rfb).
-        tables:        Lista de dicts com file_pattern, target_schema, target_table.
-        chunk_size:    Linhas por Parquet gerado (padrão: 500_000).
-        encoding:      Encoding dos CSVs (padrão: latin-1).
-        separator:     Separador de campos (padrão: ;).
+        source_mount:      Caminho do HD no container (ex: /mnt/hd_rfb).
+        tables:            Lista de dicts com file_pattern, target_schema, target_table.
+        chunk_size:        Linhas por chunk pandas (padrão: 100_000).
+        chunks_por_append: Quantos chunks pandas acumular antes de cada append Iceberg
+                           (padrão: 10 → 1M linhas / ~100MB por snapshot Parquet).
+                           Reduzir para 5 se o Airflow atingir limite de memória.
+                           Aumentar com cuidado: cada append cria um snapshot Iceberg.
+        encoding:          Encoding dos CSVs (padrão: latin-1).
+        separator:         Separador de campos (padrão: ;).
     """
     ti = context.get("ti")
     branch_name = ti.xcom_pull(task_ids="create_nessie_branch") if ti else None
@@ -240,6 +246,7 @@ def load_csv_to_iceberg(
             target_schema=target_schema,
             target_table=target_table,
             chunk_size=chunk_size,
+            chunks_por_append=chunks_por_append,
             encoding=encoding,
             separator=separator,
             branch_name=branch_name,
@@ -255,6 +262,7 @@ def _processar_tabela(
     target_schema: str,
     target_table: str,
     chunk_size: int,
+    chunks_por_append: int,
     encoding: str,
     separator: str,
     branch_name: str,
@@ -291,6 +299,8 @@ def _processar_tabela(
 
         total_linhas = 0
         num_chunk = 0
+        num_append = 0
+        batch: list[pd.DataFrame] = []   # acumulador de chunks antes do append
 
         reader = pd.read_csv(
             arquivo,
@@ -305,27 +315,53 @@ def _processar_tabela(
                                  # "Buffer overflow" nos arquivos brutos da RFB
         )
 
-        for chunk_df in reader:
-            num_chunk += 1
-
-            # Remove linhas completamente vazias
-            chunk_df = chunk_df.dropna(how="all")
-
-            # Adiciona data_extracao como primeira coluna
-            chunk_df.insert(0, "data_extracao", datetime.now(timezone.utc))
-
-            # Schema explícito: garante pa.string() mesmo em colunas all-null
+        def _flush_batch(batch: list[pd.DataFrame]) -> int:
+            """Concatena o batch acumulado, converte para Arrow e faz append Iceberg."""
+            nonlocal num_append
+            combined = pd.concat(batch, ignore_index=True)
+            combined = combined.dropna(how="all")
+            combined.insert(0, "data_extracao", datetime.now(timezone.utc))
             arrow_table = pa.Table.from_pandas(
-                chunk_df, schema=arrow_schema, preserve_index=False
+                combined, schema=arrow_schema, preserve_index=False
             )
             _append_com_retry(iceberg_table, arrow_table)
+            n = len(combined)
+            num_append += 1
+            # Libera memória explicitamente antes do próximo batch
+            del combined, arrow_table
+            gc.collect()
+            return n
 
+        for chunk_df in reader:
+            num_chunk += 1
+            batch.append(chunk_df)
             total_linhas += len(chunk_df)
             print(
                 f"    chunk {num_chunk}: {len(chunk_df):,} linhas "
                 f"(total acumulado: {total_linhas:,})"
             )
 
-        print(f"  [{target_table}] {nome_arquivo}: {total_linhas:,} linhas carregadas.")
+            # Grava no Iceberg a cada chunks_por_append chunks acumulados
+            if len(batch) >= chunks_por_append:
+                linhas_batch = _flush_batch(batch)
+                batch = []
+                print(
+                    f"    → append #{num_append}: {linhas_batch:,} linhas "
+                    f"gravadas no Iceberg."
+                )
+
+        # Último batch (pode ter menos de chunks_por_append chunks)
+        if batch:
+            linhas_batch = _flush_batch(batch)
+            batch = []
+            print(
+                f"    → append #{num_append} (final): {linhas_batch:,} linhas "
+                f"gravadas no Iceberg."
+            )
+
+        print(
+            f"  [{target_table}] {nome_arquivo}: {total_linhas:,} linhas carregadas "
+            f"em {num_append} append(s) Iceberg."
+        )
 
     print(f"[{target_table}] Tabela concluída na branch '{branch_name}'.")
