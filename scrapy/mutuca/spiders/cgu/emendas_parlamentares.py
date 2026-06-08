@@ -1,8 +1,10 @@
 """
 Spider: EmendasParlamentaresSpider
 
-Coleta dados de emendas parlamentares do portal da transparência da Controladoria Geral
-da União.
+Responsável exclusivamente pela orquestração HTTP:
+  - Disparar requisições paginadas ao endpoint A1
+  - Para cada emenda, disparar requisição ao endpoint A2
+  - Delegar extração e construção de itens ao CguEmendasCollector
 
 Fluxo de dados:
   [A1] /emendas/consulta/resultado  →  todos os tipos de emenda (sem filtro)
@@ -18,8 +20,7 @@ import datetime
 from urllib.parse import urlencode
 
 import scrapy
-
-from mutuca.items.cgu_emendas_item import EmendaParlamentarItem
+from mutuca.core.cgu_emendas_collector import CguEmendasCollector
 from mutuca.utils.error_handlers import handle_request_error
 from mutuca.utils.logger import get_logger
 
@@ -27,13 +28,15 @@ from mutuca.utils.logger import get_logger
 # Endpoints
 # ---------------------------------------------------------------------------
 BASE_A1 = "https://portaldatransparencia.gov.br/emendas/consulta/resultado"
-BASE_A2 = "https://portaldatransparencia.gov.br/emendas/documentos-relacionados/resultado"
+BASE_A2 = (
+    "https://portaldatransparencia.gov.br/emendas/documentos-relacionados/resultado"
+)
 
 # ---------------------------------------------------------------------------
 # Paginação
 # ---------------------------------------------------------------------------
-PAGE_SIZE_A1 = 1000   # blocos reais de paginação do A1
-PAGE_SIZE_A2 = 1000   # traz todos os documentos de uma emenda de uma vez
+PAGE_SIZE_A1 = 1000  # blocos reais de paginação do A1
+PAGE_SIZE_A2 = 1000  # traz todos os documentos de uma emenda de uma vez
 
 # ---------------------------------------------------------------------------
 # Colunas solicitadas à API (conforme contrato da CGU)
@@ -44,7 +47,6 @@ COLUNAS_A1 = (
     "programa,acao,planoOrcamentario,codigoEmenda,valorEmpenhado,"
     "valorLiquidado,valorPago,valorRestoInscrito,valorRestoCancelado,valorRestoPago"
 )
-COLUNAS_A2 = "data,fase,codigoDocumentoResumido,favorecido,valor"
 
 
 class EmendasParlamentaresSpider(scrapy.Spider):
@@ -59,6 +61,7 @@ class EmendasParlamentaresSpider(scrapy.Spider):
         self.data_inicio = de or ano_atual
         self.data_fim = ate or ano_atual
         self.log = get_logger(self.name)
+        self.collector = CguEmendasCollector()
 
     # ---------------------------------------------------------------------------
     # Parâmetros base do A1 (offset é sobrescrito em cada requisição)
@@ -95,19 +98,21 @@ class EmendasParlamentaresSpider(scrapy.Spider):
         )
 
     # ---------------------------------------------------------------------------
-    # Callback A1: processa lista de emendas e dispara requisições ao A2
+    # Callback A1: pagina o endpoint e despacha requisições ao A2
     # ---------------------------------------------------------------------------
     def parse_emendas(self, response):
         """
         Consome JSON do A1.
         1. Valida payload.
-        2. Para cada emenda dispara requisição ao A2.
+        2. Para cada emenda, delega extração ao collector e dispara request ao A2.
         3. Pagina o A1 enquanto offset < recordsTotal.
         """
         try:
             payload = response.json()
         except Exception as e:
-            self.log.error(f"Falha ao decodificar JSON do A1: {e} | URL: {response.url}")
+            self.log.error(
+                f"Falha ao decodificar JSON do A1: {e} | URL: {response.url}"
+            )
             return
 
         records_total = payload.get("recordsTotal", 0)
@@ -119,45 +124,10 @@ class EmendasParlamentaresSpider(scrapy.Spider):
         )
 
         for emenda in emendas:
-            dados_a1 = {
-                "autor": emenda.get("autor", ""),
-                "codigo_emenda": emenda.get("codigoEmenda", ""),
-                "tipo_emenda": emenda.get("tipoEmenda", ""),
-                "sk_tipo_emenda": emenda.get("skTipoEmenda", ""),
-                "localidade_do_gasto": emenda.get("localidadeDoGasto", ""),
-                "codigo_funcao": emenda.get("codigoFuncao", ""),
-                "funcao": emenda.get("funcao", ""),
-                "codigo_subfuncao": emenda.get("codigoSubfuncao", ""),
-                "subfuncao": emenda.get("subfuncao"),
-                "programa": emenda.get("programa", ""),
-                "acao": emenda.get("acao", ""),
-                "plano_orcamentario": emenda.get("planoOrcamentario", ""),
-                "numero_emenda": emenda.get("numeroEmenda", ""),
-                "ano": emenda.get("ano", ""),
-                "valor_total_a1": emenda.get("valorPago", ""),
-                "valor_empenhado": emenda.get("valorEmpenhado", ""),
-                "valor_liquidado": emenda.get("valorLiquidado", ""),
-                "valor_resto_inscrito": emenda.get("valorRestoInscrito", ""),
-                "valor_resto_cancelado": emenda.get("valorRestoCancelado", ""),
-                "valor_resto_pago": emenda.get("valorRestoPago", ""),
-                "possui_apoio_solicitante": emenda.get("possuiApoiadorSolicitante", ""),
-            }
-
-            params_a2 = {
-                "paginacaoSimples": "false",
-                "tamanhoPagina": str(PAGE_SIZE_A2),
-                "offset": "0",
-                "direcaoOrdenacao": "asc",
-                "colunaOrdenacao": "data",
-                "colunasSelecionadas": COLUNAS_A2,
-                "codigo": dados_a1["codigo_emenda"],
-                "ano": dados_a1["ano"],
-                "codigoFuncao": dados_a1["codigo_funcao"],
-                "codigoSubfuncao": dados_a1["codigo_subfuncao"],
-                "localidadeDoGasto": dados_a1["localidade_do_gasto"],
-                "skTipoEmenda": dados_a1["sk_tipo_emenda"],
-                "palavraChave": "",
-            }
+            dados_a1 = self.collector.extrair_dados_a1(emenda)
+            params_a2 = self.collector.montar_params_a2(
+                dados_a1, page_size=PAGE_SIZE_A2
+            )
 
             yield scrapy.Request(
                 url=f"{BASE_A2}?{urlencode(params_a2)}",
@@ -181,13 +151,13 @@ class EmendasParlamentaresSpider(scrapy.Spider):
             self.log.info("A1 completamente percorrido.")
 
     # ---------------------------------------------------------------------------
-    # Callback A2: consolida campos A1 + A2 num EmendaParlamentarItem
+    # Callback A2: delega construção do item ao collector
     # ---------------------------------------------------------------------------
     def parse_documentos(self, response, dados_a1: dict):
         """
         Consome JSON do A2.
         Relacionamento: dados_a1["codigo_emenda"] == parâmetro 'codigo' enviado ao A2.
-        Faz yield de um EmendaParlamentarItem por documento retornado.
+        Faz yield de um EmendaParlamentarItem por documento, via collector.
         """
         try:
             payload = response.json()
@@ -199,43 +169,14 @@ class EmendasParlamentaresSpider(scrapy.Spider):
             return
 
         documentos = payload.get("data", [])
-        data_extracao = datetime.datetime.utcnow().isoformat()
 
         for doc in documentos:
-            yield EmendaParlamentarItem(
-                # Campos do A1
-                autor=dados_a1["autor"],
-                codigo_emenda=dados_a1["codigo_emenda"],
-                tipo_emenda=dados_a1["tipo_emenda"],
-                sk_tipo_emenda=dados_a1["sk_tipo_emenda"],
-                localidade_do_gasto=dados_a1["localidade_do_gasto"],
-                codigo_funcao=dados_a1["codigo_funcao"],
-                funcao=dados_a1["funcao"],
-                codigo_subfuncao=dados_a1["codigo_subfuncao"],
-                subfuncao=dados_a1["subfuncao"],
-                programa=dados_a1["programa"],
-                acao=dados_a1["acao"],
-                plano_orcamentario=dados_a1["plano_orcamentario"],
-                numero_emenda=dados_a1["numero_emenda"],
-                ano=dados_a1["ano"],
-                valor_total_a1=dados_a1["valor_total_a1"],
-                valor_empenhado=dados_a1["valor_empenhado"],
-                valor_liquidado=dados_a1["valor_liquidado"],
-                valor_resto_inscrito=dados_a1["valor_resto_inscrito"],
-                valor_resto_cancelado=dados_a1["valor_resto_cancelado"],
-                valor_resto_pago=dados_a1["valor_resto_pago"],
-                possui_apoio_solicitante=dados_a1["possui_apoio_solicitante"],
-                # Campos do A2
-                codigo_documento=doc.get("codigoDocumentoResumido", ""),
-                fase_documento=doc.get("fase", ""),
-                data_documento=doc.get("data", ""),
-                favorecido=doc.get("favorecido", ""),
-                valor_documento=doc.get("valor", ""),
-                # Metadados
-                data_extracao=data_extracao,
-            )
+            yield self.collector.construir_item(dados_a1, doc)
 
         self.log.info(
             f"Emenda {dados_a1['codigo_emenda']} → {len(documentos)} documento(s).",
-            extra={"codigo_emenda": dados_a1["codigo_emenda"], "documentos": len(documentos)},
+            extra={
+                "codigo_emenda": dados_a1["codigo_emenda"],
+                "documentos": len(documentos),
+            },
         )
