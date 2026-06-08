@@ -52,7 +52,11 @@ COLUNAS_A1 = (
 class EmendasParlamentaresSpider(scrapy.Spider):
     name = "emendas_parlamentares"
     custom_settings = {
-        "FEEDS": {"emendas_parlamentares_%(de)s_%(ate)s.json": {"format": "json"}},
+        "FEEDS": {
+            "emendas_parlamentares_%(data_inicio)s_%(data_fim)s.json": {
+                "format": "json"
+            }
+        },
     }
 
     def __init__(self, de=None, ate=None, *args, **kwargs):
