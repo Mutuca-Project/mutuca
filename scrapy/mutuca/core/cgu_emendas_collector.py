@@ -6,9 +6,18 @@ utilizáveis pelo pipeline. Contém toda a lógica de mapeamento de campos e
 construção de itens, mantendo o spider focado exclusivamente na orquestração HTTP.
 
 Métodos públicos (funções puras — dict/item entra, dict/item sai):
+  - codigo_emenda_valido(codigo)  → bool — filtra códigos não-numéricos (S/I, REL. GERAL)
   - extrair_dados_a1(emenda)      → dict com campos normalizados do endpoint A1
   - montar_params_a2(dados_a1)    → dict com parâmetros prontos para a requisição A2
   - construir_item(dados_a1, doc) → EmendaParlamentarItem consolidado
+
+Contexto de validação (codigo_emenda_valido):
+  A API da CGU retorna valores não-numéricos no campo codigoEmenda para emendas
+  de comissão sem código individual ('S/I') e para relatoria geral ('REL. GERAL').
+  Quando esses valores são usados como chave no endpoint A2, a API ignora o filtro
+  e retorna todos os documentos que casam com os demais parâmetros (funcao,
+  subfuncao, localidadeDoGasto), produzindo até 403.000 documentos por 'emenda'.
+  Essas entradas devem ser filtradas antes de disparar qualquer requisição ao A2.
 
 Referência de campos:
   A1 (chaves camelCase da API → snake_case interno):
@@ -43,10 +52,15 @@ Referência de campos:
 """
 
 import datetime
-from typing import Any
+import re
 
 from mutuca.items.cgu_emendas_item import EmendaParlamentarItem
 from mutuca.utils.logger import get_logger
+
+# Padrão de código de emenda válido: sequência numérica de 10 a 14 dígitos.
+# Formato real observado: AAAA + código_parlamentar(5) + sequencial(3) = 12 dígitos.
+# Intervalo alargado para acomodar variações entre anos e tipos de emenda.
+_REGEX_CODIGO_VALIDO = re.compile(r'^\d{10,14}$')
 
 logger = get_logger(__name__)
 
@@ -62,6 +76,28 @@ class CguEmendasCollector:
     # ------------------------------------------------------------------
     # API pública
     # ------------------------------------------------------------------
+
+    def codigo_emenda_valido(self, codigo: str) -> bool:
+        """
+        Verifica se o codigo_emenda é um código numérico válido para uso no A2.
+
+        A CGU retorna valores não-numéricos ('S/I', 'REL. GERAL') como codigoEmenda
+        em emendas de comissão sem código individual. Usar esses valores como chave
+        no endpoint A2 produz resultados inflados (até 403.000 documentos por emenda)
+        porque a API ignora o filtro de código e devolve tudo que casa com os demais
+        parâmetros (funcao, subfuncao, localidadeDoGasto).
+
+        Args:
+            codigo: Valor de codigo_emenda extraído do payload A1.
+
+        Returns:
+            True  → código numérico de 10–14 dígitos; requisição A2 pode prosseguir.
+            False → código inválido ('S/I', 'REL. GERAL', vazio, None); deve ser
+                    ignorado pelo spider antes de disparar o request ao A2.
+        """
+        if not codigo:
+            return False
+        return bool(_REGEX_CODIGO_VALIDO.match(str(codigo)))
 
     def extrair_dados_a1(self, emenda: dict) -> dict:
         """
@@ -106,7 +142,9 @@ class CguEmendasCollector:
 
         return dados
 
-    def montar_params_a2(self, dados_a1: dict, page_size: int = 1000) -> dict:
+    def montar_params_a2(
+        self, dados_a1: dict, page_size: int = 1000, offset: int = 0
+    ) -> dict:
         """
         Constrói o dicionário de parâmetros para a requisição ao endpoint A2.
 
@@ -114,28 +152,33 @@ class CguEmendasCollector:
         Os demais campos são filtros requeridos pela API para retornar os
         documentos corretos da emenda.
 
+        O parâmetro offset permite paginação: emendas com mais de page_size
+        documentos (ex.: Emendas de Relator com centenas de beneficiários)
+        exigem múltiplas requisições com offset incrementado até esgotar
+        recordsTotal. Esse controle é responsabilidade do spider.
+
         Args:
             dados_a1:  Saída de extrair_dados_a1.
-            page_size: Tamanho de página do A2 (padrão 1000 — traz todos os
-                       documentos de uma emenda de uma vez).
+            page_size: Tamanho de página (padrão 1000).
+            offset:    Ponto de início da página (padrão 0 — primeira página).
 
         Returns:
             Dicionário de parâmetros pronto para urlencode.
         """
         return {
-            "paginacaoSimples":   "false",
-            "tamanhoPagina":      str(page_size),
-            "offset":             "0",
-            "direcaoOrdenacao":   "asc",
-            "colunaOrdenacao":    "data",
+            "paginacaoSimples":    "false",
+            "tamanhoPagina":       str(page_size),
+            "offset":              str(offset),
+            "direcaoOrdenacao":    "asc",
+            "colunaOrdenacao":     "data",
             "colunasSelecionadas": "data,fase,codigoDocumentoResumido,favorecido,valor",
-            "codigo":             dados_a1["codigo_emenda"],
-            "ano":                dados_a1["ano"],
-            "codigoFuncao":       dados_a1["codigo_funcao"],
-            "codigoSubfuncao":    dados_a1["codigo_subfuncao"],
-            "localidadeDoGasto":  dados_a1["localidade_do_gasto"],
-            "skTipoEmenda":       dados_a1["sk_tipo_emenda"],
-            "palavraChave":       "",
+            "codigo":              dados_a1["codigo_emenda"],
+            "ano":                 dados_a1["ano"],
+            "codigoFuncao":        dados_a1["codigo_funcao"],
+            "codigoSubfuncao":     dados_a1["codigo_subfuncao"],
+            "localidadeDoGasto":   dados_a1["localidade_do_gasto"],
+            "skTipoEmenda":        dados_a1["sk_tipo_emenda"],
+            "palavraChave":        "",
         }
 
     def construir_item(self, dados_a1: dict, doc: dict) -> EmendaParlamentarItem:
