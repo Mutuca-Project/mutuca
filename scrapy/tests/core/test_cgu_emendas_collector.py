@@ -1,8 +1,21 @@
 """
 Testes unitários — CguEmendasCollector
 
-Testa os três métodos públicos do collector de forma completamente isolada:
+Testa os quatro métodos públicos do collector de forma completamente isolada:
 sem Scrapy, sem fixtures JSON, sem HTTP. Entrada e saída são dicts e Items puros.
+
+Classes de teste:
+  TestCodigoEmendaValido   — validação de códigos numéricos vs não-numéricos (S/I, REL. GERAL)
+  TestExtrairDadosA1       — mapeamento camelCase → snake_case dos campos do endpoint A1
+  TestMontarParamsA2       — construção dos parâmetros de query para o endpoint A2 (com offset)
+  TestConstruirItem        — consolidação A1 + A2 → EmendaParlamentarItem
+
+Contexto de TestCodigoEmendaValido:
+  A análise empírica do dump 2018–2026 identificou emendas com codigoEmenda='S/I'
+  (403.000 docs) e codigoEmenda='REL. GERAL' (124.000 docs). Esses valores fazem a
+  API do A2 ignorar o filtro de código e retornar todos os documentos que casam com
+  os demais parâmetros, contaminando a base. O método codigo_emenda_valido() bloqueia
+  esse comportamento antes de qualquer requisição ao A2.
 
 Execução:
     cd scrapy/
@@ -60,6 +73,39 @@ def collector():
 def dados_a1(collector):
     """Saída normalizada de extrair_dados_a1 — base para os demais testes."""
     return collector.extrair_dados_a1(EMENDA_A1_RAW)
+
+
+# ---------------------------------------------------------------------------
+# codigo_emenda_valido
+# ---------------------------------------------------------------------------
+
+class TestCodigoEmendaValido:
+    """
+    Valida o filtro que impede emendas com codigoEmenda não-numérico de disparar
+    requisições ao A2. Contexto: dump 2018-2026 revelou 'S/I' com 403.000 docs
+    e 'REL. GERAL' com 124.000 docs — resultados inflados por falha de filtro na API.
+    """
+
+    def test_codigo_numerico_12_digitos_e_valido(self, collector):
+        assert collector.codigo_emenda_valido("202639000008") is True
+
+    def test_codigo_numerico_10_digitos_e_valido(self, collector):
+        """Intervalo mínimo: alguns tipos de emenda usam códigos mais curtos."""
+        assert collector.codigo_emenda_valido("2026390008") is True
+
+    def test_codigo_si_e_invalido(self, collector):
+        """'S/I' (Sem Informação) — emenda de comissão sem código individual."""
+        assert collector.codigo_emenda_valido("S/I") is False
+
+    def test_codigo_rel_geral_e_invalido(self, collector):
+        """'REL. GERAL' — relatoria geral de comissão sem código numérico."""
+        assert collector.codigo_emenda_valido("REL. GERAL") is False
+
+    def test_codigo_vazio_e_invalido(self, collector):
+        assert collector.codigo_emenda_valido("") is False
+
+    def test_codigo_none_e_invalido(self, collector):
+        assert collector.codigo_emenda_valido(None) is False
 
 
 # ---------------------------------------------------------------------------
@@ -145,6 +191,15 @@ class TestMontarParamsA2:
     def test_offset_inicial_e_zero(self, collector, dados_a1):
         params = collector.montar_params_a2(dados_a1)
         assert params["offset"] == "0"
+
+    def test_offset_customizavel(self, collector, dados_a1):
+        """
+        Paginação do A2: offset deve ser transmitido como string para o urlencode.
+        Emendas de Relator (sk_tipo_emenda=5) podem ter mais de 1000 documentos —
+        cada página subsequente usa offset incrementado por PAGE_SIZE_A2.
+        """
+        params = collector.montar_params_a2(dados_a1, offset=1000)
+        assert params["offset"] == "1000"
 
     def test_colunas_a2_presentes(self, collector, dados_a1):
         params = collector.montar_params_a2(dados_a1)

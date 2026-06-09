@@ -1,0 +1,21 @@
+{
+  "draw": 1,
+  "recordsTotal": 2000,
+  "recordsFiltered": 2000,
+  "data": [
+    {
+      "codigoDocumentoResumido": "2021NE123456",
+      "fase": "Empenho",
+      "data": "10/01/2021",
+      "favorecido": "12.345.678/0001-99 - PREFEITURA MUNICIPAL DE EXEMPLO",
+      "valor": "100.000,00"
+    },
+    {
+      "codigoDocumentoResumido": "2021OB654321",
+      "fase": "Pagamento",
+      "data": "15/03/2021",
+      "favorecido": "12.345.678/0001-99 - PREFEITURA MUNICIPAL DE EXEMPLO",
+      "valor": "100.000,00"
+    }
+  ]
+}

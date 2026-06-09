@@ -1,0 +1,21 @@
+{
+  "draw": 1,
+  "recordsTotal": 2,
+  "recordsFiltered": 2,
+  "data": [
+    {
+      "codigoDocumentoResumido": "2026NE456110",
+      "fase": "Empenho",
+      "data": "13/04/2026",
+      "favorecido": "04.786.328/0001-36 - FUNDO MUNICIPAL DE SAUDE",
+      "valor": "500.000,00"
+    },
+    {
+      "codigoDocumentoResumido": "2026OB123456",
+      "fase": "Pagamento",
+      "data": "20/04/2026",
+      "favorecido": "04.786.328/0001-36 - FUNDO MUNICIPAL DE SAUDE",
+      "valor": "500.000,00"
+    }
+  ]
+}

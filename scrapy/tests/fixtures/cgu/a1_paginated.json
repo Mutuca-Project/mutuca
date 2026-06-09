@@ -1,0 +1,30 @@
+{
+  "draw": 1,
+  "recordsTotal": 2000,
+  "recordsFiltered": 2000,
+  "data": [
+    {
+      "autor": "3900 - ADRIANO DO BALDY",
+      "codigoEmenda": "202639000008",
+      "tipoEmenda": "Emenda Individual - Transferências com Finalidade Definida",
+      "skTipoEmenda": 2,
+      "localidadeDoGasto": "MÚLTIPLO",
+      "codigoFuncao": "10",
+      "funcao": "Saúde",
+      "codigoSubfuncao": "302",
+      "subfuncao": "Assistência hospitalar e ambulatorial",
+      "programa": "5118 - ATENCAO ESPECIALIZADA A SAUDE",
+      "acao": "2E90 - INCREMENTO TEMPORARIO AO CUSTEIO DOS SERVICOS",
+      "planoOrcamentario": "INCREMENTO TEMPORARIO AO CUSTEIO DOS SERVICOS",
+      "numeroEmenda": "0008",
+      "ano": 2026,
+      "valorPago": "1.653.375,00",
+      "valorEmpenhado": "3.053.375,00",
+      "valorLiquidado": "1.653.375,00",
+      "valorRestoInscrito": "0,00",
+      "valorRestoCancelado": "0,00",
+      "valorRestoPago": "0,00",
+      "possuiApoiadorSolicitante": "Não se aplica"
+    }
+  ]
+}

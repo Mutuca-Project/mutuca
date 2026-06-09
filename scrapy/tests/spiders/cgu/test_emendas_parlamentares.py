@@ -1,9 +1,27 @@
 """
-Testes de fumaça — EmendasParlamentaresSpider
+Testes de integração (fumaça) — EmendasParlamentaresSpider
 
 Valida o comportamento dos callbacks sem realizar chamadas HTTP reais.
 Cada teste isola um aspecto específico do spider usando fixtures JSON
 que reproduzem fielmente o formato da API da CGU.
+
+Classes de teste:
+  TestStartRequests                  — URL, parâmetros de= ate= e meta offset inicial
+  TestParseEmendas                   — paginação A1, dispatch de requests A2
+  TestParseEmendasComCodigoInvalido  — filtro de emendas S/I e REL. GERAL antes do A2
+  TestParseDocumentos                — yield de items, campos A1/A2, JSON inválido, A2 vazio
+  TestParseDocumentosPaginacao       — paginação do A2 quando recordsTotal > PAGE_SIZE_A2
+
+Contexto de TestParseEmendasComCodigoInvalido:
+  Emendas com codigoEmenda='S/I' ou 'REL. GERAL' fazem a API do A2 retornar
+  resultados inflados (até 403.000 docs) por ignorar o filtro de código.
+  O spider deve detectar esses casos via collector.codigo_emenda_valido() e
+  pular o dispatch do request A2.
+
+Contexto de TestParseDocumentosPaginacao:
+  Emendas de Relator (sk_tipo_emenda=5) podem ter >1000 documentos. O spider
+  deve paginar o A2 da mesma forma que o A1: enquanto offset + PAGE_SIZE < recordsTotal,
+  despacha nova requisição com offset incrementado.
 
 Execução:
     cd scrapy/
@@ -246,3 +264,107 @@ class TestParseDocumentos:
         )
         results = _collect(spider_cgu.parse_documentos(bad_response, _DADOS_A1_EXEMPLO))
         assert results == []
+
+
+# ---------------------------------------------------------------------------
+# Grupo 4 — parse_emendas com código inválido
+# ---------------------------------------------------------------------------
+
+class TestParseEmendasComCodigoInvalido:
+    """
+    Verifica que emendas com codigoEmenda não-numérico ('S/I', 'REL. GERAL') são
+    descartadas antes de disparar qualquer requisição ao A2.
+
+    Fixture a1_com_emenda_invalida.json contém 3 emendas:
+      - "202639000008" (válida)  → deve gerar 1 request A2
+      - "S/I"                   → deve ser ignorada
+      - "REL. GERAL"            → deve ser ignorada
+    """
+
+    def test_emenda_valida_gera_request_a2(self, spider_cgu):
+        """A emenda com código numérico válido deve gerar exatamente 1 request A2."""
+        response = fake_response("cgu/a1_com_emenda_invalida.json", meta={"offset": 0})
+        results = _collect(spider_cgu.parse_emendas(response))
+        a2_requests = [r for r in _requests(results) if BASE_A2 in r.url]
+        assert len(a2_requests) == 1
+
+    def test_emenda_si_nao_gera_request_a2(self, spider_cgu):
+        """Emenda com codigoEmenda='S/I' não deve gerar request ao A2."""
+        response = fake_response("cgu/a1_com_emenda_invalida.json", meta={"offset": 0})
+        results = _collect(spider_cgu.parse_emendas(response))
+        a2_requests = [r for r in _requests(results) if BASE_A2 in r.url]
+        # Apenas 1 request A2 (a emenda válida) — S/I e REL. GERAL descartadas
+        assert len(a2_requests) == 1
+
+    def test_codigo_invalido_nao_contamina_url_a2(self, spider_cgu):
+        """A URL do request A2 gerado deve conter o código numérico válido, não S/I."""
+        response = fake_response("cgu/a1_com_emenda_invalida.json", meta={"offset": 0})
+        results = _collect(spider_cgu.parse_emendas(response))
+        a2_requests = [r for r in _requests(results) if BASE_A2 in r.url]
+        assert "202639000008" in a2_requests[0].url
+        assert "S%2FI" not in a2_requests[0].url   # "S/I" URL-encoded
+        assert "REL." not in a2_requests[0].url
+
+
+# ---------------------------------------------------------------------------
+# Grupo 5 — paginação do A2
+# ---------------------------------------------------------------------------
+
+class TestParseDocumentosPaginacao:
+    """
+    Verifica que parse_documentos pagina o A2 corretamente quando recordsTotal
+    ultrapassa o tamanho de uma página (PAGE_SIZE_A2=1000).
+
+    Contexto: análise do dump 2018-2026 identificou 230 emendas com >=1000 docs,
+    sendo o máximo 403.000 (truncamento confirmado). Emendas de Relator
+    (sk_tipo_emenda=5) são as mais afetadas por terem muitos beneficiários municipais.
+
+    Fixture a2_paginado.json: recordsTotal=2000, 2 docs na página (offset=0).
+    """
+
+    def test_pagina_quando_records_total_maior_que_page_size(self, spider_cgu):
+        """recordsTotal=2000 com offset=0 deve gerar items + 1 request de próxima página."""
+        response = fake_response(
+            "cgu/a2_paginado.json",
+            cb_kwargs={"dados_a1": _DADOS_A1_EXEMPLO},
+        )
+        results = _collect(spider_cgu.parse_documentos(response, _DADOS_A1_EXEMPLO, offset_a2=0))
+        a2_next = [r for r in _requests(results) if BASE_A2 in r.url]
+        items = _emenda_items(results)
+        assert len(items) == 2, "Deve gerar 2 items da página atual"
+        assert len(a2_next) == 1, "Deve gerar 1 request para a próxima página"
+
+    def test_proximo_offset_a2_e_incrementado_corretamente(self, spider_cgu):
+        """O offset do próximo request A2 deve ser offset_atual + PAGE_SIZE_A2."""
+        response = fake_response(
+            "cgu/a2_paginado.json",
+            cb_kwargs={"dados_a1": _DADOS_A1_EXEMPLO},
+        )
+        results = _collect(spider_cgu.parse_documentos(response, _DADOS_A1_EXEMPLO, offset_a2=0))
+        a2_next = [r for r in _requests(results) if BASE_A2 in r.url]
+        assert "offset=1000" in a2_next[0].url
+
+    def test_nao_pagina_quando_ultima_pagina(self, spider_cgu):
+        """Na última página (offset=1000, total=2000), não deve gerar novo request A2."""
+        response = fake_response(
+            "cgu/a2_paginado.json",
+            cb_kwargs={"dados_a1": _DADOS_A1_EXEMPLO},
+        )
+        # offset_a2=1000 + PAGE_SIZE_A2=1000 = 2000, que não é < recordsTotal=2000
+        results = _collect(
+            spider_cgu.parse_documentos(response, _DADOS_A1_EXEMPLO, offset_a2=1000)
+        )
+        a2_next = [r for r in _requests(results) if BASE_A2 in r.url]
+        assert len(a2_next) == 0
+
+    def test_items_gerados_mesmo_com_paginacao_pendente(self, spider_cgu):
+        """Items da página atual devem ser gerados independentemente de haver próxima página."""
+        response = fake_response(
+            "cgu/a2_paginado.json",
+            cb_kwargs={"dados_a1": _DADOS_A1_EXEMPLO},
+        )
+        results = _collect(spider_cgu.parse_documentos(response, _DADOS_A1_EXEMPLO, offset_a2=0))
+        items = _emenda_items(results)
+        assert all(isinstance(i, EmendaParlamentarItem) for i in items)
+        assert items[0]["codigo_documento"] == "2021NE123456"
+        assert items[1]["codigo_documento"] == "2021OB654321"
