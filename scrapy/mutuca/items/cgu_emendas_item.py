@@ -48,6 +48,7 @@ class EmendaParlamentarItem(scrapy.Item):
     valor_documento = scrapy.Field()
 
     # ------------------------------------------------------------------
-    # Metadados de auditoria
+    # Nota: data_extracao NÃO está neste item intencionalmente.
+    # É adicionada pelo iceberg_loader como TIMESTAMP WITH TIME ZONE no
+    # momento da carga — padrão uniforme em todos os pipelines do projeto.
     # ------------------------------------------------------------------
-    data_extracao = scrapy.Field()    # Timestamp UTC da extração (obrigatório — gate dbt)

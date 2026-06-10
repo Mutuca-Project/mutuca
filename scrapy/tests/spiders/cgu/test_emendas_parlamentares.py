@@ -188,8 +188,12 @@ class TestParseDocumentos:
         assert len(items) == 2
         assert all(isinstance(i, EmendaParlamentarItem) for i in items)
 
-    def test_item_tem_data_extracao_preenchida(self, spider_cgu):
-        """data_extracao deve estar presente e não vazio em todos os items."""
+    def test_item_nao_tem_data_extracao(self, spider_cgu):
+        """
+        data_extracao NÃO deve estar no item gerado pelo spider.
+        É adicionada pelo iceberg_loader como TIMESTAMP WITH TIME ZONE
+        no momento da carga — padrão uniforme em todos os pipelines.
+        """
         response = fake_response(
             "cgu/a2_response.json",
             cb_kwargs={"dados_a1": _DADOS_A1_EXEMPLO},
@@ -198,8 +202,7 @@ class TestParseDocumentos:
             _collect(spider_cgu.parse_documentos(response, _DADOS_A1_EXEMPLO))
         )
         for item in items:
-            assert "data_extracao" in item
-            assert item["data_extracao"]  # não vazio
+            assert "data_extracao" not in item
 
     def test_campos_a1_sao_propagados_corretamente(self, spider_cgu):
         """Todos os campos do A1 (dados_a1) devem aparecer intactos no Item."""

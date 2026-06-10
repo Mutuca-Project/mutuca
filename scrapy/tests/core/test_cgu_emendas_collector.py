@@ -234,16 +234,14 @@ class TestConstruirItem:
         assert item["favorecido"] == "04.786.328/0001-36 - FUNDO MUNICIPAL DE SAUDE"
         assert item["valor_documento"] == "500.000,00"
 
-    def test_data_extracao_preenchida(self, collector, dados_a1):
+    def test_data_extracao_nao_esta_no_item(self, collector, dados_a1):
+        """
+        data_extracao NÃO deve estar no item gerado pelo spider.
+        É adicionada pelo iceberg_loader como TIMESTAMP WITH TIME ZONE
+        no momento da carga — padrão uniforme em todos os pipelines.
+        """
         item = collector.construir_item(dados_a1, DOC_A2_RAW)
-        assert item["data_extracao"]
-
-    def test_data_extracao_e_iso8601(self, collector, dados_a1):
-        """data_extracao deve ser um timestamp ISO 8601 parseável."""
-        from datetime import datetime
-        item = collector.construir_item(dados_a1, DOC_A2_RAW)
-        # Não deve lançar ValueError
-        datetime.fromisoformat(item["data_extracao"])
+        assert "data_extracao" not in item
 
     def test_doc_vazio_preenche_campos_a2_com_string_vazia(self, collector, dados_a1):
         """Documento A2 sem campos deve gerar item com strings vazias, sem KeyError."""

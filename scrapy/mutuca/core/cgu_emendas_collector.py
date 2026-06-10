@@ -51,7 +51,6 @@ Referência de campos:
     valor                   → valor_documento
 """
 
-import datetime
 import re
 
 from mutuca.items.cgu_emendas_item import EmendaParlamentarItem
@@ -60,7 +59,7 @@ from mutuca.utils.logger import get_logger
 # Padrão de código de emenda válido: sequência numérica de 10 a 14 dígitos.
 # Formato real observado: AAAA + código_parlamentar(5) + sequencial(3) = 12 dígitos.
 # Intervalo alargado para acomodar variações entre anos e tipos de emenda.
-_REGEX_CODIGO_VALIDO = re.compile(r'^\d{10,14}$')
+_REGEX_CODIGO_VALIDO = re.compile(r"^\d{10,14}$")
 
 logger = get_logger(__name__)
 
@@ -112,26 +111,26 @@ class CguEmendasCollector:
             cb_kwargs ao request do A2 e ao método construir_item.
         """
         dados = {
-            "autor":                  emenda.get("autor", ""),
-            "codigo_emenda":          emenda.get("codigoEmenda", ""),
-            "tipo_emenda":            emenda.get("tipoEmenda", ""),
-            "sk_tipo_emenda":         emenda.get("skTipoEmenda", ""),
-            "localidade_do_gasto":    emenda.get("localidadeDoGasto", ""),
-            "codigo_funcao":          emenda.get("codigoFuncao", ""),
-            "funcao":                 emenda.get("funcao", ""),
-            "codigo_subfuncao":       emenda.get("codigoSubfuncao", ""),
-            "subfuncao":              emenda.get("subfuncao"),
-            "programa":               emenda.get("programa", ""),
-            "acao":                   emenda.get("acao", ""),
-            "plano_orcamentario":     emenda.get("planoOrcamentario", ""),
-            "numero_emenda":          emenda.get("numeroEmenda", ""),
-            "ano":                    emenda.get("ano", ""),
-            "valor_total_a1":         emenda.get("valorPago", ""),
-            "valor_empenhado":        emenda.get("valorEmpenhado", ""),
-            "valor_liquidado":        emenda.get("valorLiquidado", ""),
-            "valor_resto_inscrito":   emenda.get("valorRestoInscrito", ""),
-            "valor_resto_cancelado":  emenda.get("valorRestoCancelado", ""),
-            "valor_resto_pago":       emenda.get("valorRestoPago", ""),
+            "autor": emenda.get("autor", ""),
+            "codigo_emenda": emenda.get("codigoEmenda", ""),
+            "tipo_emenda": emenda.get("tipoEmenda", ""),
+            "sk_tipo_emenda": emenda.get("skTipoEmenda", ""),
+            "localidade_do_gasto": emenda.get("localidadeDoGasto", ""),
+            "codigo_funcao": emenda.get("codigoFuncao", ""),
+            "funcao": emenda.get("funcao", ""),
+            "codigo_subfuncao": emenda.get("codigoSubfuncao", ""),
+            "subfuncao": emenda.get("subfuncao"),
+            "programa": emenda.get("programa", ""),
+            "acao": emenda.get("acao", ""),
+            "plano_orcamentario": emenda.get("planoOrcamentario", ""),
+            "numero_emenda": emenda.get("numeroEmenda", ""),
+            "ano": emenda.get("ano", ""),
+            "valor_total_a1": emenda.get("valorPago", ""),
+            "valor_empenhado": emenda.get("valorEmpenhado", ""),
+            "valor_liquidado": emenda.get("valorLiquidado", ""),
+            "valor_resto_inscrito": emenda.get("valorRestoInscrito", ""),
+            "valor_resto_cancelado": emenda.get("valorRestoCancelado", ""),
+            "valor_resto_pago": emenda.get("valorRestoPago", ""),
             "possui_apoio_solicitante": emenda.get("possuiApoiadorSolicitante", ""),
         }
 
@@ -166,19 +165,19 @@ class CguEmendasCollector:
             Dicionário de parâmetros pronto para urlencode.
         """
         return {
-            "paginacaoSimples":    "false",
-            "tamanhoPagina":       str(page_size),
-            "offset":              str(offset),
-            "direcaoOrdenacao":    "asc",
-            "colunaOrdenacao":     "data",
+            "paginacaoSimples": "false",
+            "tamanhoPagina": str(page_size),
+            "offset": str(offset),
+            "direcaoOrdenacao": "asc",
+            "colunaOrdenacao": "data",
             "colunasSelecionadas": "data,fase,codigoDocumentoResumido,favorecido,valor",
-            "codigo":              dados_a1["codigo_emenda"],
-            "ano":                 dados_a1["ano"],
-            "codigoFuncao":        dados_a1["codigo_funcao"],
-            "codigoSubfuncao":     dados_a1["codigo_subfuncao"],
-            "localidadeDoGasto":   dados_a1["localidade_do_gasto"],
-            "skTipoEmenda":        dados_a1["sk_tipo_emenda"],
-            "palavraChave":        "",
+            "codigo": dados_a1["codigo_emenda"],
+            "ano": dados_a1["ano"],
+            "codigoFuncao": dados_a1["codigo_funcao"],
+            "codigoSubfuncao": dados_a1["codigo_subfuncao"],
+            "localidadeDoGasto": dados_a1["localidade_do_gasto"],
+            "skTipoEmenda": dados_a1["sk_tipo_emenda"],
+            "palavraChave": "",
         }
 
     def construir_item(self, dados_a1: dict, doc: dict) -> EmendaParlamentarItem:
@@ -226,6 +225,5 @@ class CguEmendasCollector:
             data_documento=doc.get("data", ""),
             favorecido=doc.get("favorecido", ""),
             valor_documento=doc.get("valor", ""),
-            # Metadados de auditoria
-            data_extracao=datetime.datetime.utcnow().isoformat(),
+            # Nota: data_extracao é adicionada pelo iceberg_loader, não pelo spider.
         )

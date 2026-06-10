@@ -61,9 +61,12 @@ COLUNAS_A1 = (
 class EmendasParlamentaresSpider(scrapy.Spider):
     name = "emendas_parlamentares"
     custom_settings = {
+        # Formato jsonlines (um objeto JSON por linha) exigido pelo iceberg_loader.
+        # Em produção (Airflow), este FEEDS é ignorado — o output é controlado
+        # pelo campo scrapy.output do cgu.yaml via flag -O.
         "FEEDS": {
-            "emendas_parlamentares_%(data_inicio)s_%(data_fim)s.json": {
-                "format": "json"
+            "emendas_parlamentares_%(data_inicio)s_%(data_fim)s.jsonl": {
+                "format": "jsonlines"
             }
         },
     }
