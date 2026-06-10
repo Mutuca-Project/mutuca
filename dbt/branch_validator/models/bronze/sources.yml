@@ -125,3 +125,62 @@ sources:
               - not_null:
                   config:
                     severity: error
+
+      # ------------------------------------------------------------------
+      # CGU Emendas Parlamentares
+      # Pipeline: ingestao_cgu_emendas (cgu.yaml)
+      # Granularidade: um registro por documento (OB/NE/NS) por emenda.
+      # Fonte: endpoints A1 + A2 do Portal da Transparência (CGU).
+      # ------------------------------------------------------------------
+      - name: cgu_emendas_parlamentares
+        description: >
+          Documentos de execução orçamentária de emendas parlamentares coletados
+          do Portal da Transparência da CGU. Cada registro representa um documento
+          (Empenho, Liquidação ou Pagamento) vinculado a uma emenda.
+          Campos chave para a investigação: codigo_emenda, favorecido (CNPJ do
+          beneficiário final), fase_documento e valor_documento.
+        meta:
+          plugin: iceberg_branch
+          table: bronze.cgu_emendas_parlamentares
+        columns:
+          - name: data_extracao
+            description: "Timestamp UTC de quando a linha foi carregada pelo iceberg_loader."
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+
+          - name: codigo_emenda
+            description: >
+              Código numérico de 12 dígitos que identifica a emenda (chave primária
+              do relacionamento A1→A2). Valores não-numéricos (S/I, REL. GERAL)
+              são filtrados pelo spider antes da coleta.
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+
+          - name: codigo_documento
+            description: >
+              Código resumido do documento de execução (ex: 2026NE456110).
+              Combinado com codigo_emenda forma a chave natural do registro.
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+
+          - name: fase_documento
+            description: "Fase de execução: Empenho (NE), Liquidação (NS) ou Pagamento (OB)."
+            tests:
+              - not_null:
+                  config:
+                    severity: error
+
+          - name: favorecido
+            description: >
+              Beneficiário final do recurso no formato 'CNPJ - NOME'.
+              Campo crítico para o match societário da investigação Teopolítica.
+            tests:
+              - not_null:
+                  config:
+                    severity: warn  # warn: ~9% dos registros históricos sem padrão CNPJ
