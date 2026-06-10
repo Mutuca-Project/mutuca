@@ -56,5 +56,11 @@ nav:
       - Motor de consulta SQL: decisoes/motor-de-consulta.md
       - Estratégia de ingestão: decisoes/ingestao-de-dados.md
       - Transformação transparente: decisoes/transformacao.md
+  - Pipelines:
+      - Visão geral: pipelines/index.md
+      - Emendas Parlamentares (CGU): pipelines/cgu-emendas.md
+  - Referência:
+      - Dicionário de dados — CGU Emendas: referencia/dicionario-cgu-emendas.md
+      - Padrões de desenvolvimento: referencia/padroes-desenvolvimento.md
   - Sobre:
       - Missão e contexto: sobre/index.md
