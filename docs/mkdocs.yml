@@ -56,6 +56,8 @@ nav:
       - Motor de consulta SQL: decisoes/motor-de-consulta.md
       - Estratégia de ingestão: decisoes/ingestao-de-dados.md
       - Transformação transparente: decisoes/transformacao.md
+  - Operação:
+      - Armazenamento externo (MinIO + HD): operacao/armazenamento-externo.md
   - Pipelines:
       - Visão geral: pipelines/index.md
       - Emendas Parlamentares (CGU): pipelines/cgu-emendas.md
