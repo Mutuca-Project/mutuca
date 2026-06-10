@@ -1,0 +1,53 @@
+dag_id: ingestao_cgu_emendas
+description: "Ingestão incremental de emendas parlamentares (CGU) — Bronze"
+owner: teopolitica
+start_date: "2024-01-01"
+
+# Execução mensal: primeiro dia de cada mês às 06:00.
+# Coleta o delta do último período processado até o mês atual.
+schedule: "0 6 1 * *"
+
+# Branching por execução via Nessie (ADR 007).
+# Cada ingestão abre uma branch isolada, valida com dbt e mergeia para main.
+# Em caso de falha no dbt_test_branch, a branch é deletada sem contaminar main.
+branching:
+  enabled: true
+  from_ref: main
+
+scrapy:
+  spider: emendas_parlamentares
+
+  # Saída no bucket bronze do MinIO (montado no HD externo via make up-hd).
+  # O iceberg_loader lê deste prefixo após a raspagem.
+  output: "s3://bronze/emendas_parlamentares/lote_{{ ts_nodash }}.jsonl"
+
+  # Janela temporal da raspagem — controlada via Airflow Variables.
+  # Antes de cada execução manual ou agendada, ajuste as variáveis no Airflow UI:
+  #   cgu_emendas_ano_inicio → ano inicial do período (ex: "2026")
+  #   cgu_emendas_ano_fim    → ano final do período   (ex: "2026")
+  #
+  # Para a primeira execução histórica (2018–2026), ajuste para:
+  #   cgu_emendas_ano_inicio = "2018"
+  #   cgu_emendas_ano_fim    = "2026"
+  #
+  # Padrão incremental mensal: ambas as variáveis apontam para o ano corrente.
+  args:
+    de: "{{ var.value.get('cgu_emendas_ano_inicio', '2026') }}"
+    ate: "{{ var.value.get('cgu_emendas_ano_fim', '2026') }}"
+
+  settings:
+    DOWNLOAD_DELAY: 1
+    CONCURRENT_REQUESTS: 8
+    AUTOTHROTTLE_ENABLED: "True"
+    AUTOTHROTTLE_TARGET_CONCURRENCY: "4.0"
+
+load_iceberg:
+  # Glob que o iceberg_loader usa para localizar os JSONL no MinIO.
+  # "processed/" é o subdiretório para onde os arquivos são movidos após carga.
+  source_glob: "bronze/emendas_parlamentares/lote_*.jsonl"
+  target_schema: bronze
+  target_table: cgu_emendas_parlamentares
+
+  # batch_size: linhas por INSERT no caminho Trino (sem branching).
+  # Ignorado no caminho PyIceberg — cada JSONL gera 1 arquivo Parquet.
+  batch_size: 100

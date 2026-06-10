@@ -32,4 +32,5 @@ dev-dependencies = [
     "pip>=24.2",
     "python-dotenv>=1.0.1",
     "ipdb>=0.13.13",
+    "pytest>=9.0.3",
 ]

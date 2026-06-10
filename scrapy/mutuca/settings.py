@@ -19,10 +19,14 @@ NEWSPIDER_MODULE = "mutuca.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/128.0.0.0 Safari/537.36"
+)
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 8
@@ -42,16 +46,25 @@ COOKIES_ENABLED = True
 # TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
+
 DEFAULT_REQUEST_HEADERS = {
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.5",
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8",
     "Accept-Encoding": "gzip, deflate, br",
     "Connection": "keep-alive",
-    "Upgrade-Insecure-Requests": "1",
-    "Sec-Fetch-Dest": "document",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "none",
 }
+
+
+# DEFAULT_REQUEST_HEADERS = {
+#     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+#     "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.5",
+#     "Accept-Encoding": "gzip, deflate, br",
+#     "Connection": "keep-alive",
+#     "Upgrade-Insecure-Requests": "1",
+#     "Sec-Fetch-Dest": "document",
+#     "Sec-Fetch-Mode": "navigate",
+#     "Sec-Fetch-Site": "none",
+# }
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html

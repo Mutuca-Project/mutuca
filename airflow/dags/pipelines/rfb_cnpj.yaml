@@ -21,11 +21,17 @@ load_csv:
   # No container: /mnt/hd_rfb (fixo — não alterar aqui)
   source_mount: /mnt/hd_rfb
 
-  # Linhas por arquivo Parquet gerado no Iceberg.
-  # 100k linhas ~ 10-30 MB por Parquet — adequado para MinIO em HD externo (USB).
-  # Arquivos maiores aumentam o risco de timeout S3 (curlCode 28) durante upload.
-  # Aumentar para 300000 apenas se o armazenamento for NVMe local.
+  # Linhas por chunk pandas (leitura do CSV).
+  # 100k linhas ~ 10-30 MB em RAM por chunk — controla o pico de memória por leitura.
   chunk_size: 100000
+
+  # Quantos chunks acumular antes de cada append Iceberg (= 1 snapshot Parquet).
+  # 10 chunks × 100k linhas = 1M linhas / ~100 MB por snapshot.
+  # Reduzir para 5 se o Airflow for morto pelo OOM Killer (return code -9).
+  # Aumentar com cuidado: mais chunks → menos snapshots, mas mais RAM por batch.
+  # Contexto: cada append cria 1 snapshot Iceberg. Appends excessivos acumulam
+  # metadados em memória e eventualmente ativam o OOM Killer.
+  chunks_por_append: 10
 
   encoding: latin-1   # encoding padrão dos arquivos da Receita Federal
   separator: ";"      # separador padrão dos arquivos da Receita Federal

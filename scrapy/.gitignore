@@ -1,3 +1,6 @@
+# Fixtures de teste são código — devem ser versionadas mesmo com *.json no .gitignore raiz
+!tests/fixtures/**/*.json
+
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
