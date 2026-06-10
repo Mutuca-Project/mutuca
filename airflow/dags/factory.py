@@ -2,21 +2,19 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 import yaml
-from airflow import DAG
 from airflow.hooks.base import BaseHook
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 from airflow.providers.docker.operators.docker import DockerOperator
 from airflow.utils.trigger_rule import TriggerRule
 from docker.types import Mount
-
 from shared.iceberg_loader import increment_offset, load_jsonl_to_iceberg
+from shared.nessie_client import create_branch as nessie_create_branch
+from shared.nessie_client import delete_branch as nessie_delete_branch
+from shared.nessie_client import merge_to_main as nessie_merge_to_main
 from shared.rfb_csv_loader import load_csv_to_iceberg
-from shared.nessie_client import (
-    create_branch as nessie_create_branch,
-    delete_branch as nessie_delete_branch,
-    merge_to_main as nessie_merge_to_main,
-)
+
+from airflow import DAG
 
 PIPELINES_DIR = Path(__file__).parent / "pipelines"
 
@@ -34,6 +32,7 @@ docker build -t lakehouse-dbt-validator:latest /opt/airflow/project/dbt/branch_v
 # ---------------------------------------------------------------------------
 # Callables de branching Nessie (ADR 007)
 # ---------------------------------------------------------------------------
+
 
 def _nessie_create_branch(dag_id: str, from_ref: str, **context) -> str:
     """
@@ -66,6 +65,7 @@ def _nessie_delete(**context) -> None:
 # Helpers do factory
 # ---------------------------------------------------------------------------
 
+
 def _build_scrapy_command(scrapy_cfg: dict, offset_cfg: dict | None) -> str:
     spider = scrapy_cfg["spider"]
     cmd = f"scrapy crawl {spider}"
@@ -77,6 +77,11 @@ def _build_scrapy_command(scrapy_cfg: dict, offset_cfg: dict | None) -> str:
             f" -a offset={{{{ var.value.get('{variable}', 0) }}}}"
             f" -a batch_size={batch_size}"
         )
+
+    # Argumentos do spider (-a key=value). Suportam Jinja (ex: Airflow Variables).
+    # Uso: scrapy.args no YAML do pipeline (ex: de, ate para o CGU).
+    for key, value in scrapy_cfg.get("args", {}).items():
+        cmd += f" -a {key}={value}"
 
     for key, value in scrapy_cfg.get("settings", {}).items():
         cmd += f" -s {key}={value}"
@@ -104,11 +109,12 @@ def _build_mounts(mounts_cfg: list) -> list:
 # Factory principal
 # ---------------------------------------------------------------------------
 
+
 def create_dag(config: dict) -> DAG:
     dag_id = config["dag_id"]
-    scrapy_cfg = config.get("scrapy")          # opcional: ausente em pipelines sem scraping
+    scrapy_cfg = config.get("scrapy")  # opcional: ausente em pipelines sem scraping
     load_cfg = config.get("load_iceberg")
-    load_csv_cfg = config.get("load_csv")      # loader CSV do HD externo (ex: RFB CNPJ)
+    load_csv_cfg = config.get("load_csv")  # loader CSV do HD externo (ex: RFB CNPJ)
     offset_cfg = config.get("offset_control")
     branching_cfg = config.get("branching")
     branching_enabled = bool(branching_cfg and branching_cfg.get("enabled"))
@@ -256,7 +262,9 @@ def create_dag(config: dict) -> DAG:
                 nessie_iceberg_endpoint = branching_cfg.get(
                     "nessie_iceberg_endpoint", "http://lakehouse-nessie:19120/iceberg/"
                 )
-                minio_endpoint = conn.extra_dejson.get("endpoint_url", "http://lakehouse-minio:9000")
+                minio_endpoint = conn.extra_dejson.get(
+                    "endpoint_url", "http://lakehouse-minio:9000"
+                )
 
                 dbt_test_task = DockerOperator(
                     task_id="dbt_test_branch",
