@@ -39,6 +39,8 @@ nav:
       - Introdução as Pipelines de dados: pipelines/index.md
       - Fontes e Estratégias: pipelines/fontes.md
       - Esquemas e Relacionamentos: pipelines/relacionamentos.md
+      - Pipelines Implementados:
+          - Emendas Parlamentares (CGU): pipelines/cgu_emendas.md
   - Modelos de Dados:
       - Dicionários de Dados: modelos/dicionarios.md
       - Modelo de Dados: modelos/datamodel.md
