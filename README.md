@@ -134,7 +134,7 @@ docker compose up -d
 
 ```
 
-### Passo 4: Check liste de validação  
+### Passo 4: Check list de validação  
 
 Antes de começar a desenvolver pipelines, garanta que todos os "departamentos da redação" estão de pé e funcionais. Como engenheiros jornalistas, o terminal é nossa mesa de trabalho. Abaixo está uma lista de validação da infraestrutura e comandos úteis para monitorar e consertar a casa.
 
